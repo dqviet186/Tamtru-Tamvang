@@ -1,0 +1,11 @@
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsHostingWS\bin\Debug\WindowsFormsHostingWS.exe
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsHostingWS\bin\Debug\WindowsFormsHostingWS.pdb
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsHostingWS\obj\x86\Debug\ResolveAssemblyReference.cache
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsHostingWS\obj\x86\Debug\WindowsFormsHostingWS.Form1.resources
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsHostingWS\obj\x86\Debug\WindowsFormsHostingWS.Properties.Resources.resources
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsHostingWS\obj\x86\Debug\GenerateResource.read.1.tlog
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsHostingWS\obj\x86\Debug\GenerateResource.write.1.tlog
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsHostingWS\obj\x86\Debug\WindowsFormsHostingWS.exe
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsHostingWS\obj\x86\Debug\WindowsFormsHostingWS.pdb
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsHostingWS\bin\Debug\TTTVService.dll
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsHostingWS\bin\Debug\TTTVService.pdb

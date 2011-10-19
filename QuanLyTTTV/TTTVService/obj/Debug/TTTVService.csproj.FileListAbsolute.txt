@@ -1,0 +1,6 @@
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\TTTVService\bin\Debug\TTTVService.dll.config
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\TTTVService\bin\Debug\TTTVService.dll
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\TTTVService\bin\Debug\TTTVService.pdb
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\TTTVService\obj\Debug\ResolveAssemblyReference.cache
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\TTTVService\obj\Debug\TTTVService.dll
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\TTTVService\obj\Debug\TTTVService.pdb

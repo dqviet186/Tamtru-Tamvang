@@ -1,0 +1,11 @@
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsClient\obj\x86\Debug\ResolveAssemblyReference.cache
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsClient\obj\x86\Debug\WindowsFormsClient.Properties.Resources.resources
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsClient\obj\x86\Debug\GenerateResource.read.1.tlog
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsClient\obj\x86\Debug\GenerateResource.write.1.tlog
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsClient\bin\Debug\WindowsFormsClient.exe
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsClient\bin\Debug\WindowsFormsClient.pdb
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsClient\obj\x86\Debug\WindowsFormsClient.exe
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsClient\obj\x86\Debug\WindowsFormsClient.pdb
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsClient\bin\Debug\TTTVService.dll
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsClient\bin\Debug\TTTVService.pdb
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsClient\obj\x86\Debug\WindowsFormsClient.Form1.resources
