@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.tamtrutamvang.com/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tamtrutamvang.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.tamtrutamvang.com/Imports">
+      <xsd:import namespace="http://www.tamtrutamvang.com/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="pis_AuthorInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuthorInformation" />
+  </wsdl:message>
+  <wsdl:message name="pis_AuthorInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthorInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="pis_GetInfoByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInfoByName" />
+  </wsdl:message>
+  <wsdl:message name="pis_GetInfoByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInfoByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="pis_GetInfoByAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInfoByAddress" />
+  </wsdl:message>
+  <wsdl:message name="pis_GetInfoByAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInfoByAddressResponse" />
+  </wsdl:message>
+  <wsdl:portType name="pis">
+    <wsdl:operation name="AuthorInformation">
+      <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/AuthorInformation" message="tns:pis_AuthorInformation_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/AuthorInformationResponse" message="tns:pis_AuthorInformation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInfoByName">
+      <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/GetInfoByName" message="tns:pis_GetInfoByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/GetInfoByNameResponse" message="tns:pis_GetInfoByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInfoByAddress">
+      <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/GetInfoByAddress" message="tns:pis_GetInfoByAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/GetInfoByAddressResponse" message="tns:pis_GetInfoByAddress_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

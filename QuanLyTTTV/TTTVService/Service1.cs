@@ -11,12 +11,22 @@ namespace TTTVService
     [ServiceBehavior(IncludeExceptionDetailInFaults = true)]
     public class Service1 : IService1
     {
-        public string GetThongTinNhom()
+        public string GetAuthor()
         {
             string nhom = "10";
             string dstv = "Duong Quoc Viet (MSSV: 09263L)";
             string tt = "Nhóm: " + nhom + " - Thành viên nhóm: " + dstv;
             return tt;
+        }
+
+        public string GetInfoByName(string Name)
+        {
+            return Name;
+        }
+
+        public string GetInfoByAddress(string Adress)
+        {
+            return Adress;
         }
     }
 }

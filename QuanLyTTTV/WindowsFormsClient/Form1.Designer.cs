@@ -59,16 +59,16 @@
             // 
             this.button2.Location = new System.Drawing.Point(15, 87);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(126, 44);
             this.button2.TabIndex = 2;
-            this.button2.Text = "WSHttpBinding";
+            this.button2.Text = "HttpBinding Call By Service";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(106, 97);
+            this.label2.Location = new System.Drawing.Point(147, 103);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 4;
