@@ -45,6 +45,9 @@ namespace WindowsFormsClient
                 //string thongtinnhom = proxy.GetAuthor();
                 //label1.Text = thongtinnhom;
                 //Console.WriteLine(thongtinnhom);
+
+                ServiceReference1.pisClient proxy = new ServiceReference1.pisClient();
+                label1.Text = proxy.AuthorInformation();
             }
             catch
             {
