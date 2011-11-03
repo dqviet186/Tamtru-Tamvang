@@ -61,6 +61,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="FormNhom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNhom.Designer.cs">
+      <DependentUpon>FormNhom.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -73,6 +79,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormNhom.resx">
+      <DependentUpon>FormNhom.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -96,6 +105,10 @@
     <ProjectReference Include="..\TTTVService\TTTVService.csproj">
       <Project>{0BC64C30-A3E1-490C-B27A-BC3529433C50}</Project>
       <Name>TTTVService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WindowsFormsHostingWS\WindowsFormsHostingWS.csproj">
+      <Project>{4855E25A-9E0F-4155-8244-7C9BAE961E58}</Project>
+      <Name>WindowsFormsHostingWS</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

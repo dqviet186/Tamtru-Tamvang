@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.ServiceModel;
 using System.ServiceModel.Description;
 //using TTTVService;
+using WindowsFormsHostingWS;
 using WindowsFormsClient.ServiceReference1;
 
 
@@ -34,29 +35,14 @@ namespace WindowsFormsClient
             //Console.WriteLine(thongtinnhom);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void thôngTinNhómToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            try
-            {
-
-                ServiceReference1.pisClient proxy = new ServiceReference1.pisClient();
-                label1.Text = proxy.GetAuthorInfo();
-            }
-            catch
-            {
-                MessageBox.Show("Lỗi kết nối");
-            }
+            new FormNhom().ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void thoátToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            ServiceReference1.pisClient proxy = new ServiceReference1.pisClient();
-            label2.Text = proxy.GetAuthorInfo();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
+            this.Close();
         }
     }
 }

@@ -20,6 +20,7 @@ namespace WindowsFormsHostingWS
         string ShowMex = "No";
         Object selectedItem = "";
         string str = "";
+        string relativeAddress = "";
 
         public Form1()
         {
@@ -62,7 +63,7 @@ namespace WindowsFormsHostingWS
                 
                 if (str == "BasicHttpBinding")
                 {
-                    string relativeAddress = txt1.Text;
+                    relativeAddress = txt1.Text;
                     host.AddServiceEndpoint(contractType, new BasicHttpBinding(), relativeAddress);
                 }
                 else if (str == "WSHttpBinding")
@@ -100,7 +101,7 @@ namespace WindowsFormsHostingWS
 
         private void btnsave_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Khong biet cach luu vao file config!!");
+            this.Close();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

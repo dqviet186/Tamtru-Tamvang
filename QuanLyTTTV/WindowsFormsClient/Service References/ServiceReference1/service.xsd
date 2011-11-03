@@ -12,49 +12,49 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetInfoByName">
+  <xs:element name="FindInfoByName">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetInfoByNameResponse">
+  <xs:element name="FindInfoByNameResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="GetInfoByNameResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="FindInfoByNameResult" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetInfoByPhone">
+  <xs:element name="FindInfoByPhone">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetInfoByPhoneResponse">
+  <xs:element name="FindInfoByPhoneResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="GetInfoByPhoneResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="FindInfoByPhoneResult" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetInfoByIdNumber">
+  <xs:element name="FindInfoByIdNumber">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="IdNumber" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetInfoByIdNumberResponse">
+  <xs:element name="FindInfoByIdNumberResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="GetInfoByIdNumberResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="FindInfoByIdNumberResult" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetInfoBySex">
+  <xs:element name="ListPersonBySex">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
@@ -62,28 +62,28 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetInfoBySexResponse">
+  <xs:element name="ListPersonBySexResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="GetInfoBySexResult" type="xs:int" />
+        <xs:element minOccurs="0" name="ListPersonBySexResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetListByAddress">
+  <xs:element name="ListPersonByAddress">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetListByAddressResponse">
+  <xs:element name="ListPersonByAddressResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="GetListByAddressResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ListPersonByAddressResult" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetListByDate">
+  <xs:element name="ListPersonByDate">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
@@ -92,24 +92,24 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetListByDateResponse">
+  <xs:element name="ListPersonByDateResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="GetListByDateResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ListPersonByDateResult" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetListOccupationByAddress">
+  <xs:element name="ListOccupationByAddress">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetListOccupationByAddressResponse">
+  <xs:element name="ListOccupationByAddressResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="GetListOccupationByAddressResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ListOccupationByAddressResult" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -125,6 +125,40 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="CountSexByAddressResult" type="xs:int" />
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertInfomation">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertInfomationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatInformation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatInformationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteInformation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteInformationResponse">
+    <xs:complexType>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
 </xs:schema>

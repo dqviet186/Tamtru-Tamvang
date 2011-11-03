@@ -47,5 +47,65 @@ namespace TTTVService
         // Count how many male/ female in this address
         [OperationContract(Name="CountSexByAddress")]
         int CountSexByAddress(string Address);
+
+        // For Insert, update, delete data
+        [OperationContract(Name="InsertInfomation")]
+        void InsertData();
+
+        [OperationContract(Name="UpdatInformation")]
+        void UpdateData(int Id);
+
+        [OperationContract(Name="DeleteInformation")]
+        void DeleteData(int Id);
+        // For Insert, update, delete data
+    }
+
+    [DataContract]
+    public class TranferRecord
+    {
+        [DataMember]
+        private int Id;
+
+        [DataMember]
+        private string FullName;
+
+        [DataMember]
+        private string PhoneNumber;
+
+        [DataMember]
+        private string Email;
+
+        [DataMember]
+        private DateTime Birthday;
+
+        [DataMember]
+        private string Sex;
+
+        [DataMember]
+        private string OriginalAddress;
+
+        [DataMember]
+        private string IDNumber;
+
+        [DataMember]
+        private string Occupation;
+
+        [DataMember]
+        private string CurrentAddress;
+
+        [DataMember]
+        private DateTime FromDate;
+
+        [DataMember]
+        private DateTime ToDate;
+
+        [DataMember]
+        private string Reason;
+
+        [DataMember]
+        private string Description;
+
+        [DataMember]
+        private string Type;
     }
 }

@@ -10,3 +10,6 @@ G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsCli
 G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsClient\bin\Debug\TTTVService.pdb
 G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsClient\obj\x86\Debug\WindowsFormsClient.Form1.resources
 G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsClient\bin\Debug\WindowsFormsClient.exe.config
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsClient\obj\x86\Debug\WindowsFormsClient.FormNhom.resources
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsClient\bin\Debug\WindowsFormsHostingWS.exe
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsClient\bin\Debug\WindowsFormsHostingWS.pdb

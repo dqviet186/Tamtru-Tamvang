@@ -134,7 +134,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_pis_GetInfoByName_Input_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_pis_FindInfoByName_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -153,7 +153,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_pis_GetInfoByName_output_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_pis_FindInfoByName_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -172,7 +172,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_pis_GetInfoByPhone_Input_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_pis_FindInfoByPhone_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -191,7 +191,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_pis_GetInfoByPhone_output_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_pis_FindInfoByPhone_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -210,7 +210,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_pis_GetInfoByIdNumber_Input_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_pis_FindInfoByIdNumber_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -229,7 +229,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_pis_GetInfoByIdNumber_output_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_pis_FindInfoByIdNumber_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -248,7 +248,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_pis_GetInfoBySex_Input_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_pis_ListPersonBySex_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -267,7 +267,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_pis_GetInfoBySex_output_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_pis_ListPersonBySex_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -286,7 +286,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_pis_GetListByAddress_Input_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_pis_ListPersonByAddress_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -305,7 +305,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_pis_GetListByAddress_output_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_pis_ListPersonByAddress_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -324,7 +324,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_pis_GetListByDate_Input_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_pis_ListPersonByDate_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -343,7 +343,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_pis_GetListByDate_output_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_pis_ListPersonByDate_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -362,7 +362,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_pis_GetListOccupationByAddress_Input_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_pis_ListOccupationByAddress_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -381,7 +381,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_pis_GetListOccupationByAddress_output_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_pis_ListOccupationByAddress_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -438,6 +438,120 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_pis_InsertInfomation_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_pis_InsertInfomation_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_pis_UpdatInformation_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_pis_UpdatInformation_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_pis_DeleteInformation_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_pis_DeleteInformation_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:import namespace="http://www.tamtrutamvang.com/" location="" />
   <wsdl:types />
   <wsdl:binding name="WSHttpBinding_pis" type="i0:pis">
@@ -454,80 +568,80 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetInfoByName">
-      <soap12:operation soapAction="http://www.tamtrutamvang.com/pis/GetInfoByName" style="document" />
+    <wsdl:operation name="FindInfoByName">
+      <soap12:operation soapAction="http://www.tamtrutamvang.com/pis/FindInfoByName" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_pis_GetInfoByName_Input_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_pis_FindInfoByName_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_pis_GetInfoByName_output_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_pis_FindInfoByName_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetInfoByPhone">
-      <soap12:operation soapAction="http://www.tamtrutamvang.com/pis/GetInfoByPhone" style="document" />
+    <wsdl:operation name="FindInfoByPhone">
+      <soap12:operation soapAction="http://www.tamtrutamvang.com/pis/FindInfoByPhone" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_pis_GetInfoByPhone_Input_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_pis_FindInfoByPhone_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_pis_GetInfoByPhone_output_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_pis_FindInfoByPhone_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetInfoByIdNumber">
-      <soap12:operation soapAction="http://www.tamtrutamvang.com/pis/GetInfoByIdNumber" style="document" />
+    <wsdl:operation name="FindInfoByIdNumber">
+      <soap12:operation soapAction="http://www.tamtrutamvang.com/pis/FindInfoByIdNumber" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_pis_GetInfoByIdNumber_Input_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_pis_FindInfoByIdNumber_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_pis_GetInfoByIdNumber_output_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_pis_FindInfoByIdNumber_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetInfoBySex">
-      <soap12:operation soapAction="http://www.tamtrutamvang.com/pis/GetInfoBySex" style="document" />
+    <wsdl:operation name="ListPersonBySex">
+      <soap12:operation soapAction="http://www.tamtrutamvang.com/pis/ListPersonBySex" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_pis_GetInfoBySex_Input_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_pis_ListPersonBySex_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_pis_GetInfoBySex_output_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_pis_ListPersonBySex_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetListByAddress">
-      <soap12:operation soapAction="http://www.tamtrutamvang.com/pis/GetListByAddress" style="document" />
+    <wsdl:operation name="ListPersonByAddress">
+      <soap12:operation soapAction="http://www.tamtrutamvang.com/pis/ListPersonByAddress" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_pis_GetListByAddress_Input_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_pis_ListPersonByAddress_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_pis_GetListByAddress_output_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_pis_ListPersonByAddress_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetListByDate">
-      <soap12:operation soapAction="http://www.tamtrutamvang.com/pis/GetListByDate" style="document" />
+    <wsdl:operation name="ListPersonByDate">
+      <soap12:operation soapAction="http://www.tamtrutamvang.com/pis/ListPersonByDate" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_pis_GetListByDate_Input_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_pis_ListPersonByDate_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_pis_GetListByDate_output_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_pis_ListPersonByDate_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetListOccupationByAddress">
-      <soap12:operation soapAction="http://www.tamtrutamvang.com/pis/GetListOccupationByAddress" style="document" />
+    <wsdl:operation name="ListOccupationByAddress">
+      <soap12:operation soapAction="http://www.tamtrutamvang.com/pis/ListOccupationByAddress" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_pis_GetListOccupationByAddress_Input_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_pis_ListOccupationByAddress_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_pis_GetListOccupationByAddress_output_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_pis_ListOccupationByAddress_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
@@ -539,6 +653,39 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSHttpBinding_pis_CountSexByAddress_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertInfomation">
+      <soap12:operation soapAction="http://www.tamtrutamvang.com/pis/InsertInfomation" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_pis_InsertInfomation_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_pis_InsertInfomation_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatInformation">
+      <soap12:operation soapAction="http://www.tamtrutamvang.com/pis/UpdatInformation" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_pis_UpdatInformation_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_pis_UpdatInformation_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInformation">
+      <soap12:operation soapAction="http://www.tamtrutamvang.com/pis/DeleteInformation" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_pis_DeleteInformation_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_pis_DeleteInformation_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>

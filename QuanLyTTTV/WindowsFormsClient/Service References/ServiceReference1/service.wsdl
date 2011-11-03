@@ -12,47 +12,47 @@
   <wsdl:message name="pis_GetAuthorInfo_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAuthorInfoResponse" />
   </wsdl:message>
-  <wsdl:message name="pis_GetInfoByName_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetInfoByName" />
+  <wsdl:message name="pis_FindInfoByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindInfoByName" />
   </wsdl:message>
-  <wsdl:message name="pis_GetInfoByName_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetInfoByNameResponse" />
+  <wsdl:message name="pis_FindInfoByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindInfoByNameResponse" />
   </wsdl:message>
-  <wsdl:message name="pis_GetInfoByPhone_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetInfoByPhone" />
+  <wsdl:message name="pis_FindInfoByPhone_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindInfoByPhone" />
   </wsdl:message>
-  <wsdl:message name="pis_GetInfoByPhone_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetInfoByPhoneResponse" />
+  <wsdl:message name="pis_FindInfoByPhone_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindInfoByPhoneResponse" />
   </wsdl:message>
-  <wsdl:message name="pis_GetInfoByIdNumber_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetInfoByIdNumber" />
+  <wsdl:message name="pis_FindInfoByIdNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindInfoByIdNumber" />
   </wsdl:message>
-  <wsdl:message name="pis_GetInfoByIdNumber_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetInfoByIdNumberResponse" />
+  <wsdl:message name="pis_FindInfoByIdNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindInfoByIdNumberResponse" />
   </wsdl:message>
-  <wsdl:message name="pis_GetInfoBySex_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetInfoBySex" />
+  <wsdl:message name="pis_ListPersonBySex_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListPersonBySex" />
   </wsdl:message>
-  <wsdl:message name="pis_GetInfoBySex_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetInfoBySexResponse" />
+  <wsdl:message name="pis_ListPersonBySex_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListPersonBySexResponse" />
   </wsdl:message>
-  <wsdl:message name="pis_GetListByAddress_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetListByAddress" />
+  <wsdl:message name="pis_ListPersonByAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListPersonByAddress" />
   </wsdl:message>
-  <wsdl:message name="pis_GetListByAddress_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetListByAddressResponse" />
+  <wsdl:message name="pis_ListPersonByAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListPersonByAddressResponse" />
   </wsdl:message>
-  <wsdl:message name="pis_GetListByDate_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetListByDate" />
+  <wsdl:message name="pis_ListPersonByDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListPersonByDate" />
   </wsdl:message>
-  <wsdl:message name="pis_GetListByDate_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetListByDateResponse" />
+  <wsdl:message name="pis_ListPersonByDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListPersonByDateResponse" />
   </wsdl:message>
-  <wsdl:message name="pis_GetListOccupationByAddress_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetListOccupationByAddress" />
+  <wsdl:message name="pis_ListOccupationByAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListOccupationByAddress" />
   </wsdl:message>
-  <wsdl:message name="pis_GetListOccupationByAddress_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetListOccupationByAddressResponse" />
+  <wsdl:message name="pis_ListOccupationByAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListOccupationByAddressResponse" />
   </wsdl:message>
   <wsdl:message name="pis_CountSexByAddress_InputMessage">
     <wsdl:part name="parameters" element="tns:CountSexByAddress" />
@@ -60,42 +60,72 @@
   <wsdl:message name="pis_CountSexByAddress_OutputMessage">
     <wsdl:part name="parameters" element="tns:CountSexByAddressResponse" />
   </wsdl:message>
+  <wsdl:message name="pis_InsertInfomation_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertInfomation" />
+  </wsdl:message>
+  <wsdl:message name="pis_InsertInfomation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertInfomationResponse" />
+  </wsdl:message>
+  <wsdl:message name="pis_UpdatInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatInformation" />
+  </wsdl:message>
+  <wsdl:message name="pis_UpdatInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="pis_DeleteInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteInformation" />
+  </wsdl:message>
+  <wsdl:message name="pis_DeleteInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteInformationResponse" />
+  </wsdl:message>
   <wsdl:portType name="pis">
     <wsdl:operation name="GetAuthorInfo">
       <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/GetAuthorInfo" message="tns:pis_GetAuthorInfo_InputMessage" />
       <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/GetAuthorInfoResponse" message="tns:pis_GetAuthorInfo_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetInfoByName">
-      <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/GetInfoByName" message="tns:pis_GetInfoByName_InputMessage" />
-      <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/GetInfoByNameResponse" message="tns:pis_GetInfoByName_OutputMessage" />
+    <wsdl:operation name="FindInfoByName">
+      <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/FindInfoByName" message="tns:pis_FindInfoByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/FindInfoByNameResponse" message="tns:pis_FindInfoByName_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetInfoByPhone">
-      <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/GetInfoByPhone" message="tns:pis_GetInfoByPhone_InputMessage" />
-      <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/GetInfoByPhoneResponse" message="tns:pis_GetInfoByPhone_OutputMessage" />
+    <wsdl:operation name="FindInfoByPhone">
+      <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/FindInfoByPhone" message="tns:pis_FindInfoByPhone_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/FindInfoByPhoneResponse" message="tns:pis_FindInfoByPhone_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetInfoByIdNumber">
-      <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/GetInfoByIdNumber" message="tns:pis_GetInfoByIdNumber_InputMessage" />
-      <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/GetInfoByIdNumberResponse" message="tns:pis_GetInfoByIdNumber_OutputMessage" />
+    <wsdl:operation name="FindInfoByIdNumber">
+      <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/FindInfoByIdNumber" message="tns:pis_FindInfoByIdNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/FindInfoByIdNumberResponse" message="tns:pis_FindInfoByIdNumber_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetInfoBySex">
-      <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/GetInfoBySex" message="tns:pis_GetInfoBySex_InputMessage" />
-      <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/GetInfoBySexResponse" message="tns:pis_GetInfoBySex_OutputMessage" />
+    <wsdl:operation name="ListPersonBySex">
+      <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/ListPersonBySex" message="tns:pis_ListPersonBySex_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/ListPersonBySexResponse" message="tns:pis_ListPersonBySex_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetListByAddress">
-      <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/GetListByAddress" message="tns:pis_GetListByAddress_InputMessage" />
-      <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/GetListByAddressResponse" message="tns:pis_GetListByAddress_OutputMessage" />
+    <wsdl:operation name="ListPersonByAddress">
+      <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/ListPersonByAddress" message="tns:pis_ListPersonByAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/ListPersonByAddressResponse" message="tns:pis_ListPersonByAddress_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetListByDate">
-      <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/GetListByDate" message="tns:pis_GetListByDate_InputMessage" />
-      <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/GetListByDateResponse" message="tns:pis_GetListByDate_OutputMessage" />
+    <wsdl:operation name="ListPersonByDate">
+      <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/ListPersonByDate" message="tns:pis_ListPersonByDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/ListPersonByDateResponse" message="tns:pis_ListPersonByDate_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetListOccupationByAddress">
-      <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/GetListOccupationByAddress" message="tns:pis_GetListOccupationByAddress_InputMessage" />
-      <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/GetListOccupationByAddressResponse" message="tns:pis_GetListOccupationByAddress_OutputMessage" />
+    <wsdl:operation name="ListOccupationByAddress">
+      <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/ListOccupationByAddress" message="tns:pis_ListOccupationByAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/ListOccupationByAddressResponse" message="tns:pis_ListOccupationByAddress_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="CountSexByAddress">
       <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/CountSexByAddress" message="tns:pis_CountSexByAddress_InputMessage" />
       <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/CountSexByAddressResponse" message="tns:pis_CountSexByAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertInfomation">
+      <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/InsertInfomation" message="tns:pis_InsertInfomation_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/InsertInfomationResponse" message="tns:pis_InsertInfomation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatInformation">
+      <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/UpdatInformation" message="tns:pis_UpdatInformation_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/UpdatInformationResponse" message="tns:pis_UpdatInformation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInformation">
+      <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/DeleteInformation" message="tns:pis_DeleteInformation_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/DeleteInformationResponse" message="tns:pis_DeleteInformation_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

@@ -58,5 +58,20 @@ namespace TTTVService
         {
             return 0;
         }
+
+        public void InsertData()
+        {
+
+        }
+
+        public void UpdateData(int Id)
+        {
+            
+        }
+
+        public void DeleteData(int Id)
+        {
+
+        }
     }
 }

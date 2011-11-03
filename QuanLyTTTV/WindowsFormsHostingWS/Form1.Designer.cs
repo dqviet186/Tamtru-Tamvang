@@ -164,7 +164,7 @@
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(105, 23);
             this.btnsave.TabIndex = 14;
-            this.btnsave.Text = "Save cofiguration";
+            this.btnsave.Text = "Exit";
             this.btnsave.UseVisualStyleBackColor = true;
             this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
@@ -230,7 +230,7 @@
             this.Controls.Add(this.baselocation);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
-            this.Text = "Quản lý tạm trú tạm vắng";
+            this.Text = "Cấu hình Server - Quản lý tạm trú tạm vắng - NHÓM 10";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
