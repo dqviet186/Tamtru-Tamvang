@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.ServiceModel;
 using System.ServiceModel.Description;
 //using TTTVService;
+using WindowsFormsClient.ServiceReference1;
 
 
 namespace WindowsFormsClient
@@ -37,17 +38,9 @@ namespace WindowsFormsClient
         {
             try
             {
-                //Dung ChannelFactory cho phep tao nhieu doi tuong proxy voi cac endpoint khac nhau
-                //EndpointAddress address = new EndpointAddress("http://localhost:8000/quanly/tamtrutamvang");
-                //BasicHttpBinding binding = new BasicHttpBinding();
-                //IService1 proxy = ChannelFactory<IService1>.CreateChannel(binding, address);
-
-                //string thongtinnhom = proxy.GetAuthor();
-                //label1.Text = thongtinnhom;
-                //Console.WriteLine(thongtinnhom);
 
                 ServiceReference1.pisClient proxy = new ServiceReference1.pisClient();
-                label1.Text = proxy.AuthorInformation();
+                label1.Text = proxy.GetAuthorInfo();
             }
             catch
             {
@@ -58,7 +51,7 @@ namespace WindowsFormsClient
         private void button2_Click(object sender, EventArgs e)
         {
             ServiceReference1.pisClient proxy = new ServiceReference1.pisClient();
-            label2.Text = proxy.AuthorInformation();
+            label2.Text = proxy.GetAuthorInfo();
         }
 
         private void button3_Click(object sender, EventArgs e)

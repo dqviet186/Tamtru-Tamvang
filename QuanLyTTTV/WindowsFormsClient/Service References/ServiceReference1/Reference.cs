@@ -15,13 +15,13 @@ namespace WindowsFormsClient.ServiceReference1 {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.tamtrutamvang.com/", ConfigurationName="ServiceReference1.pis")]
     public interface pis {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/AuthorInformation", ReplyAction="http://www.tamtrutamvang.com/pis/AuthorInformationResponse")]
-        string AuthorInformation();
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/GetAuthorInfo", ReplyAction="http://www.tamtrutamvang.com/pis/GetAuthorInfoResponse")]
+        string GetAuthorInfo();
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://www.tamtrutamvang.com/pis/AuthorInformation", ReplyAction="http://www.tamtrutamvang.com/pis/AuthorInformationResponse")]
-        System.IAsyncResult BeginAuthorInformation(System.AsyncCallback callback, object asyncState);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://www.tamtrutamvang.com/pis/GetAuthorInfo", ReplyAction="http://www.tamtrutamvang.com/pis/GetAuthorInfoResponse")]
+        System.IAsyncResult BeginGetAuthorInfo(System.AsyncCallback callback, object asyncState);
         
-        string EndAuthorInformation(System.IAsyncResult result);
+        string EndGetAuthorInfo(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/GetInfoByName", ReplyAction="http://www.tamtrutamvang.com/pis/GetInfoByNameResponse")]
         string GetInfoByName(string Name);
@@ -31,13 +31,61 @@ namespace WindowsFormsClient.ServiceReference1 {
         
         string EndGetInfoByName(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/GetInfoByAddress", ReplyAction="http://www.tamtrutamvang.com/pis/GetInfoByAddressResponse")]
-        string GetInfoByAddress(string Adress);
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/GetInfoByPhone", ReplyAction="http://www.tamtrutamvang.com/pis/GetInfoByPhoneResponse")]
+        string GetInfoByPhone(string Phone);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://www.tamtrutamvang.com/pis/GetInfoByAddress", ReplyAction="http://www.tamtrutamvang.com/pis/GetInfoByAddressResponse")]
-        System.IAsyncResult BeginGetInfoByAddress(string Adress, System.AsyncCallback callback, object asyncState);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://www.tamtrutamvang.com/pis/GetInfoByPhone", ReplyAction="http://www.tamtrutamvang.com/pis/GetInfoByPhoneResponse")]
+        System.IAsyncResult BeginGetInfoByPhone(string Phone, System.AsyncCallback callback, object asyncState);
         
-        string EndGetInfoByAddress(System.IAsyncResult result);
+        string EndGetInfoByPhone(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/GetInfoByIdNumber", ReplyAction="http://www.tamtrutamvang.com/pis/GetInfoByIdNumberResponse")]
+        string GetInfoByIdNumber(string IdNumber);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://www.tamtrutamvang.com/pis/GetInfoByIdNumber", ReplyAction="http://www.tamtrutamvang.com/pis/GetInfoByIdNumberResponse")]
+        System.IAsyncResult BeginGetInfoByIdNumber(string IdNumber, System.AsyncCallback callback, object asyncState);
+        
+        string EndGetInfoByIdNumber(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/GetInfoBySex", ReplyAction="http://www.tamtrutamvang.com/pis/GetInfoBySexResponse")]
+        int GetInfoBySex(string Address, string Sex);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://www.tamtrutamvang.com/pis/GetInfoBySex", ReplyAction="http://www.tamtrutamvang.com/pis/GetInfoBySexResponse")]
+        System.IAsyncResult BeginGetInfoBySex(string Address, string Sex, System.AsyncCallback callback, object asyncState);
+        
+        int EndGetInfoBySex(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/GetListByAddress", ReplyAction="http://www.tamtrutamvang.com/pis/GetListByAddressResponse")]
+        string GetListByAddress(string Address);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://www.tamtrutamvang.com/pis/GetListByAddress", ReplyAction="http://www.tamtrutamvang.com/pis/GetListByAddressResponse")]
+        System.IAsyncResult BeginGetListByAddress(string Address, System.AsyncCallback callback, object asyncState);
+        
+        string EndGetListByAddress(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/GetListByDate", ReplyAction="http://www.tamtrutamvang.com/pis/GetListByDateResponse")]
+        string GetListByDate(string Address, System.DateTime FromDate, System.DateTime ToDate);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://www.tamtrutamvang.com/pis/GetListByDate", ReplyAction="http://www.tamtrutamvang.com/pis/GetListByDateResponse")]
+        System.IAsyncResult BeginGetListByDate(string Address, System.DateTime FromDate, System.DateTime ToDate, System.AsyncCallback callback, object asyncState);
+        
+        string EndGetListByDate(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/GetListOccupationByAddress", ReplyAction="http://www.tamtrutamvang.com/pis/GetListOccupationByAddressResponse")]
+        string GetListOccupationByAddress(string Address);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://www.tamtrutamvang.com/pis/GetListOccupationByAddress", ReplyAction="http://www.tamtrutamvang.com/pis/GetListOccupationByAddressResponse")]
+        System.IAsyncResult BeginGetListOccupationByAddress(string Address, System.AsyncCallback callback, object asyncState);
+        
+        string EndGetListOccupationByAddress(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/CountSexByAddress", ReplyAction="http://www.tamtrutamvang.com/pis/CountSexByAddressResponse")]
+        int CountSexByAddress(string Address);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://www.tamtrutamvang.com/pis/CountSexByAddress", ReplyAction="http://www.tamtrutamvang.com/pis/CountSexByAddressResponse")]
+        System.IAsyncResult BeginCountSexByAddress(string Address, System.AsyncCallback callback, object asyncState);
+        
+        int EndCountSexByAddress(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -46,11 +94,11 @@ namespace WindowsFormsClient.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class AuthorInformationCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class GetAuthorInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        public AuthorInformationCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        public GetAuthorInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -84,11 +132,11 @@ namespace WindowsFormsClient.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class GetInfoByAddressCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class GetInfoByPhoneCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        public GetInfoByAddressCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        public GetInfoByPhoneCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -103,13 +151,127 @@ namespace WindowsFormsClient.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetInfoByIdNumberCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetInfoByIdNumberCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetInfoBySexCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetInfoBySexCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public int Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetListByAddressCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetListByAddressCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetListByDateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetListByDateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetListOccupationByAddressCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetListOccupationByAddressCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class CountSexByAddressCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public CountSexByAddressCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public int Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class pisClient : System.ServiceModel.ClientBase<WindowsFormsClient.ServiceReference1.pis>, WindowsFormsClient.ServiceReference1.pis {
         
-        private BeginOperationDelegate onBeginAuthorInformationDelegate;
+        private BeginOperationDelegate onBeginGetAuthorInfoDelegate;
         
-        private EndOperationDelegate onEndAuthorInformationDelegate;
+        private EndOperationDelegate onEndGetAuthorInfoDelegate;
         
-        private System.Threading.SendOrPostCallback onAuthorInformationCompletedDelegate;
+        private System.Threading.SendOrPostCallback onGetAuthorInfoCompletedDelegate;
         
         private BeginOperationDelegate onBeginGetInfoByNameDelegate;
         
@@ -117,11 +279,47 @@ namespace WindowsFormsClient.ServiceReference1 {
         
         private System.Threading.SendOrPostCallback onGetInfoByNameCompletedDelegate;
         
-        private BeginOperationDelegate onBeginGetInfoByAddressDelegate;
+        private BeginOperationDelegate onBeginGetInfoByPhoneDelegate;
         
-        private EndOperationDelegate onEndGetInfoByAddressDelegate;
+        private EndOperationDelegate onEndGetInfoByPhoneDelegate;
         
-        private System.Threading.SendOrPostCallback onGetInfoByAddressCompletedDelegate;
+        private System.Threading.SendOrPostCallback onGetInfoByPhoneCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetInfoByIdNumberDelegate;
+        
+        private EndOperationDelegate onEndGetInfoByIdNumberDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetInfoByIdNumberCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetInfoBySexDelegate;
+        
+        private EndOperationDelegate onEndGetInfoBySexDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetInfoBySexCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetListByAddressDelegate;
+        
+        private EndOperationDelegate onEndGetListByAddressDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetListByAddressCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetListByDateDelegate;
+        
+        private EndOperationDelegate onEndGetListByDateDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetListByDateCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetListOccupationByAddressDelegate;
+        
+        private EndOperationDelegate onEndGetListOccupationByAddressDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetListOccupationByAddressCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginCountSexByAddressDelegate;
+        
+        private EndOperationDelegate onEndCountSexByAddressDelegate;
+        
+        private System.Threading.SendOrPostCallback onCountSexByAddressCompletedDelegate;
         
         public pisClient() {
         }
@@ -142,58 +340,70 @@ namespace WindowsFormsClient.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
-        public event System.EventHandler<AuthorInformationCompletedEventArgs> AuthorInformationCompleted;
+        public event System.EventHandler<GetAuthorInfoCompletedEventArgs> GetAuthorInfoCompleted;
         
         public event System.EventHandler<GetInfoByNameCompletedEventArgs> GetInfoByNameCompleted;
         
-        public event System.EventHandler<GetInfoByAddressCompletedEventArgs> GetInfoByAddressCompleted;
+        public event System.EventHandler<GetInfoByPhoneCompletedEventArgs> GetInfoByPhoneCompleted;
         
-        public string AuthorInformation() {
-            return base.Channel.AuthorInformation();
+        public event System.EventHandler<GetInfoByIdNumberCompletedEventArgs> GetInfoByIdNumberCompleted;
+        
+        public event System.EventHandler<GetInfoBySexCompletedEventArgs> GetInfoBySexCompleted;
+        
+        public event System.EventHandler<GetListByAddressCompletedEventArgs> GetListByAddressCompleted;
+        
+        public event System.EventHandler<GetListByDateCompletedEventArgs> GetListByDateCompleted;
+        
+        public event System.EventHandler<GetListOccupationByAddressCompletedEventArgs> GetListOccupationByAddressCompleted;
+        
+        public event System.EventHandler<CountSexByAddressCompletedEventArgs> CountSexByAddressCompleted;
+        
+        public string GetAuthorInfo() {
+            return base.Channel.GetAuthorInfo();
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginAuthorInformation(System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginAuthorInformation(callback, asyncState);
+        public System.IAsyncResult BeginGetAuthorInfo(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetAuthorInfo(callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public string EndAuthorInformation(System.IAsyncResult result) {
-            return base.Channel.EndAuthorInformation(result);
+        public string EndGetAuthorInfo(System.IAsyncResult result) {
+            return base.Channel.EndGetAuthorInfo(result);
         }
         
-        private System.IAsyncResult OnBeginAuthorInformation(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            return this.BeginAuthorInformation(callback, asyncState);
+        private System.IAsyncResult OnBeginGetAuthorInfo(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGetAuthorInfo(callback, asyncState);
         }
         
-        private object[] OnEndAuthorInformation(System.IAsyncResult result) {
-            string retVal = this.EndAuthorInformation(result);
+        private object[] OnEndGetAuthorInfo(System.IAsyncResult result) {
+            string retVal = this.EndGetAuthorInfo(result);
             return new object[] {
                     retVal};
         }
         
-        private void OnAuthorInformationCompleted(object state) {
-            if ((this.AuthorInformationCompleted != null)) {
+        private void OnGetAuthorInfoCompleted(object state) {
+            if ((this.GetAuthorInfoCompleted != null)) {
                 InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.AuthorInformationCompleted(this, new AuthorInformationCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+                this.GetAuthorInfoCompleted(this, new GetAuthorInfoCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
             }
         }
         
-        public void AuthorInformationAsync() {
-            this.AuthorInformationAsync(null);
+        public void GetAuthorInfoAsync() {
+            this.GetAuthorInfoAsync(null);
         }
         
-        public void AuthorInformationAsync(object userState) {
-            if ((this.onBeginAuthorInformationDelegate == null)) {
-                this.onBeginAuthorInformationDelegate = new BeginOperationDelegate(this.OnBeginAuthorInformation);
+        public void GetAuthorInfoAsync(object userState) {
+            if ((this.onBeginGetAuthorInfoDelegate == null)) {
+                this.onBeginGetAuthorInfoDelegate = new BeginOperationDelegate(this.OnBeginGetAuthorInfo);
             }
-            if ((this.onEndAuthorInformationDelegate == null)) {
-                this.onEndAuthorInformationDelegate = new EndOperationDelegate(this.OnEndAuthorInformation);
+            if ((this.onEndGetAuthorInfoDelegate == null)) {
+                this.onEndGetAuthorInfoDelegate = new EndOperationDelegate(this.OnEndGetAuthorInfo);
             }
-            if ((this.onAuthorInformationCompletedDelegate == null)) {
-                this.onAuthorInformationCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAuthorInformationCompleted);
+            if ((this.onGetAuthorInfoCompletedDelegate == null)) {
+                this.onGetAuthorInfoCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetAuthorInfoCompleted);
             }
-            base.InvokeAsync(this.onBeginAuthorInformationDelegate, null, this.onEndAuthorInformationDelegate, this.onAuthorInformationCompletedDelegate, userState);
+            base.InvokeAsync(this.onBeginGetAuthorInfoDelegate, null, this.onEndGetAuthorInfoDelegate, this.onGetAuthorInfoCompletedDelegate, userState);
         }
         
         public string GetInfoByName(string Name) {
@@ -246,54 +456,360 @@ namespace WindowsFormsClient.ServiceReference1 {
                         Name}, this.onEndGetInfoByNameDelegate, this.onGetInfoByNameCompletedDelegate, userState);
         }
         
-        public string GetInfoByAddress(string Adress) {
-            return base.Channel.GetInfoByAddress(Adress);
+        public string GetInfoByPhone(string Phone) {
+            return base.Channel.GetInfoByPhone(Phone);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGetInfoByAddress(string Adress, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetInfoByAddress(Adress, callback, asyncState);
+        public System.IAsyncResult BeginGetInfoByPhone(string Phone, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetInfoByPhone(Phone, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public string EndGetInfoByAddress(System.IAsyncResult result) {
-            return base.Channel.EndGetInfoByAddress(result);
+        public string EndGetInfoByPhone(System.IAsyncResult result) {
+            return base.Channel.EndGetInfoByPhone(result);
         }
         
-        private System.IAsyncResult OnBeginGetInfoByAddress(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            string Adress = ((string)(inValues[0]));
-            return this.BeginGetInfoByAddress(Adress, callback, asyncState);
+        private System.IAsyncResult OnBeginGetInfoByPhone(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string Phone = ((string)(inValues[0]));
+            return this.BeginGetInfoByPhone(Phone, callback, asyncState);
         }
         
-        private object[] OnEndGetInfoByAddress(System.IAsyncResult result) {
-            string retVal = this.EndGetInfoByAddress(result);
+        private object[] OnEndGetInfoByPhone(System.IAsyncResult result) {
+            string retVal = this.EndGetInfoByPhone(result);
             return new object[] {
                     retVal};
         }
         
-        private void OnGetInfoByAddressCompleted(object state) {
-            if ((this.GetInfoByAddressCompleted != null)) {
+        private void OnGetInfoByPhoneCompleted(object state) {
+            if ((this.GetInfoByPhoneCompleted != null)) {
                 InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.GetInfoByAddressCompleted(this, new GetInfoByAddressCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+                this.GetInfoByPhoneCompleted(this, new GetInfoByPhoneCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
             }
         }
         
-        public void GetInfoByAddressAsync(string Adress) {
-            this.GetInfoByAddressAsync(Adress, null);
+        public void GetInfoByPhoneAsync(string Phone) {
+            this.GetInfoByPhoneAsync(Phone, null);
         }
         
-        public void GetInfoByAddressAsync(string Adress, object userState) {
-            if ((this.onBeginGetInfoByAddressDelegate == null)) {
-                this.onBeginGetInfoByAddressDelegate = new BeginOperationDelegate(this.OnBeginGetInfoByAddress);
+        public void GetInfoByPhoneAsync(string Phone, object userState) {
+            if ((this.onBeginGetInfoByPhoneDelegate == null)) {
+                this.onBeginGetInfoByPhoneDelegate = new BeginOperationDelegate(this.OnBeginGetInfoByPhone);
             }
-            if ((this.onEndGetInfoByAddressDelegate == null)) {
-                this.onEndGetInfoByAddressDelegate = new EndOperationDelegate(this.OnEndGetInfoByAddress);
+            if ((this.onEndGetInfoByPhoneDelegate == null)) {
+                this.onEndGetInfoByPhoneDelegate = new EndOperationDelegate(this.OnEndGetInfoByPhone);
             }
-            if ((this.onGetInfoByAddressCompletedDelegate == null)) {
-                this.onGetInfoByAddressCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetInfoByAddressCompleted);
+            if ((this.onGetInfoByPhoneCompletedDelegate == null)) {
+                this.onGetInfoByPhoneCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetInfoByPhoneCompleted);
             }
-            base.InvokeAsync(this.onBeginGetInfoByAddressDelegate, new object[] {
-                        Adress}, this.onEndGetInfoByAddressDelegate, this.onGetInfoByAddressCompletedDelegate, userState);
+            base.InvokeAsync(this.onBeginGetInfoByPhoneDelegate, new object[] {
+                        Phone}, this.onEndGetInfoByPhoneDelegate, this.onGetInfoByPhoneCompletedDelegate, userState);
+        }
+        
+        public string GetInfoByIdNumber(string IdNumber) {
+            return base.Channel.GetInfoByIdNumber(IdNumber);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetInfoByIdNumber(string IdNumber, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetInfoByIdNumber(IdNumber, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public string EndGetInfoByIdNumber(System.IAsyncResult result) {
+            return base.Channel.EndGetInfoByIdNumber(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetInfoByIdNumber(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string IdNumber = ((string)(inValues[0]));
+            return this.BeginGetInfoByIdNumber(IdNumber, callback, asyncState);
+        }
+        
+        private object[] OnEndGetInfoByIdNumber(System.IAsyncResult result) {
+            string retVal = this.EndGetInfoByIdNumber(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetInfoByIdNumberCompleted(object state) {
+            if ((this.GetInfoByIdNumberCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetInfoByIdNumberCompleted(this, new GetInfoByIdNumberCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetInfoByIdNumberAsync(string IdNumber) {
+            this.GetInfoByIdNumberAsync(IdNumber, null);
+        }
+        
+        public void GetInfoByIdNumberAsync(string IdNumber, object userState) {
+            if ((this.onBeginGetInfoByIdNumberDelegate == null)) {
+                this.onBeginGetInfoByIdNumberDelegate = new BeginOperationDelegate(this.OnBeginGetInfoByIdNumber);
+            }
+            if ((this.onEndGetInfoByIdNumberDelegate == null)) {
+                this.onEndGetInfoByIdNumberDelegate = new EndOperationDelegate(this.OnEndGetInfoByIdNumber);
+            }
+            if ((this.onGetInfoByIdNumberCompletedDelegate == null)) {
+                this.onGetInfoByIdNumberCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetInfoByIdNumberCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetInfoByIdNumberDelegate, new object[] {
+                        IdNumber}, this.onEndGetInfoByIdNumberDelegate, this.onGetInfoByIdNumberCompletedDelegate, userState);
+        }
+        
+        public int GetInfoBySex(string Address, string Sex) {
+            return base.Channel.GetInfoBySex(Address, Sex);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetInfoBySex(string Address, string Sex, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetInfoBySex(Address, Sex, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public int EndGetInfoBySex(System.IAsyncResult result) {
+            return base.Channel.EndGetInfoBySex(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetInfoBySex(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string Address = ((string)(inValues[0]));
+            string Sex = ((string)(inValues[1]));
+            return this.BeginGetInfoBySex(Address, Sex, callback, asyncState);
+        }
+        
+        private object[] OnEndGetInfoBySex(System.IAsyncResult result) {
+            int retVal = this.EndGetInfoBySex(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetInfoBySexCompleted(object state) {
+            if ((this.GetInfoBySexCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetInfoBySexCompleted(this, new GetInfoBySexCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetInfoBySexAsync(string Address, string Sex) {
+            this.GetInfoBySexAsync(Address, Sex, null);
+        }
+        
+        public void GetInfoBySexAsync(string Address, string Sex, object userState) {
+            if ((this.onBeginGetInfoBySexDelegate == null)) {
+                this.onBeginGetInfoBySexDelegate = new BeginOperationDelegate(this.OnBeginGetInfoBySex);
+            }
+            if ((this.onEndGetInfoBySexDelegate == null)) {
+                this.onEndGetInfoBySexDelegate = new EndOperationDelegate(this.OnEndGetInfoBySex);
+            }
+            if ((this.onGetInfoBySexCompletedDelegate == null)) {
+                this.onGetInfoBySexCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetInfoBySexCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetInfoBySexDelegate, new object[] {
+                        Address,
+                        Sex}, this.onEndGetInfoBySexDelegate, this.onGetInfoBySexCompletedDelegate, userState);
+        }
+        
+        public string GetListByAddress(string Address) {
+            return base.Channel.GetListByAddress(Address);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetListByAddress(string Address, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetListByAddress(Address, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public string EndGetListByAddress(System.IAsyncResult result) {
+            return base.Channel.EndGetListByAddress(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetListByAddress(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string Address = ((string)(inValues[0]));
+            return this.BeginGetListByAddress(Address, callback, asyncState);
+        }
+        
+        private object[] OnEndGetListByAddress(System.IAsyncResult result) {
+            string retVal = this.EndGetListByAddress(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetListByAddressCompleted(object state) {
+            if ((this.GetListByAddressCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetListByAddressCompleted(this, new GetListByAddressCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetListByAddressAsync(string Address) {
+            this.GetListByAddressAsync(Address, null);
+        }
+        
+        public void GetListByAddressAsync(string Address, object userState) {
+            if ((this.onBeginGetListByAddressDelegate == null)) {
+                this.onBeginGetListByAddressDelegate = new BeginOperationDelegate(this.OnBeginGetListByAddress);
+            }
+            if ((this.onEndGetListByAddressDelegate == null)) {
+                this.onEndGetListByAddressDelegate = new EndOperationDelegate(this.OnEndGetListByAddress);
+            }
+            if ((this.onGetListByAddressCompletedDelegate == null)) {
+                this.onGetListByAddressCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetListByAddressCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetListByAddressDelegate, new object[] {
+                        Address}, this.onEndGetListByAddressDelegate, this.onGetListByAddressCompletedDelegate, userState);
+        }
+        
+        public string GetListByDate(string Address, System.DateTime FromDate, System.DateTime ToDate) {
+            return base.Channel.GetListByDate(Address, FromDate, ToDate);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetListByDate(string Address, System.DateTime FromDate, System.DateTime ToDate, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetListByDate(Address, FromDate, ToDate, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public string EndGetListByDate(System.IAsyncResult result) {
+            return base.Channel.EndGetListByDate(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetListByDate(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string Address = ((string)(inValues[0]));
+            System.DateTime FromDate = ((System.DateTime)(inValues[1]));
+            System.DateTime ToDate = ((System.DateTime)(inValues[2]));
+            return this.BeginGetListByDate(Address, FromDate, ToDate, callback, asyncState);
+        }
+        
+        private object[] OnEndGetListByDate(System.IAsyncResult result) {
+            string retVal = this.EndGetListByDate(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetListByDateCompleted(object state) {
+            if ((this.GetListByDateCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetListByDateCompleted(this, new GetListByDateCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetListByDateAsync(string Address, System.DateTime FromDate, System.DateTime ToDate) {
+            this.GetListByDateAsync(Address, FromDate, ToDate, null);
+        }
+        
+        public void GetListByDateAsync(string Address, System.DateTime FromDate, System.DateTime ToDate, object userState) {
+            if ((this.onBeginGetListByDateDelegate == null)) {
+                this.onBeginGetListByDateDelegate = new BeginOperationDelegate(this.OnBeginGetListByDate);
+            }
+            if ((this.onEndGetListByDateDelegate == null)) {
+                this.onEndGetListByDateDelegate = new EndOperationDelegate(this.OnEndGetListByDate);
+            }
+            if ((this.onGetListByDateCompletedDelegate == null)) {
+                this.onGetListByDateCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetListByDateCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetListByDateDelegate, new object[] {
+                        Address,
+                        FromDate,
+                        ToDate}, this.onEndGetListByDateDelegate, this.onGetListByDateCompletedDelegate, userState);
+        }
+        
+        public string GetListOccupationByAddress(string Address) {
+            return base.Channel.GetListOccupationByAddress(Address);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetListOccupationByAddress(string Address, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetListOccupationByAddress(Address, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public string EndGetListOccupationByAddress(System.IAsyncResult result) {
+            return base.Channel.EndGetListOccupationByAddress(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetListOccupationByAddress(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string Address = ((string)(inValues[0]));
+            return this.BeginGetListOccupationByAddress(Address, callback, asyncState);
+        }
+        
+        private object[] OnEndGetListOccupationByAddress(System.IAsyncResult result) {
+            string retVal = this.EndGetListOccupationByAddress(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetListOccupationByAddressCompleted(object state) {
+            if ((this.GetListOccupationByAddressCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetListOccupationByAddressCompleted(this, new GetListOccupationByAddressCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetListOccupationByAddressAsync(string Address) {
+            this.GetListOccupationByAddressAsync(Address, null);
+        }
+        
+        public void GetListOccupationByAddressAsync(string Address, object userState) {
+            if ((this.onBeginGetListOccupationByAddressDelegate == null)) {
+                this.onBeginGetListOccupationByAddressDelegate = new BeginOperationDelegate(this.OnBeginGetListOccupationByAddress);
+            }
+            if ((this.onEndGetListOccupationByAddressDelegate == null)) {
+                this.onEndGetListOccupationByAddressDelegate = new EndOperationDelegate(this.OnEndGetListOccupationByAddress);
+            }
+            if ((this.onGetListOccupationByAddressCompletedDelegate == null)) {
+                this.onGetListOccupationByAddressCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetListOccupationByAddressCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetListOccupationByAddressDelegate, new object[] {
+                        Address}, this.onEndGetListOccupationByAddressDelegate, this.onGetListOccupationByAddressCompletedDelegate, userState);
+        }
+        
+        public int CountSexByAddress(string Address) {
+            return base.Channel.CountSexByAddress(Address);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginCountSexByAddress(string Address, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginCountSexByAddress(Address, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public int EndCountSexByAddress(System.IAsyncResult result) {
+            return base.Channel.EndCountSexByAddress(result);
+        }
+        
+        private System.IAsyncResult OnBeginCountSexByAddress(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string Address = ((string)(inValues[0]));
+            return this.BeginCountSexByAddress(Address, callback, asyncState);
+        }
+        
+        private object[] OnEndCountSexByAddress(System.IAsyncResult result) {
+            int retVal = this.EndCountSexByAddress(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnCountSexByAddressCompleted(object state) {
+            if ((this.CountSexByAddressCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.CountSexByAddressCompleted(this, new CountSexByAddressCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void CountSexByAddressAsync(string Address) {
+            this.CountSexByAddressAsync(Address, null);
+        }
+        
+        public void CountSexByAddressAsync(string Address, object userState) {
+            if ((this.onBeginCountSexByAddressDelegate == null)) {
+                this.onBeginCountSexByAddressDelegate = new BeginOperationDelegate(this.OnBeginCountSexByAddress);
+            }
+            if ((this.onEndCountSexByAddressDelegate == null)) {
+                this.onEndCountSexByAddressDelegate = new EndOperationDelegate(this.OnEndCountSexByAddress);
+            }
+            if ((this.onCountSexByAddressCompletedDelegate == null)) {
+                this.onCountSexByAddressCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnCountSexByAddressCompleted);
+            }
+            base.InvokeAsync(this.onBeginCountSexByAddressDelegate, new object[] {
+                        Address}, this.onEndCountSexByAddressDelegate, this.onCountSexByAddressCompletedDelegate, userState);
         }
     }
 }

@@ -11,20 +11,41 @@ namespace TTTVService
     [ServiceContract (Name="pis",Namespace="http://www.tamtrutamvang.com/")]
     public interface IService1
     {
-        //[OperationContract]
-        //string GetData(int value);
-
-        //[OperationContract]
-        //CompositeType GetDataUsingDataContract(CompositeType composite);
-
         // TODO: Add your service operations here
-        [OperationContract(Name = "AuthorInformation")]
+        // Get information of author
+        [OperationContract(Name = "GetAuthorInfo")]
         string GetAuthor();
 
-        [OperationContract]
+        // Find information by Name
+        [OperationContract(Name="FindInfoByName")]
         string GetInfoByName(string Name);
 
-        [OperationContract]
-        string GetInfoByAddress(string Adress);
+        // Find information by Address
+        [OperationContract(Name="FindInfoByPhone")]
+        string GetInfoByPhone(string Phone);
+
+        // Find information by IdNumber
+        [OperationContract(Name="FindInfoByIdNumber")]
+        string GetInfoByIdNumber(string IdNumber);
+
+        // Find information by sex
+        [OperationContract(Name="ListPersonBySex")]
+        int GetInfoBySex(string Address, string Sex);
+
+        // Get all person are in this address
+        [OperationContract(Name="ListPersonByAddress")]
+        string GetListByAddress(string Address);
+
+        // Get all person are in this address from date to date
+        [OperationContract(Name="ListPersonByDate")]
+        string GetListByDate(string Address, DateTime FromDate, DateTime ToDate);
+
+        // report occupation in this address
+        [OperationContract(Name="ListOccupationByAddress")]
+        string GetListOccupationByAddress(string Address);
+
+        // Count how many male/ female in this address
+        [OperationContract(Name="CountSexByAddress")]
+        int CountSexByAddress(string Address);
     }
 }

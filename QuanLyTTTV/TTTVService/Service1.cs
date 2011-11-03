@@ -24,9 +24,39 @@ namespace TTTVService
             return Name;
         }
 
-        public string GetInfoByAddress(string Adress)
+        public string GetInfoByPhone(string Phone)
         {
-            return Adress;
+            return "";
+        }
+
+        public string GetInfoByIdNumber(string IdNumber)
+        {
+            return "";
+        }
+
+        public int GetInfoBySex(string Address, string Sex)
+        {
+            return 0;
+        }
+
+        public string GetListByAddress(string Address)
+        {
+            return "";
+        }
+
+        public string GetListByDate(string Address, DateTime FromDate, DateTime ToDate)
+        {
+            return "";
+        }
+
+        public string GetListOccupationByAddress(string Address)
+        {
+            return "";
+        }
+
+        public int CountSexByAddress(string Address)
+        {
+            return 0;
         }
     }
 }
