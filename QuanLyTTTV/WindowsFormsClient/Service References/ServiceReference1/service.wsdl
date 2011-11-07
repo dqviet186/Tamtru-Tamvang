@@ -60,6 +60,12 @@
   <wsdl:message name="pis_CountSexByAddress_OutputMessage">
     <wsdl:part name="parameters" element="tns:CountSexByAddressResponse" />
   </wsdl:message>
+  <wsdl:message name="pis_LoadData_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadData" />
+  </wsdl:message>
+  <wsdl:message name="pis_LoadData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadDataResponse" />
+  </wsdl:message>
   <wsdl:message name="pis_InsertInfomation_InputMessage">
     <wsdl:part name="parameters" element="tns:InsertInfomation" />
   </wsdl:message>
@@ -114,6 +120,10 @@
     <wsdl:operation name="CountSexByAddress">
       <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/CountSexByAddress" message="tns:pis_CountSexByAddress_InputMessage" />
       <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/CountSexByAddressResponse" message="tns:pis_CountSexByAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadData">
+      <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/LoadData" message="tns:pis_LoadData_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/LoadDataResponse" message="tns:pis_LoadData_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="InsertInfomation">
       <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/InsertInfomation" message="tns:pis_InsertInfomation_InputMessage" />

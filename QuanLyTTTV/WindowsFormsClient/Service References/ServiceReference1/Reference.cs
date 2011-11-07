@@ -87,6 +87,14 @@ namespace WindowsFormsClient.ServiceReference1 {
         
         int EndCountSexByAddress(System.IAsyncResult result);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/LoadData", ReplyAction="http://www.tamtrutamvang.com/pis/LoadDataResponse")]
+        void LoadData(string sql);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://www.tamtrutamvang.com/pis/LoadData", ReplyAction="http://www.tamtrutamvang.com/pis/LoadDataResponse")]
+        System.IAsyncResult BeginLoadData(string sql, System.AsyncCallback callback, object asyncState);
+        
+        void EndLoadData(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/InsertInfomation", ReplyAction="http://www.tamtrutamvang.com/pis/InsertInfomationResponse")]
         void InsertInfomation();
         
@@ -345,6 +353,12 @@ namespace WindowsFormsClient.ServiceReference1 {
         
         private System.Threading.SendOrPostCallback onCountSexByAddressCompletedDelegate;
         
+        private BeginOperationDelegate onBeginLoadDataDelegate;
+        
+        private EndOperationDelegate onEndLoadDataDelegate;
+        
+        private System.Threading.SendOrPostCallback onLoadDataCompletedDelegate;
+        
         private BeginOperationDelegate onBeginInsertInfomationDelegate;
         
         private EndOperationDelegate onEndInsertInfomationDelegate;
@@ -399,6 +413,8 @@ namespace WindowsFormsClient.ServiceReference1 {
         public event System.EventHandler<ListOccupationByAddressCompletedEventArgs> ListOccupationByAddressCompleted;
         
         public event System.EventHandler<CountSexByAddressCompletedEventArgs> CountSexByAddressCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> LoadDataCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> InsertInfomationCompleted;
         
@@ -858,6 +874,55 @@ namespace WindowsFormsClient.ServiceReference1 {
             }
             base.InvokeAsync(this.onBeginCountSexByAddressDelegate, new object[] {
                         Address}, this.onEndCountSexByAddressDelegate, this.onCountSexByAddressCompletedDelegate, userState);
+        }
+        
+        public void LoadData(string sql) {
+            base.Channel.LoadData(sql);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginLoadData(string sql, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginLoadData(sql, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void EndLoadData(System.IAsyncResult result) {
+            base.Channel.EndLoadData(result);
+        }
+        
+        private System.IAsyncResult OnBeginLoadData(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string sql = ((string)(inValues[0]));
+            return this.BeginLoadData(sql, callback, asyncState);
+        }
+        
+        private object[] OnEndLoadData(System.IAsyncResult result) {
+            this.EndLoadData(result);
+            return null;
+        }
+        
+        private void OnLoadDataCompleted(object state) {
+            if ((this.LoadDataCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.LoadDataCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void LoadDataAsync(string sql) {
+            this.LoadDataAsync(sql, null);
+        }
+        
+        public void LoadDataAsync(string sql, object userState) {
+            if ((this.onBeginLoadDataDelegate == null)) {
+                this.onBeginLoadDataDelegate = new BeginOperationDelegate(this.OnBeginLoadData);
+            }
+            if ((this.onEndLoadDataDelegate == null)) {
+                this.onEndLoadDataDelegate = new EndOperationDelegate(this.OnEndLoadData);
+            }
+            if ((this.onLoadDataCompletedDelegate == null)) {
+                this.onLoadDataCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnLoadDataCompleted);
+            }
+            base.InvokeAsync(this.onBeginLoadDataDelegate, new object[] {
+                        sql}, this.onEndLoadDataDelegate, this.onLoadDataCompletedDelegate, userState);
         }
         
         public void InsertInfomation() {

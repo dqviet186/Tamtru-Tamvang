@@ -48,14 +48,17 @@ namespace TTTVService
         [OperationContract(Name="CountSexByAddress")]
         int CountSexByAddress(string Address);
 
-        // For Insert, update, delete data
-        [OperationContract(Name="InsertInfomation")]
+        // For Select, insert, update, delete data
+        [OperationContract(Name="LoadData")]
+        void BindingData(string sql);
+
+        [OperationContract(Name="InsertInfomation", IsOneWay=true)]
         void InsertData();
 
-        [OperationContract(Name="UpdatInformation")]
+        [OperationContract(Name = "UpdatInformation", IsOneWay = true)]
         void UpdateData(int Id);
 
-        [OperationContract(Name="DeleteInformation")]
+        [OperationContract(Name = "DeleteInformation", IsOneWay = true)]
         void DeleteData(int Id);
         // For Insert, update, delete data
     }

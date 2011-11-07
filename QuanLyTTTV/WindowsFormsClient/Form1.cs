@@ -6,13 +6,17 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+// require class database
+using System.Data.Sql;
+using System.Data.SqlClient;
 
+// require classes service
 using System.ServiceModel;
 using System.ServiceModel.Description;
+
 //using TTTVService;
 using WindowsFormsHostingWS;
 using WindowsFormsClient.ServiceReference1;
-
 
 namespace WindowsFormsClient
 {
@@ -25,14 +29,20 @@ namespace WindowsFormsClient
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //Dung ChannelFactory cho phep tao nhieu doi tuong proxy voi cac endpoint khac nhau
-            //EndpointAddress address = new EndpointAddress("http://localhost:8000/quanly/tamtrutamvang");
-            //BasicHttpBinding binding = new BasicHttpBinding();
-            //IService1 proxy = ChannelFactory<IService1>.CreateChannel(binding, address);
+            try
+            {
+                ServiceReference1.pisClient proxy = new ServiceReference1.pisClient();
 
-            //string thongtinnhom = proxy.GetThongTinNhom();
-            //label1.Text = thongtinnhom;
-            //Console.WriteLine(thongtinnhom);
+                string sql = "Select Id,FullName,PhoneNumber,Email,BirthDay,OriginalAddress,IDNumber from tamtrutamvang";
+                proxy.LoadData(sql);
+
+                DataSet myDataSet = new DataSet();
+                dataGridView1.DataSource = myDataSet.Tables[0].DefaultView;
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi kết nối");
+            }
         }
 
         private void thôngTinNhómToolStripMenuItem_Click(object sender, EventArgs e)
