@@ -18,11 +18,11 @@ namespace TTTVService
 
         // Find information by Name
         [OperationContract(Name="FindInfoByName")]
-        string GetInfoByName(string Name);
+        TranferRecord[] GetInfoByName(string Name, string type);
 
         // Find information by Address
         [OperationContract(Name="FindInfoByPhone")]
-        string GetInfoByPhone(string Phone);
+        TranferRecord[] GetInfoByPhone(string Phone, string type);
 
         // Find information by IdNumber
         [OperationContract(Name="FindInfoByIdNumber")]
@@ -50,16 +50,16 @@ namespace TTTVService
 
         // For Select, insert, update, delete data
         [OperationContract(Name="LoadData")]
-        void BindingData(string sql);
+        TranferRecord[] GetData();
 
-        [OperationContract(Name="InsertInfomation", IsOneWay=true)]
-        void InsertData();
+        //[OperationContract(Name="InsertInfomation", IsOneWay=true)]
+        //void InsertData();
 
-        [OperationContract(Name = "UpdatInformation", IsOneWay = true)]
-        void UpdateData(int Id);
+        //[OperationContract(Name = "UpdatInformation", IsOneWay = true)]
+        //void UpdateData(int Id);
 
-        [OperationContract(Name = "DeleteInformation", IsOneWay = true)]
-        void DeleteData(int Id);
+        //[OperationContract(Name = "DeleteInformation", IsOneWay = true)]
+        //void DeleteData(int Id);
         // For Insert, update, delete data
     }
 
@@ -67,48 +67,48 @@ namespace TTTVService
     public class TranferRecord
     {
         [DataMember]
-        private int Id;
+        public int Id;
 
         [DataMember]
-        private string FullName;
+        public string FullName;
 
         [DataMember]
-        private string PhoneNumber;
+        public string PhoneNumber;
 
         [DataMember]
-        private string Email;
+        public string Email;
 
         [DataMember]
-        private DateTime Birthday;
+        public DateTime Birthday;
 
         [DataMember]
-        private string Sex;
+        public string Sex;
 
         [DataMember]
-        private string OriginalAddress;
+        public string OriginalAddress;
 
         [DataMember]
-        private string IDNumber;
+        public string IDNumber;
 
         [DataMember]
-        private string Occupation;
+        public string Occupation;
 
         [DataMember]
-        private string CurrentAddress;
+        public string CurrentAddress;
 
         [DataMember]
-        private DateTime FromDate;
+        public DateTime FromDate;
 
         [DataMember]
-        private DateTime ToDate;
+        public DateTime ToDate;
 
         [DataMember]
-        private string Reason;
+        public string Reason;
 
         [DataMember]
-        private string Description;
+        public string Description;
 
         [DataMember]
-        private string Type;
+        public string Type;
     }
 }

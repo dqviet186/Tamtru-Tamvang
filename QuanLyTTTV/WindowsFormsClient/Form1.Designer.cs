@@ -44,9 +44,10 @@
             this.thêmThôngTinTạmTrúToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinTạmVắngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -98,12 +99,14 @@
             this.tìmKiếmTheoTênToolStripMenuItem.Name = "tìmKiếmTheoTênToolStripMenuItem";
             this.tìmKiếmTheoTênToolStripMenuItem.Size = new System.Drawing.Size(259, 22);
             this.tìmKiếmTheoTênToolStripMenuItem.Text = "Tìm kiếm theo tên";
+            this.tìmKiếmTheoTênToolStripMenuItem.Click += new System.EventHandler(this.tìmKiếmTheoTênToolStripMenuItem_Click);
             // 
             // tìmKiếmTheoSốĐiệnThoạiToolStripMenuItem
             // 
             this.tìmKiếmTheoSốĐiệnThoạiToolStripMenuItem.Name = "tìmKiếmTheoSốĐiệnThoạiToolStripMenuItem";
             this.tìmKiếmTheoSốĐiệnThoạiToolStripMenuItem.Size = new System.Drawing.Size(259, 22);
             this.tìmKiếmTheoSốĐiệnThoạiToolStripMenuItem.Text = "Tìm kiếm theo số điện thoại";
+            this.tìmKiếmTheoSốĐiệnThoạiToolStripMenuItem.Click += new System.EventHandler(this.tìmKiếmTheoSốĐiệnThoạiToolStripMenuItem_Click);
             // 
             // tìmKiếmTheoCMNDToolStripMenuItem
             // 
@@ -169,13 +172,41 @@
             this.thoátToolStripMenuItem.Text = "Thoát";
             this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click_1);
             // 
-            // dataGridView1
+            // label1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(37, 84);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(595, 150);
-            this.dataGridView1.TabIndex = 6;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.OrangeRed;
+            this.label1.Location = new System.Drawing.Point(309, 202);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(716, 37);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Chương Trình Quản lý thông tin tạm trú tạm vắng";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.label2.Location = new System.Drawing.Point(43, 288);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(410, 25);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Giáo viên hướng dẫn: Thầy Võ Hoàng Hải";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.label3.Location = new System.Drawing.Point(43, 333);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(370, 25);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Sinh viên thực hiện: Dương Quốc Việt";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
@@ -183,7 +214,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1350, 730);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.ForeColor = System.Drawing.Color.Black;
             this.MainMenuStrip = this.menuStrip1;
@@ -193,7 +226,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,7 +249,9 @@
         private System.Windows.Forms.ToolStripMenuItem thêmThôngTinTạmTrúToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thôngTinTạmVắngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 

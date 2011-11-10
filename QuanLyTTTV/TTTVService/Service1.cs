@@ -6,6 +6,7 @@ using System.ServiceModel;
 using System.Text;
 
 // require class database
+using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
 
@@ -15,13 +16,7 @@ namespace TTTVService
     [ServiceBehavior(IncludeExceptionDetailInFaults = true)]
     public class Service1 : IService1
     {
-        private System.Data.SqlClient.SqlConnection myConnection;
-        private System.Data.DataSet myDataSet;
-        private System.Data.SqlClient.SqlCommand myCommand;
-        private System.Data.SqlClient.SqlDataAdapter DataAdapter;
-
-        private int currentRowId = 0;
-        private string baseSql = "Select Id,FullName,PhoneNumber,Email,BirthDay,OriginalAddress,IDNumber from tamtrutamvang";
+        TranferRecord[] data;
 
         public string GetAuthor()
         {
@@ -32,14 +27,82 @@ namespace TTTVService
             return kq;
         }
 
-        public string GetInfoByName(string Name)
+        public TranferRecord[] GetInfoByName(string Name, string type)
         {
-            return Name;
+            SqlConnection cn = new SqlConnection();
+            cn.ConnectionString = "Data Source=mavi-PC;Initial Catalog=cnweb;Integrated Security=True";
+            cn.Open();
+
+            string query = "SELECT * FROM tamtrutamvang WHERE FullName like '%" + Name + "%' and Type = '"+type+"'";
+            SqlCommand sql = new SqlCommand(query, cn);
+            SqlDataAdapter adt = new SqlDataAdapter(sql);
+            DataSet ds = new DataSet();
+            adt.Fill(ds);
+            int rows = ds.Tables[0].Rows.Count;
+            data = new TranferRecord[rows];
+
+            for (int i = 0; i < rows; i++)
+            {
+                data[i] = new TranferRecord();
+                data[i].Id = Convert.ToInt32(ds.Tables[0].Rows[i].ItemArray[0].ToString());
+                data[i].FullName = ds.Tables[0].Rows[i].ItemArray[1].ToString();
+                data[i].PhoneNumber = ds.Tables[0].Rows[i].ItemArray[2].ToString();
+                data[i].Email = ds.Tables[0].Rows[i].ItemArray[3].ToString();
+                data[i].Birthday = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[4]);
+                data[i].Sex = ds.Tables[0].Rows[i].ItemArray[5].ToString();
+                data[i].OriginalAddress = ds.Tables[0].Rows[i].ItemArray[6].ToString();
+                data[i].IDNumber = ds.Tables[0].Rows[i].ItemArray[7].ToString();
+                data[i].Occupation = ds.Tables[0].Rows[i].ItemArray[8].ToString();
+                data[i].CurrentAddress = ds.Tables[0].Rows[i].ItemArray[9].ToString();
+                //data[i].FromDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[10]);
+                //data[i].ToDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[11]);
+                data[i].Reason = ds.Tables[0].Rows[i].ItemArray[12].ToString();
+                data[i].Description = ds.Tables[0].Rows[i].ItemArray[13].ToString();
+                data[i].Type = ds.Tables[0].Rows[i].ItemArray[14].ToString();
+            }
+
+            cn.Close();
+
+            return data;
         }
 
-        public string GetInfoByPhone(string Phone)
+        public TranferRecord[] GetInfoByPhone(string Phone, string type)
         {
-            return "";
+            SqlConnection cn = new SqlConnection();
+            cn.ConnectionString = "Data Source=mavi-PC;Initial Catalog=cnweb;Integrated Security=True";
+            cn.Open();
+
+            string query = "SELECT * FROM tamtrutamvang WHERE PhoneNumber = '" + Phone + "' and Type = '" + type + "'";
+            SqlCommand sql = new SqlCommand(query, cn);
+            SqlDataAdapter adt = new SqlDataAdapter(sql);
+            DataSet ds = new DataSet();
+            adt.Fill(ds);
+            int rows = ds.Tables[0].Rows.Count;
+            data = new TranferRecord[rows];
+
+            for (int i = 0; i < rows; i++)
+            {
+                data[i] = new TranferRecord();
+                data[i].Id = Convert.ToInt32(ds.Tables[0].Rows[i].ItemArray[0].ToString());
+                data[i].FullName = ds.Tables[0].Rows[i].ItemArray[1].ToString();
+                data[i].PhoneNumber = ds.Tables[0].Rows[i].ItemArray[2].ToString();
+                data[i].Email = ds.Tables[0].Rows[i].ItemArray[3].ToString();
+                data[i].Birthday = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[4]);
+                data[i].Sex = ds.Tables[0].Rows[i].ItemArray[5].ToString();
+                data[i].OriginalAddress = ds.Tables[0].Rows[i].ItemArray[6].ToString();
+                data[i].IDNumber = ds.Tables[0].Rows[i].ItemArray[7].ToString();
+                data[i].Occupation = ds.Tables[0].Rows[i].ItemArray[8].ToString();
+                data[i].CurrentAddress = ds.Tables[0].Rows[i].ItemArray[9].ToString();
+                //data[i].FromDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[10]);
+                //data[i].ToDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[11]);
+                data[i].Reason = ds.Tables[0].Rows[i].ItemArray[12].ToString();
+                data[i].Description = ds.Tables[0].Rows[i].ItemArray[13].ToString();
+                data[i].Type = ds.Tables[0].Rows[i].ItemArray[14].ToString();
+            }
+
+            cn.Close();
+
+            return data;
         }
 
         public string GetInfoByIdNumber(string IdNumber)
@@ -87,39 +150,44 @@ namespace TTTVService
 
         }
 
-        public void BindingData(string sql)
+        public TranferRecord[] GetData()
         {
-            try
+            string query = "SELECT * FROM tamtrutamvang";
+
+            SqlConnection cn = new SqlConnection();
+            cn.ConnectionString="Data Source=mavi-PC;Initial Catalog=cnweb;Integrated Security=True";
+            cn.Open();
+            
+            SqlCommand sql = new SqlCommand(query,cn);
+            SqlDataAdapter adt = new SqlDataAdapter(sql);
+            DataSet ds = new DataSet();
+            adt.Fill(ds);
+            int rows=ds.Tables[0].Rows.Count;
+            data=new TranferRecord[rows];
+
+            for (int i = 0; i < rows; i++)
             {
-                string connectionString = "Data Source=mavi-PC;Initial Catalog=cnweb;Integrated Security=True";
-                myConnection = new SqlConnection(connectionString);
-
-                // Open connection
-                myConnection.Open();
-
-                // create dataset to retrieve data
-                myDataSet = new System.Data.DataSet();
-
-                // create command to run query
-                myCommand = new SqlCommand();
-                myCommand.Connection = myConnection;
-                myCommand.CommandText = sql;
-
-                // create dataadapter to fill data to dataset
-                DataAdapter = new SqlDataAdapter();
-                DataAdapter.SelectCommand = myCommand;
-                DataAdapter.TableMappings.Add("Table", "users");
-                DataAdapter.Fill(myDataSet);
-
-                // close connection
-                myConnection.Close();
+                data[i] = new TranferRecord();
+                data[i].Id = Convert.ToInt32(ds.Tables[0].Rows[i].ItemArray[0].ToString());
+                data[i].FullName = ds.Tables[0].Rows[i].ItemArray[1].ToString();
+                data[i].PhoneNumber = ds.Tables[0].Rows[i].ItemArray[2].ToString();
+                data[i].Email = ds.Tables[0].Rows[i].ItemArray[3].ToString();
+                data[i].Birthday = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[4]);
+                data[i].Sex = ds.Tables[0].Rows[i].ItemArray[5].ToString();
+                data[i].OriginalAddress = ds.Tables[0].Rows[i].ItemArray[6].ToString();
+                data[i].IDNumber = ds.Tables[0].Rows[i].ItemArray[7].ToString();
+                data[i].Occupation = ds.Tables[0].Rows[i].ItemArray[8].ToString();
+                data[i].CurrentAddress = ds.Tables[0].Rows[i].ItemArray[9].ToString();
+                //data[i].FromDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[10]);
+                //data[i].ToDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[11]);
+                data[i].Reason = ds.Tables[0].Rows[i].ItemArray[12].ToString();
+                data[i].Description = ds.Tables[0].Rows[i].ItemArray[13].ToString();
+                data[i].Type = ds.Tables[0].Rows[i].ItemArray[14].ToString();
             }
-            catch (SqlException)
-            {
-                System.Console.WriteLine("To run this example, replace the value of the " +
-                "connectionString variable with a connection string that is " +
-                "valid for your system.");
-            }
+
+            cn.Close();
+
+            return data;
         }
     }
 }

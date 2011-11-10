@@ -25,6 +25,7 @@
     <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="67c8fa17-3938-4879-aae8-2c5e251797e6" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/TTTVService/Service1/mex" />
     <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="161e620b-f90d-49d5-aab1-167b4d1d99a6" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/TTTVService/Service1/mex" />
     <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="d7d542d4-e661-4901-abd6-f8dec8c8d5ce" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/TTTVService/Service1/mex" />
+    <MetadataFile FileName="TTTVService.xsd" MetadataType="Schema" ID="530adec6-a2e4-4df0-a148-b65332407f7a" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/TTTVService/Service1/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
