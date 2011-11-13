@@ -134,6 +134,25 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_pis_GetAuthorInfo_TrackedFaultFault_Fault">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="WSHttpBinding_pis_FindInfoByName_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -154,6 +173,25 @@
     </wsp:ExactlyOne>
   </wsp:Policy>
   <wsp:Policy wsu:Id="WSHttpBinding_pis_FindInfoByName_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_pis_FindInfoByName_TrackedFaultFault_Fault">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -210,6 +248,25 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_pis_FindInfoByPhone_TrackedFaultFault_Fault">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="WSHttpBinding_pis_FindInfoByIdNumber_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -230,6 +287,25 @@
     </wsp:ExactlyOne>
   </wsp:Policy>
   <wsp:Policy wsu:Id="WSHttpBinding_pis_FindInfoByIdNumber_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_pis_FindInfoByIdNumber_TrackedFaultFault_Fault">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -286,6 +362,25 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_pis_ListPersonBySex_TrackedFaultFault_Fault">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="WSHttpBinding_pis_ListPersonByAddress_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -306,6 +401,25 @@
     </wsp:ExactlyOne>
   </wsp:Policy>
   <wsp:Policy wsu:Id="WSHttpBinding_pis_ListPersonByAddress_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_pis_ListPersonByAddress_TrackedFaultFault_Fault">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -362,6 +476,25 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_pis_ListPersonByDate_TrackedFaultFault_Fault">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="WSHttpBinding_pis_ListOccupationByAddress_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -382,6 +515,25 @@
     </wsp:ExactlyOne>
   </wsp:Policy>
   <wsp:Policy wsu:Id="WSHttpBinding_pis_ListOccupationByAddress_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_pis_ListOccupationByAddress_TrackedFaultFault_Fault">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -438,6 +590,25 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_pis_CountSexByAddress_TrackedFaultFault_Fault">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="WSHttpBinding_pis_LoadData_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -476,6 +647,25 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_pis_LoadData_TrackedFaultFault_Fault">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:import namespace="http://www.tamtrutamvang.com/" location="" />
   <wsdl:types />
   <wsdl:binding name="WSHttpBinding_pis" type="i0:pis">
@@ -491,6 +681,10 @@
         <wsp:PolicyReference URI="#WSHttpBinding_pis_GetAuthorInfo_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="TrackedFaultFault">
+        <wsp:PolicyReference URI="#WSHttpBinding_pis_GetAuthorInfo_TrackedFaultFault_Fault" />
+        <soap12:fault use="literal" name="TrackedFaultFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="FindInfoByName">
       <soap12:operation soapAction="http://www.tamtrutamvang.com/pis/FindInfoByName" style="document" />
@@ -502,6 +696,10 @@
         <wsp:PolicyReference URI="#WSHttpBinding_pis_FindInfoByName_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="TrackedFaultFault">
+        <wsp:PolicyReference URI="#WSHttpBinding_pis_FindInfoByName_TrackedFaultFault_Fault" />
+        <soap12:fault use="literal" name="TrackedFaultFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="FindInfoByPhone">
       <soap12:operation soapAction="http://www.tamtrutamvang.com/pis/FindInfoByPhone" style="document" />
@@ -513,6 +711,10 @@
         <wsp:PolicyReference URI="#WSHttpBinding_pis_FindInfoByPhone_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="TrackedFaultFault">
+        <wsp:PolicyReference URI="#WSHttpBinding_pis_FindInfoByPhone_TrackedFaultFault_Fault" />
+        <soap12:fault use="literal" name="TrackedFaultFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="FindInfoByIdNumber">
       <soap12:operation soapAction="http://www.tamtrutamvang.com/pis/FindInfoByIdNumber" style="document" />
@@ -524,6 +726,10 @@
         <wsp:PolicyReference URI="#WSHttpBinding_pis_FindInfoByIdNumber_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="TrackedFaultFault">
+        <wsp:PolicyReference URI="#WSHttpBinding_pis_FindInfoByIdNumber_TrackedFaultFault_Fault" />
+        <soap12:fault use="literal" name="TrackedFaultFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="ListPersonBySex">
       <soap12:operation soapAction="http://www.tamtrutamvang.com/pis/ListPersonBySex" style="document" />
@@ -535,6 +741,10 @@
         <wsp:PolicyReference URI="#WSHttpBinding_pis_ListPersonBySex_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="TrackedFaultFault">
+        <wsp:PolicyReference URI="#WSHttpBinding_pis_ListPersonBySex_TrackedFaultFault_Fault" />
+        <soap12:fault use="literal" name="TrackedFaultFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="ListPersonByAddress">
       <soap12:operation soapAction="http://www.tamtrutamvang.com/pis/ListPersonByAddress" style="document" />
@@ -546,6 +756,10 @@
         <wsp:PolicyReference URI="#WSHttpBinding_pis_ListPersonByAddress_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="TrackedFaultFault">
+        <wsp:PolicyReference URI="#WSHttpBinding_pis_ListPersonByAddress_TrackedFaultFault_Fault" />
+        <soap12:fault use="literal" name="TrackedFaultFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="ListPersonByDate">
       <soap12:operation soapAction="http://www.tamtrutamvang.com/pis/ListPersonByDate" style="document" />
@@ -557,6 +771,10 @@
         <wsp:PolicyReference URI="#WSHttpBinding_pis_ListPersonByDate_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="TrackedFaultFault">
+        <wsp:PolicyReference URI="#WSHttpBinding_pis_ListPersonByDate_TrackedFaultFault_Fault" />
+        <soap12:fault use="literal" name="TrackedFaultFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="ListOccupationByAddress">
       <soap12:operation soapAction="http://www.tamtrutamvang.com/pis/ListOccupationByAddress" style="document" />
@@ -568,6 +786,10 @@
         <wsp:PolicyReference URI="#WSHttpBinding_pis_ListOccupationByAddress_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="TrackedFaultFault">
+        <wsp:PolicyReference URI="#WSHttpBinding_pis_ListOccupationByAddress_TrackedFaultFault_Fault" />
+        <soap12:fault use="literal" name="TrackedFaultFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="CountSexByAddress">
       <soap12:operation soapAction="http://www.tamtrutamvang.com/pis/CountSexByAddress" style="document" />
@@ -579,6 +801,10 @@
         <wsp:PolicyReference URI="#WSHttpBinding_pis_CountSexByAddress_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="TrackedFaultFault">
+        <wsp:PolicyReference URI="#WSHttpBinding_pis_CountSexByAddress_TrackedFaultFault_Fault" />
+        <soap12:fault use="literal" name="TrackedFaultFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="LoadData">
       <soap12:operation soapAction="http://www.tamtrutamvang.com/pis/LoadData" style="document" />
@@ -590,6 +816,10 @@
         <wsp:PolicyReference URI="#WSHttpBinding_pis_LoadData_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="TrackedFaultFault">
+        <wsp:PolicyReference URI="#WSHttpBinding_pis_LoadData_TrackedFaultFault_Fault" />
+        <soap12:fault use="literal" name="TrackedFaultFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="Service1">

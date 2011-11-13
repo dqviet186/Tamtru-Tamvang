@@ -16,6 +16,7 @@ namespace WindowsFormsClient.ServiceReference1 {
     public interface pis {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/GetAuthorInfo", ReplyAction="http://www.tamtrutamvang.com/pis/GetAuthorInfoResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(TTTVService.TrackedFault), Action="http://www.tamtrutamvang.com/pis/GetAuthorInfoTrackedFaultFault", Name="TrackedFault", Namespace="http://schemas.datacontract.org/2004/07/TTTVService")]
         string GetAuthorInfo();
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://www.tamtrutamvang.com/pis/GetAuthorInfo", ReplyAction="http://www.tamtrutamvang.com/pis/GetAuthorInfoResponse")]
@@ -24,6 +25,7 @@ namespace WindowsFormsClient.ServiceReference1 {
         string EndGetAuthorInfo(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/FindInfoByName", ReplyAction="http://www.tamtrutamvang.com/pis/FindInfoByNameResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(TTTVService.TrackedFault), Action="http://www.tamtrutamvang.com/pis/FindInfoByNameTrackedFaultFault", Name="TrackedFault", Namespace="http://schemas.datacontract.org/2004/07/TTTVService")]
         TTTVService.TranferRecord[] FindInfoByName(string Name, string type);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://www.tamtrutamvang.com/pis/FindInfoByName", ReplyAction="http://www.tamtrutamvang.com/pis/FindInfoByNameResponse")]
@@ -32,6 +34,7 @@ namespace WindowsFormsClient.ServiceReference1 {
         TTTVService.TranferRecord[] EndFindInfoByName(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/FindInfoByPhone", ReplyAction="http://www.tamtrutamvang.com/pis/FindInfoByPhoneResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(TTTVService.TrackedFault), Action="http://www.tamtrutamvang.com/pis/FindInfoByPhoneTrackedFaultFault", Name="TrackedFault", Namespace="http://schemas.datacontract.org/2004/07/TTTVService")]
         TTTVService.TranferRecord[] FindInfoByPhone(string Phone, string type);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://www.tamtrutamvang.com/pis/FindInfoByPhone", ReplyAction="http://www.tamtrutamvang.com/pis/FindInfoByPhoneResponse")]
@@ -40,6 +43,7 @@ namespace WindowsFormsClient.ServiceReference1 {
         TTTVService.TranferRecord[] EndFindInfoByPhone(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/FindInfoByIdNumber", ReplyAction="http://www.tamtrutamvang.com/pis/FindInfoByIdNumberResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(TTTVService.TrackedFault), Action="http://www.tamtrutamvang.com/pis/FindInfoByIdNumberTrackedFaultFault", Name="TrackedFault", Namespace="http://schemas.datacontract.org/2004/07/TTTVService")]
         string FindInfoByIdNumber(string IdNumber);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://www.tamtrutamvang.com/pis/FindInfoByIdNumber", ReplyAction="http://www.tamtrutamvang.com/pis/FindInfoByIdNumberResponse")]
@@ -48,6 +52,7 @@ namespace WindowsFormsClient.ServiceReference1 {
         string EndFindInfoByIdNumber(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/ListPersonBySex", ReplyAction="http://www.tamtrutamvang.com/pis/ListPersonBySexResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(TTTVService.TrackedFault), Action="http://www.tamtrutamvang.com/pis/ListPersonBySexTrackedFaultFault", Name="TrackedFault", Namespace="http://schemas.datacontract.org/2004/07/TTTVService")]
         int ListPersonBySex(string Address, string Sex);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://www.tamtrutamvang.com/pis/ListPersonBySex", ReplyAction="http://www.tamtrutamvang.com/pis/ListPersonBySexResponse")]
@@ -56,6 +61,7 @@ namespace WindowsFormsClient.ServiceReference1 {
         int EndListPersonBySex(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/ListPersonByAddress", ReplyAction="http://www.tamtrutamvang.com/pis/ListPersonByAddressResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(TTTVService.TrackedFault), Action="http://www.tamtrutamvang.com/pis/ListPersonByAddressTrackedFaultFault", Name="TrackedFault", Namespace="http://schemas.datacontract.org/2004/07/TTTVService")]
         string ListPersonByAddress(string Address);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://www.tamtrutamvang.com/pis/ListPersonByAddress", ReplyAction="http://www.tamtrutamvang.com/pis/ListPersonByAddressResponse")]
@@ -64,6 +70,7 @@ namespace WindowsFormsClient.ServiceReference1 {
         string EndListPersonByAddress(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/ListPersonByDate", ReplyAction="http://www.tamtrutamvang.com/pis/ListPersonByDateResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(TTTVService.TrackedFault), Action="http://www.tamtrutamvang.com/pis/ListPersonByDateTrackedFaultFault", Name="TrackedFault", Namespace="http://schemas.datacontract.org/2004/07/TTTVService")]
         string ListPersonByDate(string Address, System.DateTime FromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://www.tamtrutamvang.com/pis/ListPersonByDate", ReplyAction="http://www.tamtrutamvang.com/pis/ListPersonByDateResponse")]
@@ -72,6 +79,7 @@ namespace WindowsFormsClient.ServiceReference1 {
         string EndListPersonByDate(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/ListOccupationByAddress", ReplyAction="http://www.tamtrutamvang.com/pis/ListOccupationByAddressResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(TTTVService.TrackedFault), Action="http://www.tamtrutamvang.com/pis/ListOccupationByAddressTrackedFaultFault", Name="TrackedFault", Namespace="http://schemas.datacontract.org/2004/07/TTTVService")]
         string ListOccupationByAddress(string Address);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://www.tamtrutamvang.com/pis/ListOccupationByAddress", ReplyAction="http://www.tamtrutamvang.com/pis/ListOccupationByAddressResponse")]
@@ -80,6 +88,7 @@ namespace WindowsFormsClient.ServiceReference1 {
         string EndListOccupationByAddress(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/CountSexByAddress", ReplyAction="http://www.tamtrutamvang.com/pis/CountSexByAddressResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(TTTVService.TrackedFault), Action="http://www.tamtrutamvang.com/pis/CountSexByAddressTrackedFaultFault", Name="TrackedFault", Namespace="http://schemas.datacontract.org/2004/07/TTTVService")]
         int CountSexByAddress(string Address);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://www.tamtrutamvang.com/pis/CountSexByAddress", ReplyAction="http://www.tamtrutamvang.com/pis/CountSexByAddressResponse")]
@@ -88,6 +97,7 @@ namespace WindowsFormsClient.ServiceReference1 {
         int EndCountSexByAddress(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/LoadData", ReplyAction="http://www.tamtrutamvang.com/pis/LoadDataResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(TTTVService.TrackedFault), Action="http://www.tamtrutamvang.com/pis/LoadDataTrackedFaultFault", Name="TrackedFault", Namespace="http://schemas.datacontract.org/2004/07/TTTVService")]
         TTTVService.TranferRecord[] LoadData();
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://www.tamtrutamvang.com/pis/LoadData", ReplyAction="http://www.tamtrutamvang.com/pis/LoadDataResponse")]

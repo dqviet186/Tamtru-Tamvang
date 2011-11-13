@@ -14,42 +14,52 @@ namespace TTTVService
         // TODO: Add your service operations here
         // Get information of author
         [OperationContract(Name = "GetAuthorInfo")]
+        [FaultContract(typeof(TrackedFault))]
         string GetAuthor();
 
         // Find information by Name
         [OperationContract(Name="FindInfoByName")]
+        [FaultContract(typeof(TrackedFault))]
         TranferRecord[] GetInfoByName(string Name, string type);
 
         // Find information by Address
         [OperationContract(Name="FindInfoByPhone")]
+        [FaultContract(typeof(TrackedFault))]
         TranferRecord[] GetInfoByPhone(string Phone, string type);
 
         // Find information by IdNumber
         [OperationContract(Name="FindInfoByIdNumber")]
+        [FaultContract(typeof(TrackedFault))]
         string GetInfoByIdNumber(string IdNumber);
 
         // Find information by sex
         [OperationContract(Name="ListPersonBySex")]
+        [FaultContract(typeof(TrackedFault))]
         int GetInfoBySex(string Address, string Sex);
 
         // Get all person are in this address
         [OperationContract(Name="ListPersonByAddress")]
+        [FaultContract(typeof(TrackedFault))]
         string GetListByAddress(string Address);
 
         // Get all person are in this address from date to date
         [OperationContract(Name="ListPersonByDate")]
+        [FaultContract(typeof(TrackedFault))]
         string GetListByDate(string Address, DateTime FromDate, DateTime ToDate);
 
         // report occupation in this address
         [OperationContract(Name="ListOccupationByAddress")]
+        [FaultContract(typeof(TrackedFault))]
         string GetListOccupationByAddress(string Address);
 
         // Count how many male/ female in this address
         [OperationContract(Name="CountSexByAddress")]
+        [FaultContract(typeof(TrackedFault))]
         int CountSexByAddress(string Address);
 
         // For Select, insert, update, delete data
         [OperationContract(Name="LoadData")]
+        [FaultContract(typeof(TrackedFault))]
         TranferRecord[] GetData();
 
         //[OperationContract(Name="InsertInfomation", IsOneWay=true)]

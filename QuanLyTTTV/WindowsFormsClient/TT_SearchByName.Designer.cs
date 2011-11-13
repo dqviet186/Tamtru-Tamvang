@@ -97,6 +97,7 @@
             this.Name = "TT_SearchByName";
             this.Text = "Ứng dụng Web Service cung cấp thông tin tạm trú tạm vắng - NHÓM 10 - Dương Quốc V" +
                 "iệt (09263L)";
+            this.Load += new System.EventHandler(this.TT_SearchByName_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
