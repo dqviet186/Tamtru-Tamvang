@@ -47,6 +47,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.tìmKiếmTạmVắngTheoTênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tìmKiếmTạmVắngTheoSDTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tìmKiếmTạmVắngTheoCMNDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tìmKiếmTạmVắngTheoĐịaChỉToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timKiếmTạmVắngTheoNgàyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,18 +118,21 @@
             this.tìmKiếmTheoCMNDToolStripMenuItem.Name = "tìmKiếmTheoCMNDToolStripMenuItem";
             this.tìmKiếmTheoCMNDToolStripMenuItem.Size = new System.Drawing.Size(259, 22);
             this.tìmKiếmTheoCMNDToolStripMenuItem.Text = "Tìm kiếm theo CMND";
+            this.tìmKiếmTheoCMNDToolStripMenuItem.Click += new System.EventHandler(this.tìmKiếmTheoCMNDToolStripMenuItem_Click);
             // 
             // dsTạmTrúTheoĐịaChỉToolStripMenuItem
             // 
             this.dsTạmTrúTheoĐịaChỉToolStripMenuItem.Name = "dsTạmTrúTheoĐịaChỉToolStripMenuItem";
             this.dsTạmTrúTheoĐịaChỉToolStripMenuItem.Size = new System.Drawing.Size(259, 22);
             this.dsTạmTrúTheoĐịaChỉToolStripMenuItem.Text = "Danh sách theo địa chỉ";
+            this.dsTạmTrúTheoĐịaChỉToolStripMenuItem.Click += new System.EventHandler(this.dsTạmTrúTheoĐịaChỉToolStripMenuItem_Click);
             // 
             // thốngKêGiớiTínhTheoĐịaChỉToolStripMenuItem
             // 
             this.thốngKêGiớiTínhTheoĐịaChỉToolStripMenuItem.Name = "thốngKêGiớiTínhTheoĐịaChỉToolStripMenuItem";
             this.thốngKêGiớiTínhTheoĐịaChỉToolStripMenuItem.Size = new System.Drawing.Size(259, 22);
             this.thốngKêGiớiTínhTheoĐịaChỉToolStripMenuItem.Text = "Thống kê giới tính theo địa chỉ";
+            this.thốngKêGiớiTínhTheoĐịaChỉToolStripMenuItem.Click += new System.EventHandler(this.thốngKêGiớiTínhTheoĐịaChỉToolStripMenuItem_Click);
             // 
             // tìmKiếmDanhSáchTheoNgàyToolStripMenuItem
             // 
@@ -140,6 +148,12 @@
             // 
             // quảnLýThôngTinTạmVắngToolStripMenuItem
             // 
+            this.quảnLýThôngTinTạmVắngToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tìmKiếmTạmVắngTheoTênToolStripMenuItem,
+            this.tìmKiếmTạmVắngTheoSDTToolStripMenuItem,
+            this.tìmKiếmTạmVắngTheoCMNDToolStripMenuItem,
+            this.tìmKiếmTạmVắngTheoĐịaChỉToolStripMenuItem,
+            this.timKiếmTạmVắngTheoNgàyToolStripMenuItem});
             this.quảnLýThôngTinTạmVắngToolStripMenuItem.Name = "quảnLýThôngTinTạmVắngToolStripMenuItem";
             this.quảnLýThôngTinTạmVắngToolStripMenuItem.Size = new System.Drawing.Size(165, 20);
             this.quảnLýThôngTinTạmVắngToolStripMenuItem.Text = "Quản lý thông tin tạm vắng";
@@ -208,6 +222,36 @@
             this.label3.Text = "Sinh viên thực hiện: Dương Quốc Việt";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // tìmKiếmTạmVắngTheoTênToolStripMenuItem
+            // 
+            this.tìmKiếmTạmVắngTheoTênToolStripMenuItem.Name = "tìmKiếmTạmVắngTheoTênToolStripMenuItem";
+            this.tìmKiếmTạmVắngTheoTênToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.tìmKiếmTạmVắngTheoTênToolStripMenuItem.Text = "Tìm kiếm tạm vắng theo tên";
+            // 
+            // tìmKiếmTạmVắngTheoSDTToolStripMenuItem
+            // 
+            this.tìmKiếmTạmVắngTheoSDTToolStripMenuItem.Name = "tìmKiếmTạmVắngTheoSDTToolStripMenuItem";
+            this.tìmKiếmTạmVắngTheoSDTToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.tìmKiếmTạmVắngTheoSDTToolStripMenuItem.Text = "Tìm kiếm tạm vắng theo SDT";
+            // 
+            // tìmKiếmTạmVắngTheoCMNDToolStripMenuItem
+            // 
+            this.tìmKiếmTạmVắngTheoCMNDToolStripMenuItem.Name = "tìmKiếmTạmVắngTheoCMNDToolStripMenuItem";
+            this.tìmKiếmTạmVắngTheoCMNDToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.tìmKiếmTạmVắngTheoCMNDToolStripMenuItem.Text = "Tìm kiếm tạm vắng theo CMND";
+            // 
+            // tìmKiếmTạmVắngTheoĐịaChỉToolStripMenuItem
+            // 
+            this.tìmKiếmTạmVắngTheoĐịaChỉToolStripMenuItem.Name = "tìmKiếmTạmVắngTheoĐịaChỉToolStripMenuItem";
+            this.tìmKiếmTạmVắngTheoĐịaChỉToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.tìmKiếmTạmVắngTheoĐịaChỉToolStripMenuItem.Text = "Tìm kiếm tạm vắng theo địa chỉ";
+            // 
+            // timKiếmTạmVắngTheoNgàyToolStripMenuItem
+            // 
+            this.timKiếmTạmVắngTheoNgàyToolStripMenuItem.Name = "timKiếmTạmVắngTheoNgàyToolStripMenuItem";
+            this.timKiếmTạmVắngTheoNgàyToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.timKiếmTạmVắngTheoNgàyToolStripMenuItem.Text = "Tim kiếm tạm vắng theo ngày";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -252,6 +296,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ToolStripMenuItem tìmKiếmTạmVắngTheoTênToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tìmKiếmTạmVắngTheoSDTToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tìmKiếmTạmVắngTheoCMNDToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tìmKiếmTạmVắngTheoĐịaChỉToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem timKiếmTạmVắngTheoNgàyToolStripMenuItem;
     }
 }
 

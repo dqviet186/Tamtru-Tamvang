@@ -67,6 +67,24 @@
     <Compile Include="FormNhom.Designer.cs">
       <DependentUpon>FormNhom.cs</DependentUpon>
     </Compile>
+    <Compile Include="TT_ReportByAddress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TT_ReportByAddress.Designer.cs">
+      <DependentUpon>TT_ReportByAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TT_SearchByAddress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TT_SearchByAddress.Designer.cs">
+      <DependentUpon>TT_SearchByAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TT_SearchByIdNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TT_SearchByIdNumber.Designer.cs">
+      <DependentUpon>TT_SearchByIdNumber.cs</DependentUpon>
+    </Compile>
     <Compile Include="TT_SearchByName.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +111,15 @@
     </Compile>
     <EmbeddedResource Include="FormNhom.resx">
       <DependentUpon>FormNhom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TT_ReportByAddress.resx">
+      <DependentUpon>TT_ReportByAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TT_SearchByAddress.resx">
+      <DependentUpon>TT_SearchByAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TT_SearchByIdNumber.resx">
+      <DependentUpon>TT_SearchByIdNumber.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TT_SearchByName.resx">
       <DependentUpon>TT_SearchByName.cs</DependentUpon>
