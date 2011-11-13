@@ -30,32 +30,32 @@ namespace TTTVService
         // Find information by IdNumber
         [OperationContract(Name="FindInfoByIdNumber")]
         [FaultContract(typeof(TrackedFault))]
-        string GetInfoByIdNumber(string IdNumber);
+        TranferRecord[] GetInfoByIdNumber(string IdNumber, string type);
 
         // Find information by sex
         [OperationContract(Name="ListPersonBySex")]
         [FaultContract(typeof(TrackedFault))]
-        int GetInfoBySex(string Address, string Sex);
+        TranferRecord[] GetInfoBySex(string Address, string Sex, string type);
 
         // Get all person are in this address
         [OperationContract(Name="ListPersonByAddress")]
         [FaultContract(typeof(TrackedFault))]
-        string GetListByAddress(string Address);
+        TranferRecord[] GetListByAddress(string Address, string type);
 
         // Get all person are in this address from date to date
         [OperationContract(Name="ListPersonByDate")]
         [FaultContract(typeof(TrackedFault))]
-        string GetListByDate(string Address, DateTime FromDate, DateTime ToDate);
+        TranferRecord[] GetListByDate(string Address, DateTime FromDate, DateTime ToDate, string type);
 
         // report occupation in this address
         [OperationContract(Name="ListOccupationByAddress")]
         [FaultContract(typeof(TrackedFault))]
-        string GetListOccupationByAddress(string Address);
+        TranferRecord[] GetListOccupationByAddress(string Address, string type);
 
         // Count how many male/ female in this address
         [OperationContract(Name="CountSexByAddress")]
         [FaultContract(typeof(TrackedFault))]
-        int CountSexByAddress(string Address);
+        TranferRecord[] CountSexByAddress(string Address, string type);
 
         // For Select, insert, update, delete data
         [OperationContract(Name="LoadData")]

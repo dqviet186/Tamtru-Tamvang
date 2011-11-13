@@ -30,17 +30,28 @@ namespace WindowsFormsClient
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string txtSearch = textBox1.Text.Trim();
-            DataSet myDs = new DataSet();
-            if (txtSearch == "")
+            try
             {
-                MessageBox.Show("Vui lòng nhập thông tin cần tìm kiếm");
-                textBox1.Focus();
+                string txtSearch = textBox1.Text.Trim();
+                DataSet myDs = new DataSet();
+                if (txtSearch == "")
+                {
+                    MessageBox.Show("Vui lòng nhập thông tin cần tìm kiếm");
+                    textBox1.Focus();
+                }
+                else
+                {
+                    myDs = dataTTTV(txtSearch, "TT");
+                    dataGridView1.DataSource = myDs.Tables[0].DefaultView;
+                }
             }
-            else
+            catch (FaultException exp)
             {
-                myDs = dataTTTV(txtSearch, "TT");
-                dataGridView1.DataSource = myDs.Tables[0].DefaultView;
+                MessageBox.Show(exp.Code.Name + ": " + exp.Message.ToString(), exp.GetType().ToString());
+            }
+            catch (Exception exp)//bat loi o code rieng phia client
+            {
+                MessageBox.Show(exp.Message.ToString(), exp.GetType().ToString());
             }
         }
 

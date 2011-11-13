@@ -44,57 +44,57 @@ namespace WindowsFormsClient.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/FindInfoByIdNumber", ReplyAction="http://www.tamtrutamvang.com/pis/FindInfoByIdNumberResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(TTTVService.TrackedFault), Action="http://www.tamtrutamvang.com/pis/FindInfoByIdNumberTrackedFaultFault", Name="TrackedFault", Namespace="http://schemas.datacontract.org/2004/07/TTTVService")]
-        string FindInfoByIdNumber(string IdNumber);
+        TTTVService.TranferRecord[] FindInfoByIdNumber(string IdNumber, string type);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://www.tamtrutamvang.com/pis/FindInfoByIdNumber", ReplyAction="http://www.tamtrutamvang.com/pis/FindInfoByIdNumberResponse")]
-        System.IAsyncResult BeginFindInfoByIdNumber(string IdNumber, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginFindInfoByIdNumber(string IdNumber, string type, System.AsyncCallback callback, object asyncState);
         
-        string EndFindInfoByIdNumber(System.IAsyncResult result);
+        TTTVService.TranferRecord[] EndFindInfoByIdNumber(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/ListPersonBySex", ReplyAction="http://www.tamtrutamvang.com/pis/ListPersonBySexResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(TTTVService.TrackedFault), Action="http://www.tamtrutamvang.com/pis/ListPersonBySexTrackedFaultFault", Name="TrackedFault", Namespace="http://schemas.datacontract.org/2004/07/TTTVService")]
-        int ListPersonBySex(string Address, string Sex);
+        TTTVService.TranferRecord[] ListPersonBySex(string Address, string Sex, string type);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://www.tamtrutamvang.com/pis/ListPersonBySex", ReplyAction="http://www.tamtrutamvang.com/pis/ListPersonBySexResponse")]
-        System.IAsyncResult BeginListPersonBySex(string Address, string Sex, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginListPersonBySex(string Address, string Sex, string type, System.AsyncCallback callback, object asyncState);
         
-        int EndListPersonBySex(System.IAsyncResult result);
+        TTTVService.TranferRecord[] EndListPersonBySex(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/ListPersonByAddress", ReplyAction="http://www.tamtrutamvang.com/pis/ListPersonByAddressResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(TTTVService.TrackedFault), Action="http://www.tamtrutamvang.com/pis/ListPersonByAddressTrackedFaultFault", Name="TrackedFault", Namespace="http://schemas.datacontract.org/2004/07/TTTVService")]
-        string ListPersonByAddress(string Address);
+        TTTVService.TranferRecord[] ListPersonByAddress(string Address, string type);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://www.tamtrutamvang.com/pis/ListPersonByAddress", ReplyAction="http://www.tamtrutamvang.com/pis/ListPersonByAddressResponse")]
-        System.IAsyncResult BeginListPersonByAddress(string Address, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginListPersonByAddress(string Address, string type, System.AsyncCallback callback, object asyncState);
         
-        string EndListPersonByAddress(System.IAsyncResult result);
+        TTTVService.TranferRecord[] EndListPersonByAddress(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/ListPersonByDate", ReplyAction="http://www.tamtrutamvang.com/pis/ListPersonByDateResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(TTTVService.TrackedFault), Action="http://www.tamtrutamvang.com/pis/ListPersonByDateTrackedFaultFault", Name="TrackedFault", Namespace="http://schemas.datacontract.org/2004/07/TTTVService")]
-        string ListPersonByDate(string Address, System.DateTime FromDate, System.DateTime ToDate);
+        TTTVService.TranferRecord[] ListPersonByDate(string Address, System.DateTime FromDate, System.DateTime ToDate, string type);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://www.tamtrutamvang.com/pis/ListPersonByDate", ReplyAction="http://www.tamtrutamvang.com/pis/ListPersonByDateResponse")]
-        System.IAsyncResult BeginListPersonByDate(string Address, System.DateTime FromDate, System.DateTime ToDate, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginListPersonByDate(string Address, System.DateTime FromDate, System.DateTime ToDate, string type, System.AsyncCallback callback, object asyncState);
         
-        string EndListPersonByDate(System.IAsyncResult result);
+        TTTVService.TranferRecord[] EndListPersonByDate(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/ListOccupationByAddress", ReplyAction="http://www.tamtrutamvang.com/pis/ListOccupationByAddressResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(TTTVService.TrackedFault), Action="http://www.tamtrutamvang.com/pis/ListOccupationByAddressTrackedFaultFault", Name="TrackedFault", Namespace="http://schemas.datacontract.org/2004/07/TTTVService")]
-        string ListOccupationByAddress(string Address);
+        TTTVService.TranferRecord[] ListOccupationByAddress(string Address, string type);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://www.tamtrutamvang.com/pis/ListOccupationByAddress", ReplyAction="http://www.tamtrutamvang.com/pis/ListOccupationByAddressResponse")]
-        System.IAsyncResult BeginListOccupationByAddress(string Address, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginListOccupationByAddress(string Address, string type, System.AsyncCallback callback, object asyncState);
         
-        string EndListOccupationByAddress(System.IAsyncResult result);
+        TTTVService.TranferRecord[] EndListOccupationByAddress(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/CountSexByAddress", ReplyAction="http://www.tamtrutamvang.com/pis/CountSexByAddressResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(TTTVService.TrackedFault), Action="http://www.tamtrutamvang.com/pis/CountSexByAddressTrackedFaultFault", Name="TrackedFault", Namespace="http://schemas.datacontract.org/2004/07/TTTVService")]
-        int CountSexByAddress(string Address);
+        TTTVService.TranferRecord[] CountSexByAddress(string Address, string type);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://www.tamtrutamvang.com/pis/CountSexByAddress", ReplyAction="http://www.tamtrutamvang.com/pis/CountSexByAddressResponse")]
-        System.IAsyncResult BeginCountSexByAddress(string Address, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginCountSexByAddress(string Address, string type, System.AsyncCallback callback, object asyncState);
         
-        int EndCountSexByAddress(System.IAsyncResult result);
+        TTTVService.TranferRecord[] EndCountSexByAddress(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/LoadData", ReplyAction="http://www.tamtrutamvang.com/pis/LoadDataResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(TTTVService.TrackedFault), Action="http://www.tamtrutamvang.com/pis/LoadDataTrackedFaultFault", Name="TrackedFault", Namespace="http://schemas.datacontract.org/2004/07/TTTVService")]
@@ -178,10 +178,10 @@ namespace WindowsFormsClient.ServiceReference1 {
             this.results = results;
         }
         
-        public string Result {
+        public TTTVService.TranferRecord[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
+                return ((TTTVService.TranferRecord[])(this.results[0]));
             }
         }
     }
@@ -197,10 +197,10 @@ namespace WindowsFormsClient.ServiceReference1 {
             this.results = results;
         }
         
-        public int Result {
+        public TTTVService.TranferRecord[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
+                return ((TTTVService.TranferRecord[])(this.results[0]));
             }
         }
     }
@@ -216,10 +216,10 @@ namespace WindowsFormsClient.ServiceReference1 {
             this.results = results;
         }
         
-        public string Result {
+        public TTTVService.TranferRecord[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
+                return ((TTTVService.TranferRecord[])(this.results[0]));
             }
         }
     }
@@ -235,10 +235,10 @@ namespace WindowsFormsClient.ServiceReference1 {
             this.results = results;
         }
         
-        public string Result {
+        public TTTVService.TranferRecord[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
+                return ((TTTVService.TranferRecord[])(this.results[0]));
             }
         }
     }
@@ -254,10 +254,10 @@ namespace WindowsFormsClient.ServiceReference1 {
             this.results = results;
         }
         
-        public string Result {
+        public TTTVService.TranferRecord[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
+                return ((TTTVService.TranferRecord[])(this.results[0]));
             }
         }
     }
@@ -273,10 +273,10 @@ namespace WindowsFormsClient.ServiceReference1 {
             this.results = results;
         }
         
-        public int Result {
+        public TTTVService.TranferRecord[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
+                return ((TTTVService.TranferRecord[])(this.results[0]));
             }
         }
     }
@@ -555,27 +555,28 @@ namespace WindowsFormsClient.ServiceReference1 {
                         type}, this.onEndFindInfoByPhoneDelegate, this.onFindInfoByPhoneCompletedDelegate, userState);
         }
         
-        public string FindInfoByIdNumber(string IdNumber) {
-            return base.Channel.FindInfoByIdNumber(IdNumber);
+        public TTTVService.TranferRecord[] FindInfoByIdNumber(string IdNumber, string type) {
+            return base.Channel.FindInfoByIdNumber(IdNumber, type);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginFindInfoByIdNumber(string IdNumber, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginFindInfoByIdNumber(IdNumber, callback, asyncState);
+        public System.IAsyncResult BeginFindInfoByIdNumber(string IdNumber, string type, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginFindInfoByIdNumber(IdNumber, type, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public string EndFindInfoByIdNumber(System.IAsyncResult result) {
+        public TTTVService.TranferRecord[] EndFindInfoByIdNumber(System.IAsyncResult result) {
             return base.Channel.EndFindInfoByIdNumber(result);
         }
         
         private System.IAsyncResult OnBeginFindInfoByIdNumber(object[] inValues, System.AsyncCallback callback, object asyncState) {
             string IdNumber = ((string)(inValues[0]));
-            return this.BeginFindInfoByIdNumber(IdNumber, callback, asyncState);
+            string type = ((string)(inValues[1]));
+            return this.BeginFindInfoByIdNumber(IdNumber, type, callback, asyncState);
         }
         
         private object[] OnEndFindInfoByIdNumber(System.IAsyncResult result) {
-            string retVal = this.EndFindInfoByIdNumber(result);
+            TTTVService.TranferRecord[] retVal = this.EndFindInfoByIdNumber(result);
             return new object[] {
                     retVal};
         }
@@ -587,11 +588,11 @@ namespace WindowsFormsClient.ServiceReference1 {
             }
         }
         
-        public void FindInfoByIdNumberAsync(string IdNumber) {
-            this.FindInfoByIdNumberAsync(IdNumber, null);
+        public void FindInfoByIdNumberAsync(string IdNumber, string type) {
+            this.FindInfoByIdNumberAsync(IdNumber, type, null);
         }
         
-        public void FindInfoByIdNumberAsync(string IdNumber, object userState) {
+        public void FindInfoByIdNumberAsync(string IdNumber, string type, object userState) {
             if ((this.onBeginFindInfoByIdNumberDelegate == null)) {
                 this.onBeginFindInfoByIdNumberDelegate = new BeginOperationDelegate(this.OnBeginFindInfoByIdNumber);
             }
@@ -602,31 +603,33 @@ namespace WindowsFormsClient.ServiceReference1 {
                 this.onFindInfoByIdNumberCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnFindInfoByIdNumberCompleted);
             }
             base.InvokeAsync(this.onBeginFindInfoByIdNumberDelegate, new object[] {
-                        IdNumber}, this.onEndFindInfoByIdNumberDelegate, this.onFindInfoByIdNumberCompletedDelegate, userState);
+                        IdNumber,
+                        type}, this.onEndFindInfoByIdNumberDelegate, this.onFindInfoByIdNumberCompletedDelegate, userState);
         }
         
-        public int ListPersonBySex(string Address, string Sex) {
-            return base.Channel.ListPersonBySex(Address, Sex);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginListPersonBySex(string Address, string Sex, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginListPersonBySex(Address, Sex, callback, asyncState);
+        public TTTVService.TranferRecord[] ListPersonBySex(string Address, string Sex, string type) {
+            return base.Channel.ListPersonBySex(Address, Sex, type);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public int EndListPersonBySex(System.IAsyncResult result) {
+        public System.IAsyncResult BeginListPersonBySex(string Address, string Sex, string type, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginListPersonBySex(Address, Sex, type, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TTTVService.TranferRecord[] EndListPersonBySex(System.IAsyncResult result) {
             return base.Channel.EndListPersonBySex(result);
         }
         
         private System.IAsyncResult OnBeginListPersonBySex(object[] inValues, System.AsyncCallback callback, object asyncState) {
             string Address = ((string)(inValues[0]));
             string Sex = ((string)(inValues[1]));
-            return this.BeginListPersonBySex(Address, Sex, callback, asyncState);
+            string type = ((string)(inValues[2]));
+            return this.BeginListPersonBySex(Address, Sex, type, callback, asyncState);
         }
         
         private object[] OnEndListPersonBySex(System.IAsyncResult result) {
-            int retVal = this.EndListPersonBySex(result);
+            TTTVService.TranferRecord[] retVal = this.EndListPersonBySex(result);
             return new object[] {
                     retVal};
         }
@@ -638,11 +641,11 @@ namespace WindowsFormsClient.ServiceReference1 {
             }
         }
         
-        public void ListPersonBySexAsync(string Address, string Sex) {
-            this.ListPersonBySexAsync(Address, Sex, null);
+        public void ListPersonBySexAsync(string Address, string Sex, string type) {
+            this.ListPersonBySexAsync(Address, Sex, type, null);
         }
         
-        public void ListPersonBySexAsync(string Address, string Sex, object userState) {
+        public void ListPersonBySexAsync(string Address, string Sex, string type, object userState) {
             if ((this.onBeginListPersonBySexDelegate == null)) {
                 this.onBeginListPersonBySexDelegate = new BeginOperationDelegate(this.OnBeginListPersonBySex);
             }
@@ -654,30 +657,32 @@ namespace WindowsFormsClient.ServiceReference1 {
             }
             base.InvokeAsync(this.onBeginListPersonBySexDelegate, new object[] {
                         Address,
-                        Sex}, this.onEndListPersonBySexDelegate, this.onListPersonBySexCompletedDelegate, userState);
+                        Sex,
+                        type}, this.onEndListPersonBySexDelegate, this.onListPersonBySexCompletedDelegate, userState);
         }
         
-        public string ListPersonByAddress(string Address) {
-            return base.Channel.ListPersonByAddress(Address);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginListPersonByAddress(string Address, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginListPersonByAddress(Address, callback, asyncState);
+        public TTTVService.TranferRecord[] ListPersonByAddress(string Address, string type) {
+            return base.Channel.ListPersonByAddress(Address, type);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public string EndListPersonByAddress(System.IAsyncResult result) {
+        public System.IAsyncResult BeginListPersonByAddress(string Address, string type, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginListPersonByAddress(Address, type, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TTTVService.TranferRecord[] EndListPersonByAddress(System.IAsyncResult result) {
             return base.Channel.EndListPersonByAddress(result);
         }
         
         private System.IAsyncResult OnBeginListPersonByAddress(object[] inValues, System.AsyncCallback callback, object asyncState) {
             string Address = ((string)(inValues[0]));
-            return this.BeginListPersonByAddress(Address, callback, asyncState);
+            string type = ((string)(inValues[1]));
+            return this.BeginListPersonByAddress(Address, type, callback, asyncState);
         }
         
         private object[] OnEndListPersonByAddress(System.IAsyncResult result) {
-            string retVal = this.EndListPersonByAddress(result);
+            TTTVService.TranferRecord[] retVal = this.EndListPersonByAddress(result);
             return new object[] {
                     retVal};
         }
@@ -689,11 +694,11 @@ namespace WindowsFormsClient.ServiceReference1 {
             }
         }
         
-        public void ListPersonByAddressAsync(string Address) {
-            this.ListPersonByAddressAsync(Address, null);
+        public void ListPersonByAddressAsync(string Address, string type) {
+            this.ListPersonByAddressAsync(Address, type, null);
         }
         
-        public void ListPersonByAddressAsync(string Address, object userState) {
+        public void ListPersonByAddressAsync(string Address, string type, object userState) {
             if ((this.onBeginListPersonByAddressDelegate == null)) {
                 this.onBeginListPersonByAddressDelegate = new BeginOperationDelegate(this.OnBeginListPersonByAddress);
             }
@@ -704,20 +709,21 @@ namespace WindowsFormsClient.ServiceReference1 {
                 this.onListPersonByAddressCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnListPersonByAddressCompleted);
             }
             base.InvokeAsync(this.onBeginListPersonByAddressDelegate, new object[] {
-                        Address}, this.onEndListPersonByAddressDelegate, this.onListPersonByAddressCompletedDelegate, userState);
+                        Address,
+                        type}, this.onEndListPersonByAddressDelegate, this.onListPersonByAddressCompletedDelegate, userState);
         }
         
-        public string ListPersonByDate(string Address, System.DateTime FromDate, System.DateTime ToDate) {
-            return base.Channel.ListPersonByDate(Address, FromDate, ToDate);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginListPersonByDate(string Address, System.DateTime FromDate, System.DateTime ToDate, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginListPersonByDate(Address, FromDate, ToDate, callback, asyncState);
+        public TTTVService.TranferRecord[] ListPersonByDate(string Address, System.DateTime FromDate, System.DateTime ToDate, string type) {
+            return base.Channel.ListPersonByDate(Address, FromDate, ToDate, type);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public string EndListPersonByDate(System.IAsyncResult result) {
+        public System.IAsyncResult BeginListPersonByDate(string Address, System.DateTime FromDate, System.DateTime ToDate, string type, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginListPersonByDate(Address, FromDate, ToDate, type, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TTTVService.TranferRecord[] EndListPersonByDate(System.IAsyncResult result) {
             return base.Channel.EndListPersonByDate(result);
         }
         
@@ -725,11 +731,12 @@ namespace WindowsFormsClient.ServiceReference1 {
             string Address = ((string)(inValues[0]));
             System.DateTime FromDate = ((System.DateTime)(inValues[1]));
             System.DateTime ToDate = ((System.DateTime)(inValues[2]));
-            return this.BeginListPersonByDate(Address, FromDate, ToDate, callback, asyncState);
+            string type = ((string)(inValues[3]));
+            return this.BeginListPersonByDate(Address, FromDate, ToDate, type, callback, asyncState);
         }
         
         private object[] OnEndListPersonByDate(System.IAsyncResult result) {
-            string retVal = this.EndListPersonByDate(result);
+            TTTVService.TranferRecord[] retVal = this.EndListPersonByDate(result);
             return new object[] {
                     retVal};
         }
@@ -741,11 +748,11 @@ namespace WindowsFormsClient.ServiceReference1 {
             }
         }
         
-        public void ListPersonByDateAsync(string Address, System.DateTime FromDate, System.DateTime ToDate) {
-            this.ListPersonByDateAsync(Address, FromDate, ToDate, null);
+        public void ListPersonByDateAsync(string Address, System.DateTime FromDate, System.DateTime ToDate, string type) {
+            this.ListPersonByDateAsync(Address, FromDate, ToDate, type, null);
         }
         
-        public void ListPersonByDateAsync(string Address, System.DateTime FromDate, System.DateTime ToDate, object userState) {
+        public void ListPersonByDateAsync(string Address, System.DateTime FromDate, System.DateTime ToDate, string type, object userState) {
             if ((this.onBeginListPersonByDateDelegate == null)) {
                 this.onBeginListPersonByDateDelegate = new BeginOperationDelegate(this.OnBeginListPersonByDate);
             }
@@ -758,30 +765,32 @@ namespace WindowsFormsClient.ServiceReference1 {
             base.InvokeAsync(this.onBeginListPersonByDateDelegate, new object[] {
                         Address,
                         FromDate,
-                        ToDate}, this.onEndListPersonByDateDelegate, this.onListPersonByDateCompletedDelegate, userState);
+                        ToDate,
+                        type}, this.onEndListPersonByDateDelegate, this.onListPersonByDateCompletedDelegate, userState);
         }
         
-        public string ListOccupationByAddress(string Address) {
-            return base.Channel.ListOccupationByAddress(Address);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginListOccupationByAddress(string Address, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginListOccupationByAddress(Address, callback, asyncState);
+        public TTTVService.TranferRecord[] ListOccupationByAddress(string Address, string type) {
+            return base.Channel.ListOccupationByAddress(Address, type);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public string EndListOccupationByAddress(System.IAsyncResult result) {
+        public System.IAsyncResult BeginListOccupationByAddress(string Address, string type, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginListOccupationByAddress(Address, type, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TTTVService.TranferRecord[] EndListOccupationByAddress(System.IAsyncResult result) {
             return base.Channel.EndListOccupationByAddress(result);
         }
         
         private System.IAsyncResult OnBeginListOccupationByAddress(object[] inValues, System.AsyncCallback callback, object asyncState) {
             string Address = ((string)(inValues[0]));
-            return this.BeginListOccupationByAddress(Address, callback, asyncState);
+            string type = ((string)(inValues[1]));
+            return this.BeginListOccupationByAddress(Address, type, callback, asyncState);
         }
         
         private object[] OnEndListOccupationByAddress(System.IAsyncResult result) {
-            string retVal = this.EndListOccupationByAddress(result);
+            TTTVService.TranferRecord[] retVal = this.EndListOccupationByAddress(result);
             return new object[] {
                     retVal};
         }
@@ -793,11 +802,11 @@ namespace WindowsFormsClient.ServiceReference1 {
             }
         }
         
-        public void ListOccupationByAddressAsync(string Address) {
-            this.ListOccupationByAddressAsync(Address, null);
+        public void ListOccupationByAddressAsync(string Address, string type) {
+            this.ListOccupationByAddressAsync(Address, type, null);
         }
         
-        public void ListOccupationByAddressAsync(string Address, object userState) {
+        public void ListOccupationByAddressAsync(string Address, string type, object userState) {
             if ((this.onBeginListOccupationByAddressDelegate == null)) {
                 this.onBeginListOccupationByAddressDelegate = new BeginOperationDelegate(this.OnBeginListOccupationByAddress);
             }
@@ -808,30 +817,32 @@ namespace WindowsFormsClient.ServiceReference1 {
                 this.onListOccupationByAddressCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnListOccupationByAddressCompleted);
             }
             base.InvokeAsync(this.onBeginListOccupationByAddressDelegate, new object[] {
-                        Address}, this.onEndListOccupationByAddressDelegate, this.onListOccupationByAddressCompletedDelegate, userState);
+                        Address,
+                        type}, this.onEndListOccupationByAddressDelegate, this.onListOccupationByAddressCompletedDelegate, userState);
         }
         
-        public int CountSexByAddress(string Address) {
-            return base.Channel.CountSexByAddress(Address);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginCountSexByAddress(string Address, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginCountSexByAddress(Address, callback, asyncState);
+        public TTTVService.TranferRecord[] CountSexByAddress(string Address, string type) {
+            return base.Channel.CountSexByAddress(Address, type);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public int EndCountSexByAddress(System.IAsyncResult result) {
+        public System.IAsyncResult BeginCountSexByAddress(string Address, string type, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginCountSexByAddress(Address, type, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TTTVService.TranferRecord[] EndCountSexByAddress(System.IAsyncResult result) {
             return base.Channel.EndCountSexByAddress(result);
         }
         
         private System.IAsyncResult OnBeginCountSexByAddress(object[] inValues, System.AsyncCallback callback, object asyncState) {
             string Address = ((string)(inValues[0]));
-            return this.BeginCountSexByAddress(Address, callback, asyncState);
+            string type = ((string)(inValues[1]));
+            return this.BeginCountSexByAddress(Address, type, callback, asyncState);
         }
         
         private object[] OnEndCountSexByAddress(System.IAsyncResult result) {
-            int retVal = this.EndCountSexByAddress(result);
+            TTTVService.TranferRecord[] retVal = this.EndCountSexByAddress(result);
             return new object[] {
                     retVal};
         }
@@ -843,11 +854,11 @@ namespace WindowsFormsClient.ServiceReference1 {
             }
         }
         
-        public void CountSexByAddressAsync(string Address) {
-            this.CountSexByAddressAsync(Address, null);
+        public void CountSexByAddressAsync(string Address, string type) {
+            this.CountSexByAddressAsync(Address, type, null);
         }
         
-        public void CountSexByAddressAsync(string Address, object userState) {
+        public void CountSexByAddressAsync(string Address, string type, object userState) {
             if ((this.onBeginCountSexByAddressDelegate == null)) {
                 this.onBeginCountSexByAddressDelegate = new BeginOperationDelegate(this.OnBeginCountSexByAddress);
             }
@@ -858,7 +869,8 @@ namespace WindowsFormsClient.ServiceReference1 {
                 this.onCountSexByAddressCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnCountSexByAddressCompleted);
             }
             base.InvokeAsync(this.onBeginCountSexByAddressDelegate, new object[] {
-                        Address}, this.onEndCountSexByAddressDelegate, this.onCountSexByAddressCompletedDelegate, userState);
+                        Address,
+                        type}, this.onEndCountSexByAddressDelegate, this.onCountSexByAddressCompletedDelegate, userState);
         }
         
         public TTTVService.TranferRecord[] LoadData() {

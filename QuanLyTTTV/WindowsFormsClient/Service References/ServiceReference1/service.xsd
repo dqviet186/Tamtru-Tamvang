@@ -47,13 +47,14 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="IdNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="FindInfoByIdNumberResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="FindInfoByIdNumberResult" nillable="true" type="xs:string" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/TTTVService" minOccurs="0" name="FindInfoByIdNumberResult" nillable="true" type="q3:ArrayOfTranferRecord" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -62,13 +63,14 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="Sex" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ListPersonBySexResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="ListPersonBySexResult" type="xs:int" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/TTTVService" minOccurs="0" name="ListPersonBySexResult" nillable="true" type="q4:ArrayOfTranferRecord" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -76,13 +78,14 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ListPersonByAddressResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="ListPersonByAddressResult" nillable="true" type="xs:string" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/TTTVService" minOccurs="0" name="ListPersonByAddressResult" nillable="true" type="q5:ArrayOfTranferRecord" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -92,13 +95,14 @@
         <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="FromDate" type="xs:dateTime" />
         <xs:element minOccurs="0" name="ToDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ListPersonByDateResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="ListPersonByDateResult" nillable="true" type="xs:string" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/TTTVService" minOccurs="0" name="ListPersonByDateResult" nillable="true" type="q6:ArrayOfTranferRecord" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -106,13 +110,14 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ListOccupationByAddressResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="ListOccupationByAddressResult" nillable="true" type="xs:string" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/TTTVService" minOccurs="0" name="ListOccupationByAddressResult" nillable="true" type="q7:ArrayOfTranferRecord" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -120,13 +125,14 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CountSexByAddressResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="CountSexByAddressResult" type="xs:int" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/TTTVService" minOccurs="0" name="CountSexByAddressResult" nillable="true" type="q8:ArrayOfTranferRecord" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -138,7 +144,7 @@
   <xs:element name="LoadDataResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/TTTVService" minOccurs="0" name="LoadDataResult" nillable="true" type="q3:ArrayOfTranferRecord" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/TTTVService" minOccurs="0" name="LoadDataResult" nillable="true" type="q9:ArrayOfTranferRecord" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

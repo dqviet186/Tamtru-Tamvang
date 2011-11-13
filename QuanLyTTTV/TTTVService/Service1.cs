@@ -145,39 +145,341 @@ namespace TTTVService
             }
         }
 
-        public string GetInfoByIdNumber(string IdNumber)
+        public TranferRecord[] GetInfoByIdNumber(string IdNumber, string type)
         {
-            return "";
+            try
+            {
+                SqlConnection cn = new SqlConnection();
+                cn.ConnectionString = "Data Source=mavi-PC;Initial Catalog=cnweb;Integrated Security=True";
+                cn.Open();
+
+                string query = "SELECT * FROM tamtrutamvang WHERE IDNumber = '" + IdNumber + "' and Type = '" + type + "'";
+                SqlCommand sql = new SqlCommand(query, cn);
+                SqlDataAdapter adt = new SqlDataAdapter(sql);
+                DataSet ds = new DataSet();
+                adt.Fill(ds);
+                int rows = ds.Tables[0].Rows.Count;
+                data = new TranferRecord[rows];
+
+                for (int i = 0; i < rows; i++)
+                {
+                    data[i] = new TranferRecord();
+                    data[i].Id = Convert.ToInt32(ds.Tables[0].Rows[i].ItemArray[0].ToString());
+                    data[i].FullName = ds.Tables[0].Rows[i].ItemArray[1].ToString();
+                    data[i].PhoneNumber = ds.Tables[0].Rows[i].ItemArray[2].ToString();
+                    data[i].Email = ds.Tables[0].Rows[i].ItemArray[3].ToString();
+                    data[i].Birthday = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[4]);
+                    data[i].Sex = ds.Tables[0].Rows[i].ItemArray[5].ToString();
+                    data[i].OriginalAddress = ds.Tables[0].Rows[i].ItemArray[6].ToString();
+                    data[i].IDNumber = ds.Tables[0].Rows[i].ItemArray[7].ToString();
+                    data[i].Occupation = ds.Tables[0].Rows[i].ItemArray[8].ToString();
+                    data[i].CurrentAddress = ds.Tables[0].Rows[i].ItemArray[9].ToString();
+                    //data[i].FromDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[10]);
+                    //data[i].ToDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[11]);
+                    data[i].Reason = ds.Tables[0].Rows[i].ItemArray[12].ToString();
+                    data[i].Description = ds.Tables[0].Rows[i].ItemArray[13].ToString();
+                    data[i].Type = ds.Tables[0].Rows[i].ItemArray[14].ToString();
+                }
+
+                cn.Close();
+
+                return data;
+            }
+            catch (PisNotFoundException exp)
+            {
+                TrackedFault tf = new TrackedFault(
+                    Guid.NewGuid(),
+                    exp.Message,
+                    DateTime.Now);
+
+                throw new FaultException<TrackedFault>(
+                    tf,
+                    new FaultReason("PisNotFoundException"),
+                    FaultCode.CreateReceiverFaultCode(new FaultCode("GetInfoByIdNumber")));
+            }
+            catch (Exception exp)
+            {
+                FaultReasonText reason = new FaultReasonText(exp.Message);
+                throw new FaultException(new FaultReason(reason), FaultCode.CreateReceiverFaultCode(new FaultCode("GetInfoByIdNumber")));
+            }
         }
 
-        public int GetInfoBySex(string Address, string Sex)
+        public TranferRecord[] GetInfoBySex(string Address, string Sex, string type)
         {
-            return 0;
+            try
+            {
+                SqlConnection cn = new SqlConnection();
+                cn.ConnectionString = "Data Source=mavi-PC;Initial Catalog=cnweb;Integrated Security=True";
+                cn.Open();
+
+                string query = "SELECT * FROM tamtrutamvang WHERE CurrentAddress like '%" + Address + "%' and Sex = '"+ Sex +"' and Type = '" + type + "'";
+                SqlCommand sql = new SqlCommand(query, cn);
+                SqlDataAdapter adt = new SqlDataAdapter(sql);
+                DataSet ds = new DataSet();
+                adt.Fill(ds);
+                int rows = ds.Tables[0].Rows.Count;
+                data = new TranferRecord[rows];
+
+                for (int i = 0; i < rows; i++)
+                {
+                    data[i] = new TranferRecord();
+                    data[i].Id = Convert.ToInt32(ds.Tables[0].Rows[i].ItemArray[0].ToString());
+                    data[i].FullName = ds.Tables[0].Rows[i].ItemArray[1].ToString();
+                    data[i].PhoneNumber = ds.Tables[0].Rows[i].ItemArray[2].ToString();
+                    data[i].Email = ds.Tables[0].Rows[i].ItemArray[3].ToString();
+                    data[i].Birthday = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[4]);
+                    data[i].Sex = ds.Tables[0].Rows[i].ItemArray[5].ToString();
+                    data[i].OriginalAddress = ds.Tables[0].Rows[i].ItemArray[6].ToString();
+                    data[i].IDNumber = ds.Tables[0].Rows[i].ItemArray[7].ToString();
+                    data[i].Occupation = ds.Tables[0].Rows[i].ItemArray[8].ToString();
+                    data[i].CurrentAddress = ds.Tables[0].Rows[i].ItemArray[9].ToString();
+                    //data[i].FromDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[10]);
+                    //data[i].ToDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[11]);
+                    data[i].Reason = ds.Tables[0].Rows[i].ItemArray[12].ToString();
+                    data[i].Description = ds.Tables[0].Rows[i].ItemArray[13].ToString();
+                    data[i].Type = ds.Tables[0].Rows[i].ItemArray[14].ToString();
+                }
+
+                cn.Close();
+
+                return data;
+            }
+            catch (PisNotFoundException exp)
+            {
+                TrackedFault tf = new TrackedFault(
+                    Guid.NewGuid(),
+                    exp.Message,
+                    DateTime.Now);
+
+                throw new FaultException<TrackedFault>(
+                    tf,
+                    new FaultReason("PisNotFoundException"),
+                    FaultCode.CreateReceiverFaultCode(new FaultCode("GetInfoBySex")));
+            }
+            catch (Exception exp)
+            {
+                FaultReasonText reason = new FaultReasonText(exp.Message);
+                throw new FaultException(new FaultReason(reason), FaultCode.CreateReceiverFaultCode(new FaultCode("GetInfoBySex")));
+            }
         }
 
-        public string GetListByAddress(string Address)
+        public TranferRecord[] GetListByAddress(string Address, string type)
         {
-            return "";
+            try
+            {
+                SqlConnection cn = new SqlConnection();
+                cn.ConnectionString = "Data Source=mavi-PC;Initial Catalog=cnweb;Integrated Security=True";
+                cn.Open();
+
+                string query = "SELECT * FROM tamtrutamvang WHERE CurrentAddress like '%" + Address + "%' and Type = '" + type + "'";
+                SqlCommand sql = new SqlCommand(query, cn);
+                SqlDataAdapter adt = new SqlDataAdapter(sql);
+                DataSet ds = new DataSet();
+                adt.Fill(ds);
+                int rows = ds.Tables[0].Rows.Count;
+                data = new TranferRecord[rows];
+
+                for (int i = 0; i < rows; i++)
+                {
+                    data[i] = new TranferRecord();
+                    data[i].Id = Convert.ToInt32(ds.Tables[0].Rows[i].ItemArray[0].ToString());
+                    data[i].FullName = ds.Tables[0].Rows[i].ItemArray[1].ToString();
+                    data[i].PhoneNumber = ds.Tables[0].Rows[i].ItemArray[2].ToString();
+                    data[i].Email = ds.Tables[0].Rows[i].ItemArray[3].ToString();
+                    data[i].Birthday = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[4]);
+                    data[i].Sex = ds.Tables[0].Rows[i].ItemArray[5].ToString();
+                    data[i].OriginalAddress = ds.Tables[0].Rows[i].ItemArray[6].ToString();
+                    data[i].IDNumber = ds.Tables[0].Rows[i].ItemArray[7].ToString();
+                    data[i].Occupation = ds.Tables[0].Rows[i].ItemArray[8].ToString();
+                    data[i].CurrentAddress = ds.Tables[0].Rows[i].ItemArray[9].ToString();
+                    //data[i].FromDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[10]);
+                    //data[i].ToDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[11]);
+                    data[i].Reason = ds.Tables[0].Rows[i].ItemArray[12].ToString();
+                    data[i].Description = ds.Tables[0].Rows[i].ItemArray[13].ToString();
+                    data[i].Type = ds.Tables[0].Rows[i].ItemArray[14].ToString();
+                }
+
+                cn.Close();
+
+                return data;
+            }
+            catch (PisNotFoundException exp)
+            {
+                TrackedFault tf = new TrackedFault(
+                    Guid.NewGuid(),
+                    exp.Message,
+                    DateTime.Now);
+
+                throw new FaultException<TrackedFault>(
+                    tf,
+                    new FaultReason("PisNotFoundException"),
+                    FaultCode.CreateReceiverFaultCode(new FaultCode("GetListByAddress")));
+            }
+            catch (Exception exp)
+            {
+                FaultReasonText reason = new FaultReasonText(exp.Message);
+                throw new FaultException(new FaultReason(reason), FaultCode.CreateReceiverFaultCode(new FaultCode("GetListByAddress")));
+            }
         }
 
-        public string GetListByDate(string Address, DateTime FromDate, DateTime ToDate)
+        public TranferRecord[] GetListByDate(string Address, DateTime FromDate, DateTime ToDate, string type)
         {
-            return "";
+            try
+            {
+                SqlConnection cn = new SqlConnection();
+                cn.ConnectionString = "Data Source=mavi-PC;Initial Catalog=cnweb;Integrated Security=True";
+                cn.Open();
+
+                string query = "SELECT * FROM tamtrutamvang WHERE CurrentAddress like '%" + Address + "%' and FromDate >= '" + FromDate + "' and ToDate <= '" + ToDate + "' and Type = '" + type + "'";
+                SqlCommand sql = new SqlCommand(query, cn);
+                SqlDataAdapter adt = new SqlDataAdapter(sql);
+                DataSet ds = new DataSet();
+                adt.Fill(ds);
+                int rows = ds.Tables[0].Rows.Count;
+                data = new TranferRecord[rows];
+
+                for (int i = 0; i < rows; i++)
+                {
+                    data[i] = new TranferRecord();
+                    data[i].Id = Convert.ToInt32(ds.Tables[0].Rows[i].ItemArray[0].ToString());
+                    data[i].FullName = ds.Tables[0].Rows[i].ItemArray[1].ToString();
+                    data[i].PhoneNumber = ds.Tables[0].Rows[i].ItemArray[2].ToString();
+                    data[i].Email = ds.Tables[0].Rows[i].ItemArray[3].ToString();
+                    data[i].Birthday = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[4]);
+                    data[i].Sex = ds.Tables[0].Rows[i].ItemArray[5].ToString();
+                    data[i].OriginalAddress = ds.Tables[0].Rows[i].ItemArray[6].ToString();
+                    data[i].IDNumber = ds.Tables[0].Rows[i].ItemArray[7].ToString();
+                    data[i].Occupation = ds.Tables[0].Rows[i].ItemArray[8].ToString();
+                    data[i].CurrentAddress = ds.Tables[0].Rows[i].ItemArray[9].ToString();
+                    //data[i].FromDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[10]);
+                    //data[i].ToDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[11]);
+                    data[i].Reason = ds.Tables[0].Rows[i].ItemArray[12].ToString();
+                    data[i].Description = ds.Tables[0].Rows[i].ItemArray[13].ToString();
+                    data[i].Type = ds.Tables[0].Rows[i].ItemArray[14].ToString();
+                }
+
+                cn.Close();
+
+                return data;
+            }
+            catch (PisNotFoundException exp)
+            {
+                TrackedFault tf = new TrackedFault(
+                    Guid.NewGuid(),
+                    exp.Message,
+                    DateTime.Now);
+
+                throw new FaultException<TrackedFault>(
+                    tf,
+                    new FaultReason("PisNotFoundException"),
+                    FaultCode.CreateReceiverFaultCode(new FaultCode("GetListByDate")));
+            }
+            catch (Exception exp)
+            {
+                FaultReasonText reason = new FaultReasonText(exp.Message);
+                throw new FaultException(new FaultReason(reason), FaultCode.CreateReceiverFaultCode(new FaultCode("GetListByDate")));
+            }
         }
 
-        public string GetListOccupationByAddress(string Address)
+        public TranferRecord[] GetListOccupationByAddress(string Address, string type)
         {
-            return "";
+            try
+            {
+                SqlConnection cn = new SqlConnection();
+                cn.ConnectionString = "Data Source=mavi-PC;Initial Catalog=cnweb;Integrated Security=True";
+                cn.Open();
+
+                string query = "SELECT Occupation,CurrentAddress,OriginalAddress FROM tamtrutamvang WHERE CurrentAddress like '%" + Address + "%' and Type = '" + type + "'";
+                SqlCommand sql = new SqlCommand(query, cn);
+                SqlDataAdapter adt = new SqlDataAdapter(sql);
+                DataSet ds = new DataSet();
+                adt.Fill(ds);
+                int rows = ds.Tables[0].Rows.Count;
+                data = new TranferRecord[rows];
+
+                for (int i = 0; i < rows; i++)
+                {
+                    data[i] = new TranferRecord();
+                    data[i].Occupation = ds.Tables[0].Rows[i].ItemArray[0].ToString();
+                    data[i].CurrentAddress = ds.Tables[0].Rows[i].ItemArray[1].ToString();
+                    data[i].OriginalAddress = ds.Tables[0].Rows[i].ItemArray[2].ToString();
+                }
+
+                cn.Close();
+
+                return data;
+            }
+            catch (PisNotFoundException exp)
+            {
+                TrackedFault tf = new TrackedFault(
+                    Guid.NewGuid(),
+                    exp.Message,
+                    DateTime.Now);
+
+                throw new FaultException<TrackedFault>(
+                    tf,
+                    new FaultReason("PisNotFoundException"),
+                    FaultCode.CreateReceiverFaultCode(new FaultCode("GetListOccupationByAddress")));
+            }
+            catch (Exception exp)
+            {
+                FaultReasonText reason = new FaultReasonText(exp.Message);
+                throw new FaultException(new FaultReason(reason), FaultCode.CreateReceiverFaultCode(new FaultCode("GetListOccupationByAddress")));
+            }
         }
 
-        public int CountSexByAddress(string Address)
+        public TranferRecord[] CountSexByAddress(string Address, string type)
         {
-            return 0;
+            try
+            {
+                SqlConnection cn = new SqlConnection();
+                cn.ConnectionString = "Data Source=mavi-PC;Initial Catalog=cnweb;Integrated Security=True";
+                cn.Open();
+
+                string query = "SELECT Sex, COUNT(Sex) AS Total"; 
+                       query += "FROM tamtrutamvang";
+                       query += "WHERE OriginalAddress = '%"+Address+"%' and type = '"+type+"'";
+                       query += "GROUP BY Sex";
+                SqlCommand sql = new SqlCommand(query, cn);
+                SqlDataAdapter adt = new SqlDataAdapter(sql);
+                DataSet ds = new DataSet();
+                adt.Fill(ds);
+                int rows = ds.Tables[0].Rows.Count;
+                data = new TranferRecord[rows];
+
+                for (int i = 0; i < rows; i++)
+                {
+                    data[i] = new TranferRecord();
+                    data[i].Sex = ds.Tables[0].Rows[i].ItemArray[0].ToString();
+                    //data[i].Total = ds.Tables[0].Rows[i].ItemArray[1].ToString();
+                }
+
+                cn.Close();
+
+                return data;
+            }
+            catch (PisNotFoundException exp)
+            {
+                TrackedFault tf = new TrackedFault(
+                    Guid.NewGuid(),
+                    exp.Message,
+                    DateTime.Now);
+
+                throw new FaultException<TrackedFault>(
+                    tf,
+                    new FaultReason("PisNotFoundException"),
+                    FaultCode.CreateReceiverFaultCode(new FaultCode("GetListOccupationByAddress")));
+            }
+            catch (Exception exp)
+            {
+                FaultReasonText reason = new FaultReasonText(exp.Message);
+                throw new FaultException(new FaultReason(reason), FaultCode.CreateReceiverFaultCode(new FaultCode("GetListOccupationByAddress")));
+            }
         }
 
         public void InsertData()
         {
-
+            
         }
 
         public void UpdateData(int Id)
