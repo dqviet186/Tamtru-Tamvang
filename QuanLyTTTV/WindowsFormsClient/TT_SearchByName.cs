@@ -100,8 +100,8 @@ namespace WindowsFormsClient
                 dr["IDNumber"] = result[i].IDNumber;
                 dr["Occupation"] = result[i].Occupation;
                 dr["CurrentAddress"] = result[i].CurrentAddress;
-                dr["FromDate"] = result[i].FromDate;
-                dr["ToDate"] = result[i].ToDate;
+                dr["FromDate"] = result[i].FromDate.ToString("dd/MM/yyyy");
+                dr["ToDate"] = result[i].ToDate.ToString("dd/MM/yyyy");
                 dr["Reason"] = result[i].Reason;
                 dr["Description"] = result[i].Description;
                 //dr["Type"] = result[i].Type;

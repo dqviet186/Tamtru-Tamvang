@@ -18,3 +18,5 @@ G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsCli
 G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsClient\obj\x86\Debug\WindowsFormsClient.TT_SearchByIdNumber.resources
 G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsClient\obj\x86\Debug\WindowsFormsClient.TT_ReportSexByAddress.resources
 G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsClient\obj\x86\Debug\WindowsFormsClient.TT_SearchByAddress.resources
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsClient\obj\x86\Debug\WindowsFormsClient.TT_ListByDate.resources
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsClient\obj\x86\Debug\WindowsFormsClient.TT_ReportOccupationByAddress.resources

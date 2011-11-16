@@ -40,6 +40,11 @@
             this.tìmKiếmDanhSáchTheoNgàyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thốngKêNghềNghiệpTheoĐịaChỉToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýThôngTinTạmVắngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tìmKiếmTạmVắngTheoTênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tìmKiếmTạmVắngTheoSDTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tìmKiếmTạmVắngTheoCMNDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tìmKiếmTạmVắngTheoĐịaChỉToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timKiếmTạmVắngTheoNgàyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thêmThôngTinTạmTrúToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinTạmVắngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,11 +52,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.tìmKiếmTạmVắngTheoTênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tìmKiếmTạmVắngTheoSDTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tìmKiếmTạmVắngTheoCMNDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tìmKiếmTạmVắngTheoĐịaChỉToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.timKiếmTạmVắngTheoNgàyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -139,12 +139,14 @@
             this.tìmKiếmDanhSáchTheoNgàyToolStripMenuItem.Name = "tìmKiếmDanhSáchTheoNgàyToolStripMenuItem";
             this.tìmKiếmDanhSáchTheoNgàyToolStripMenuItem.Size = new System.Drawing.Size(259, 22);
             this.tìmKiếmDanhSáchTheoNgàyToolStripMenuItem.Text = "Tìm kiếm danh sách theo ngày";
+            this.tìmKiếmDanhSáchTheoNgàyToolStripMenuItem.Click += new System.EventHandler(this.tìmKiếmDanhSáchTheoNgàyToolStripMenuItem_Click);
             // 
             // thốngKêNghềNghiệpTheoĐịaChỉToolStripMenuItem
             // 
             this.thốngKêNghềNghiệpTheoĐịaChỉToolStripMenuItem.Name = "thốngKêNghềNghiệpTheoĐịaChỉToolStripMenuItem";
             this.thốngKêNghềNghiệpTheoĐịaChỉToolStripMenuItem.Size = new System.Drawing.Size(259, 22);
             this.thốngKêNghềNghiệpTheoĐịaChỉToolStripMenuItem.Text = "Thống kê nghề nghiệp theo địa chỉ";
+            this.thốngKêNghềNghiệpTheoĐịaChỉToolStripMenuItem.Click += new System.EventHandler(this.thốngKêNghềNghiệpTheoĐịaChỉToolStripMenuItem_Click);
             // 
             // quảnLýThôngTinTạmVắngToolStripMenuItem
             // 
@@ -157,6 +159,36 @@
             this.quảnLýThôngTinTạmVắngToolStripMenuItem.Name = "quảnLýThôngTinTạmVắngToolStripMenuItem";
             this.quảnLýThôngTinTạmVắngToolStripMenuItem.Size = new System.Drawing.Size(165, 20);
             this.quảnLýThôngTinTạmVắngToolStripMenuItem.Text = "Quản lý thông tin tạm vắng";
+            // 
+            // tìmKiếmTạmVắngTheoTênToolStripMenuItem
+            // 
+            this.tìmKiếmTạmVắngTheoTênToolStripMenuItem.Name = "tìmKiếmTạmVắngTheoTênToolStripMenuItem";
+            this.tìmKiếmTạmVắngTheoTênToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.tìmKiếmTạmVắngTheoTênToolStripMenuItem.Text = "Tìm kiếm tạm vắng theo tên";
+            // 
+            // tìmKiếmTạmVắngTheoSDTToolStripMenuItem
+            // 
+            this.tìmKiếmTạmVắngTheoSDTToolStripMenuItem.Name = "tìmKiếmTạmVắngTheoSDTToolStripMenuItem";
+            this.tìmKiếmTạmVắngTheoSDTToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.tìmKiếmTạmVắngTheoSDTToolStripMenuItem.Text = "Tìm kiếm tạm vắng theo SDT";
+            // 
+            // tìmKiếmTạmVắngTheoCMNDToolStripMenuItem
+            // 
+            this.tìmKiếmTạmVắngTheoCMNDToolStripMenuItem.Name = "tìmKiếmTạmVắngTheoCMNDToolStripMenuItem";
+            this.tìmKiếmTạmVắngTheoCMNDToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.tìmKiếmTạmVắngTheoCMNDToolStripMenuItem.Text = "Tìm kiếm tạm vắng theo CMND";
+            // 
+            // tìmKiếmTạmVắngTheoĐịaChỉToolStripMenuItem
+            // 
+            this.tìmKiếmTạmVắngTheoĐịaChỉToolStripMenuItem.Name = "tìmKiếmTạmVắngTheoĐịaChỉToolStripMenuItem";
+            this.tìmKiếmTạmVắngTheoĐịaChỉToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.tìmKiếmTạmVắngTheoĐịaChỉToolStripMenuItem.Text = "Tìm kiếm tạm vắng theo địa chỉ";
+            // 
+            // timKiếmTạmVắngTheoNgàyToolStripMenuItem
+            // 
+            this.timKiếmTạmVắngTheoNgàyToolStripMenuItem.Name = "timKiếmTạmVắngTheoNgàyToolStripMenuItem";
+            this.timKiếmTạmVắngTheoNgàyToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.timKiếmTạmVắngTheoNgàyToolStripMenuItem.Text = "Tim kiếm tạm vắng theo ngày";
             // 
             // quảnLýToolStripMenuItem
             // 
@@ -221,36 +253,6 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Sinh viên thực hiện: Dương Quốc Việt";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tìmKiếmTạmVắngTheoTênToolStripMenuItem
-            // 
-            this.tìmKiếmTạmVắngTheoTênToolStripMenuItem.Name = "tìmKiếmTạmVắngTheoTênToolStripMenuItem";
-            this.tìmKiếmTạmVắngTheoTênToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
-            this.tìmKiếmTạmVắngTheoTênToolStripMenuItem.Text = "Tìm kiếm tạm vắng theo tên";
-            // 
-            // tìmKiếmTạmVắngTheoSDTToolStripMenuItem
-            // 
-            this.tìmKiếmTạmVắngTheoSDTToolStripMenuItem.Name = "tìmKiếmTạmVắngTheoSDTToolStripMenuItem";
-            this.tìmKiếmTạmVắngTheoSDTToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
-            this.tìmKiếmTạmVắngTheoSDTToolStripMenuItem.Text = "Tìm kiếm tạm vắng theo SDT";
-            // 
-            // tìmKiếmTạmVắngTheoCMNDToolStripMenuItem
-            // 
-            this.tìmKiếmTạmVắngTheoCMNDToolStripMenuItem.Name = "tìmKiếmTạmVắngTheoCMNDToolStripMenuItem";
-            this.tìmKiếmTạmVắngTheoCMNDToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
-            this.tìmKiếmTạmVắngTheoCMNDToolStripMenuItem.Text = "Tìm kiếm tạm vắng theo CMND";
-            // 
-            // tìmKiếmTạmVắngTheoĐịaChỉToolStripMenuItem
-            // 
-            this.tìmKiếmTạmVắngTheoĐịaChỉToolStripMenuItem.Name = "tìmKiếmTạmVắngTheoĐịaChỉToolStripMenuItem";
-            this.tìmKiếmTạmVắngTheoĐịaChỉToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
-            this.tìmKiếmTạmVắngTheoĐịaChỉToolStripMenuItem.Text = "Tìm kiếm tạm vắng theo địa chỉ";
-            // 
-            // timKiếmTạmVắngTheoNgàyToolStripMenuItem
-            // 
-            this.timKiếmTạmVắngTheoNgàyToolStripMenuItem.Name = "timKiếmTạmVắngTheoNgàyToolStripMenuItem";
-            this.timKiếmTạmVắngTheoNgàyToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
-            this.timKiếmTạmVắngTheoNgàyToolStripMenuItem.Text = "Tim kiếm tạm vắng theo ngày";
             // 
             // Form1
             // 

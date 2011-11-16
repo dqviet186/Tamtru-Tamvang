@@ -67,11 +67,23 @@
     <Compile Include="FormNhom.Designer.cs">
       <DependentUpon>FormNhom.cs</DependentUpon>
     </Compile>
+    <Compile Include="TT_ListByDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TT_ListByDate.Designer.cs">
+      <DependentUpon>TT_ListByDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="TT_ReportByAddress.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TT_ReportByAddress.Designer.cs">
       <DependentUpon>TT_ReportByAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TT_ReportOccupationByAddress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TT_ReportOccupationByAddress.Designer.cs">
+      <DependentUpon>TT_ReportOccupationByAddress.cs</DependentUpon>
     </Compile>
     <Compile Include="TT_SearchByAddress.cs">
       <SubType>Form</SubType>
@@ -112,8 +124,14 @@
     <EmbeddedResource Include="FormNhom.resx">
       <DependentUpon>FormNhom.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TT_ListByDate.resx">
+      <DependentUpon>TT_ListByDate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TT_ReportByAddress.resx">
       <DependentUpon>TT_ReportByAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TT_ReportOccupationByAddress.resx">
+      <DependentUpon>TT_ReportOccupationByAddress.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TT_SearchByAddress.resx">
       <DependentUpon>TT_SearchByAddress.cs</DependentUpon>

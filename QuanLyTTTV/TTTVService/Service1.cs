@@ -56,8 +56,8 @@ namespace TTTVService
                     data[i].IDNumber = ds.Tables[0].Rows[i].ItemArray[7].ToString();
                     data[i].Occupation = ds.Tables[0].Rows[i].ItemArray[8].ToString();
                     data[i].CurrentAddress = ds.Tables[0].Rows[i].ItemArray[9].ToString();
-                    //data[i].FromDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[10]);
-                    //data[i].ToDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[11]);
+                    data[i].FromDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[10]);
+                    data[i].ToDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[11]);
                     data[i].Reason = ds.Tables[0].Rows[i].ItemArray[12].ToString();
                     data[i].Description = ds.Tables[0].Rows[i].ItemArray[13].ToString();
                     data[i].Type = ds.Tables[0].Rows[i].ItemArray[14].ToString();
@@ -115,8 +115,8 @@ namespace TTTVService
                     data[i].IDNumber = ds.Tables[0].Rows[i].ItemArray[7].ToString();
                     data[i].Occupation = ds.Tables[0].Rows[i].ItemArray[8].ToString();
                     data[i].CurrentAddress = ds.Tables[0].Rows[i].ItemArray[9].ToString();
-                    //data[i].FromDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[10]);
-                    //data[i].ToDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[11]);
+                    data[i].FromDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[10]);
+                    data[i].ToDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[11]);
                     data[i].Reason = ds.Tables[0].Rows[i].ItemArray[12].ToString();
                     data[i].Description = ds.Tables[0].Rows[i].ItemArray[13].ToString();
                     data[i].Type = ds.Tables[0].Rows[i].ItemArray[14].ToString();
@@ -174,8 +174,8 @@ namespace TTTVService
                     data[i].IDNumber = ds.Tables[0].Rows[i].ItemArray[7].ToString();
                     data[i].Occupation = ds.Tables[0].Rows[i].ItemArray[8].ToString();
                     data[i].CurrentAddress = ds.Tables[0].Rows[i].ItemArray[9].ToString();
-                    //data[i].FromDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[10]);
-                    //data[i].ToDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[11]);
+                    data[i].FromDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[10]);
+                    data[i].ToDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[11]);
                     data[i].Reason = ds.Tables[0].Rows[i].ItemArray[12].ToString();
                     data[i].Description = ds.Tables[0].Rows[i].ItemArray[13].ToString();
                     data[i].Type = ds.Tables[0].Rows[i].ItemArray[14].ToString();
@@ -233,8 +233,8 @@ namespace TTTVService
                     data[i].IDNumber = ds.Tables[0].Rows[i].ItemArray[7].ToString();
                     data[i].Occupation = ds.Tables[0].Rows[i].ItemArray[8].ToString();
                     data[i].CurrentAddress = ds.Tables[0].Rows[i].ItemArray[9].ToString();
-                    //data[i].FromDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[10]);
-                    //data[i].ToDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[11]);
+                    data[i].FromDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[10]);
+                    data[i].ToDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[11]);
                     data[i].Reason = ds.Tables[0].Rows[i].ItemArray[12].ToString();
                     data[i].Description = ds.Tables[0].Rows[i].ItemArray[13].ToString();
                     data[i].Type = ds.Tables[0].Rows[i].ItemArray[14].ToString();
@@ -292,8 +292,8 @@ namespace TTTVService
                     data[i].IDNumber = ds.Tables[0].Rows[i].ItemArray[7].ToString();
                     data[i].Occupation = ds.Tables[0].Rows[i].ItemArray[8].ToString();
                     data[i].CurrentAddress = ds.Tables[0].Rows[i].ItemArray[9].ToString();
-                    //data[i].FromDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[10]);
-                    //data[i].ToDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[11]);
+                    data[i].FromDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[10]);
+                    data[i].ToDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[11]);
                     data[i].Reason = ds.Tables[0].Rows[i].ItemArray[12].ToString();
                     data[i].Description = ds.Tables[0].Rows[i].ItemArray[13].ToString();
                     data[i].Type = ds.Tables[0].Rows[i].ItemArray[14].ToString();
@@ -330,7 +330,10 @@ namespace TTTVService
                 cn.ConnectionString = "Data Source=mavi-PC;Initial Catalog=cnweb;Integrated Security=True";
                 cn.Open();
 
-                string query = "SELECT * FROM tamtrutamvang WHERE CurrentAddress like '%" + Address + "%' and FromDate >= '" + FromDate + "' and ToDate <= '" + ToDate + "' and Type = '" + type + "'";
+                string str1 = FromDate.ToString("yyyy-MM-dd");
+                string str2 = ToDate.ToString("yyyy-MM-dd");
+
+                string query = "SELECT * FROM tamtrutamvang WHERE CurrentAddress like '%" + Address + "%' and FromDate >= '" + str1 + "' or ToDate <= '" + str2 + "' and Type = '" + type + "'";
                 SqlCommand sql = new SqlCommand(query, cn);
                 SqlDataAdapter adt = new SqlDataAdapter(sql);
                 DataSet ds = new DataSet();
@@ -351,8 +354,8 @@ namespace TTTVService
                     data[i].IDNumber = ds.Tables[0].Rows[i].ItemArray[7].ToString();
                     data[i].Occupation = ds.Tables[0].Rows[i].ItemArray[8].ToString();
                     data[i].CurrentAddress = ds.Tables[0].Rows[i].ItemArray[9].ToString();
-                    //data[i].FromDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[10]);
-                    //data[i].ToDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[11]);
+                    data[i].FromDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[10]);
+                    data[i].ToDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[11]);
                     data[i].Reason = ds.Tables[0].Rows[i].ItemArray[12].ToString();
                     data[i].Description = ds.Tables[0].Rows[i].ItemArray[13].ToString();
                     data[i].Type = ds.Tables[0].Rows[i].ItemArray[14].ToString();
@@ -389,7 +392,7 @@ namespace TTTVService
                 cn.ConnectionString = "Data Source=mavi-PC;Initial Catalog=cnweb;Integrated Security=True";
                 cn.Open();
 
-                string query = "SELECT Occupation,CurrentAddress,OriginalAddress FROM tamtrutamvang WHERE CurrentAddress like '%" + Address + "%' and Type = '" + type + "'";
+                string query = "SELECT DISTINCT(Occupation),CurrentAddress,OriginalAddress FROM tamtrutamvang WHERE CurrentAddress like '%" + Address + "%' and Type = '" + type + "'";
                 SqlCommand sql = new SqlCommand(query, cn);
                 SqlDataAdapter adt = new SqlDataAdapter(sql);
                 DataSet ds = new DataSet();
@@ -437,9 +440,9 @@ namespace TTTVService
                 cn.Open();
 
                 string query = "SELECT Sex, COUNT(Sex) AS Total"; 
-                       query += "FROM tamtrutamvang";
-                       query += "WHERE OriginalAddress = '%"+Address+"%' and type = '"+type+"'";
-                       query += "GROUP BY Sex";
+                       query += " FROM tamtrutamvang";
+                       query += " WHERE CurrentAddress LIKE '%" + Address + "%' and type = '" + type + "'";
+                       query += " GROUP BY Sex";
                 SqlCommand sql = new SqlCommand(query, cn);
                 SqlDataAdapter adt = new SqlDataAdapter(sql);
                 DataSet ds = new DataSet();
@@ -451,7 +454,7 @@ namespace TTTVService
                 {
                     data[i] = new TranferRecord();
                     data[i].Sex = ds.Tables[0].Rows[i].ItemArray[0].ToString();
-                    //data[i].Total = ds.Tables[0].Rows[i].ItemArray[1].ToString();
+                    data[i].Total = int.Parse(ds.Tables[0].Rows[i].ItemArray[1].ToString());
                 }
 
                 cn.Close();
@@ -522,8 +525,8 @@ namespace TTTVService
                     data[i].IDNumber = ds.Tables[0].Rows[i].ItemArray[7].ToString();
                     data[i].Occupation = ds.Tables[0].Rows[i].ItemArray[8].ToString();
                     data[i].CurrentAddress = ds.Tables[0].Rows[i].ItemArray[9].ToString();
-                    //data[i].FromDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[10]);
-                    //data[i].ToDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[11]);
+                    data[i].FromDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[10]);
+                    data[i].ToDate = Convert.ToDateTime(ds.Tables[0].Rows[i].ItemArray[11]);
                     data[i].Reason = ds.Tables[0].Rows[i].ItemArray[12].ToString();
                     data[i].Description = ds.Tables[0].Rows[i].ItemArray[13].ToString();
                     data[i].Type = ds.Tables[0].Rows[i].ItemArray[14].ToString();

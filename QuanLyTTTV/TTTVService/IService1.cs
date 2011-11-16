@@ -77,6 +77,9 @@ namespace TTTVService
     public class TranferRecord
     {
         [DataMember]
+        public int Total;
+
+        [DataMember]
         public int Id;
 
         [DataMember]
