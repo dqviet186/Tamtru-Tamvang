@@ -21,27 +21,27 @@ using WindowsFormsClient.ServiceReference1;
 
 namespace WindowsFormsClient
 {
-    public partial class TT_SearchByIdNumber : Form
+    public partial class TV_SearchByPhone : Form
     {
-        public TT_SearchByIdNumber()
+        public TV_SearchByPhone()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                string txtSearch = textBox2.Text.Trim();
+                string txtSearch = textBox1.Text.Trim();
                 DataSet myDs = new DataSet();
                 if (txtSearch == "")
                 {
                     MessageBox.Show("Vui lòng nhập thông tin cần tìm kiếm");
-                    textBox2.Focus();
+                    textBox1.Focus();
                 }
                 else
                 {
-                    myDs = dataTTTV(txtSearch, "TT");
+                    myDs = dataTTTV(txtSearch, "TV");
                     dataGridView1.DataSource = myDs.Tables[0].DefaultView;
                 }
             }
@@ -79,12 +79,12 @@ namespace WindowsFormsClient
             return ds;
         }
 
-        public DataSet dataTTTV(string IdNumber, string type)
+        public DataSet dataTTTV(string Phone, string type)
         {
             DataSet ds = new DataSet();
 
             ServiceReference1.pisClient proxy = new ServiceReference1.pisClient();
-            TTTVService.TranferRecord[] result = proxy.FindInfoByIdNumber(IdNumber, type);
+            TTTVService.TranferRecord[] result = proxy.FindInfoByPhone(Phone, type);
             ds = CreateData();
             DataRow dr;
             for (int i = 0; i < result.Length; i++)

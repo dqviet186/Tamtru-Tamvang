@@ -165,30 +165,35 @@
             this.tìmKiếmTạmVắngTheoTênToolStripMenuItem.Name = "tìmKiếmTạmVắngTheoTênToolStripMenuItem";
             this.tìmKiếmTạmVắngTheoTênToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.tìmKiếmTạmVắngTheoTênToolStripMenuItem.Text = "Tìm kiếm tạm vắng theo tên";
+            this.tìmKiếmTạmVắngTheoTênToolStripMenuItem.Click += new System.EventHandler(this.tìmKiếmTạmVắngTheoTênToolStripMenuItem_Click);
             // 
             // tìmKiếmTạmVắngTheoSDTToolStripMenuItem
             // 
             this.tìmKiếmTạmVắngTheoSDTToolStripMenuItem.Name = "tìmKiếmTạmVắngTheoSDTToolStripMenuItem";
             this.tìmKiếmTạmVắngTheoSDTToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.tìmKiếmTạmVắngTheoSDTToolStripMenuItem.Text = "Tìm kiếm tạm vắng theo SDT";
+            this.tìmKiếmTạmVắngTheoSDTToolStripMenuItem.Click += new System.EventHandler(this.tìmKiếmTạmVắngTheoSDTToolStripMenuItem_Click);
             // 
             // tìmKiếmTạmVắngTheoCMNDToolStripMenuItem
             // 
             this.tìmKiếmTạmVắngTheoCMNDToolStripMenuItem.Name = "tìmKiếmTạmVắngTheoCMNDToolStripMenuItem";
             this.tìmKiếmTạmVắngTheoCMNDToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.tìmKiếmTạmVắngTheoCMNDToolStripMenuItem.Text = "Tìm kiếm tạm vắng theo CMND";
+            this.tìmKiếmTạmVắngTheoCMNDToolStripMenuItem.Click += new System.EventHandler(this.tìmKiếmTạmVắngTheoCMNDToolStripMenuItem_Click);
             // 
             // tìmKiếmTạmVắngTheoĐịaChỉToolStripMenuItem
             // 
             this.tìmKiếmTạmVắngTheoĐịaChỉToolStripMenuItem.Name = "tìmKiếmTạmVắngTheoĐịaChỉToolStripMenuItem";
             this.tìmKiếmTạmVắngTheoĐịaChỉToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.tìmKiếmTạmVắngTheoĐịaChỉToolStripMenuItem.Text = "Tìm kiếm tạm vắng theo địa chỉ";
+            this.tìmKiếmTạmVắngTheoĐịaChỉToolStripMenuItem.Click += new System.EventHandler(this.tìmKiếmTạmVắngTheoĐịaChỉToolStripMenuItem_Click);
             // 
             // timKiếmTạmVắngTheoNgàyToolStripMenuItem
             // 
             this.timKiếmTạmVắngTheoNgàyToolStripMenuItem.Name = "timKiếmTạmVắngTheoNgàyToolStripMenuItem";
             this.timKiếmTạmVắngTheoNgàyToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.timKiếmTạmVắngTheoNgàyToolStripMenuItem.Text = "Tim kiếm tạm vắng theo ngày";
+            this.timKiếmTạmVắngTheoNgàyToolStripMenuItem.Click += new System.EventHandler(this.timKiếmTạmVắngTheoNgàyToolStripMenuItem_Click);
             // 
             // quảnLýToolStripMenuItem
             // 

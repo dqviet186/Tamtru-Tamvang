@@ -109,6 +109,36 @@
     <Compile Include="TT_SearchByPhone.Designer.cs">
       <DependentUpon>TT_SearchByPhone.cs</DependentUpon>
     </Compile>
+    <Compile Include="TV_ListByDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TV_ListByDate.Designer.cs">
+      <DependentUpon>TV_ListByDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TV_SearchByAddress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TV_SearchByAddress.Designer.cs">
+      <DependentUpon>TV_SearchByAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TV_SearchByIdNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TV_SearchByIdNumber.Designer.cs">
+      <DependentUpon>TV_SearchByIdNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TV_SearchByName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TV_SearchByName.Designer.cs">
+      <DependentUpon>TV_SearchByName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TV_SearchByPhone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TV_SearchByPhone.Designer.cs">
+      <DependentUpon>TV_SearchByPhone.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,6 +174,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TT_SearchByPhone.resx">
       <DependentUpon>TT_SearchByPhone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TV_ListByDate.resx">
+      <DependentUpon>TV_ListByDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TV_SearchByAddress.resx">
+      <DependentUpon>TV_SearchByAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TV_SearchByIdNumber.resx">
+      <DependentUpon>TV_SearchByIdNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TV_SearchByName.resx">
+      <DependentUpon>TV_SearchByName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TV_SearchByPhone.resx">
+      <DependentUpon>TV_SearchByPhone.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\DataSources\TTTVService.TranferRecord.datasource" />

@@ -21,38 +21,11 @@ using WindowsFormsClient.ServiceReference1;
 
 namespace WindowsFormsClient
 {
-    public partial class TT_SearchByIdNumber : Form
+    public partial class TV_ListByDate : Form
     {
-        public TT_SearchByIdNumber()
+        public TV_ListByDate()
         {
             InitializeComponent();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string txtSearch = textBox2.Text.Trim();
-                DataSet myDs = new DataSet();
-                if (txtSearch == "")
-                {
-                    MessageBox.Show("Vui lòng nhập thông tin cần tìm kiếm");
-                    textBox2.Focus();
-                }
-                else
-                {
-                    myDs = dataTTTV(txtSearch, "TT");
-                    dataGridView1.DataSource = myDs.Tables[0].DefaultView;
-                }
-            }
-            catch (FaultException exp)
-            {
-                MessageBox.Show(exp.Code.Name + ": " + exp.Message.ToString(), exp.GetType().ToString());
-            }
-            catch (Exception exp)//bat loi o code rieng phia client
-            {
-                MessageBox.Show(exp.Message.ToString(), exp.GetType().ToString());
-            }
         }
 
         // tao dataset
@@ -79,12 +52,12 @@ namespace WindowsFormsClient
             return ds;
         }
 
-        public DataSet dataTTTV(string IdNumber, string type)
+        public DataSet dataTTTV(string Address, DateTime FromDate, DateTime ToDate, string type)
         {
             DataSet ds = new DataSet();
 
             ServiceReference1.pisClient proxy = new ServiceReference1.pisClient();
-            TTTVService.TranferRecord[] result = proxy.FindInfoByIdNumber(IdNumber, type);
+            TTTVService.TranferRecord[] result = proxy.ListPersonByDate(Address, FromDate, ToDate, type);
             ds = CreateData();
             DataRow dr;
             for (int i = 0; i < result.Length; i++)
@@ -110,6 +83,29 @@ namespace WindowsFormsClient
                 ds.Tables["tamtrutamvang"].Rows.Add(dr);
             }
             return ds;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string address = textBox1.Text;
+                DateTime fromDate = dateTimePicker1.Value;
+                DateTime toDate = dateTimePicker2.Value;
+                DataSet myDs = new DataSet();
+
+                myDs = dataTTTV(address, fromDate, toDate, "TV");
+                dataGridView1.DataSource = myDs.Tables[0].DefaultView;
+
+            }
+            catch (FaultException exp)
+            {
+                MessageBox.Show(exp.Code.Name + ": " + exp.Message.ToString(), exp.GetType().ToString());
+            }
+            catch (Exception exp)//bat loi o code rieng phia client
+            {
+                MessageBox.Show(exp.Message.ToString(), exp.GetType().ToString());
+            }
         }
     }
 }

@@ -20,3 +20,8 @@ G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsCli
 G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsClient\obj\x86\Debug\WindowsFormsClient.TT_SearchByAddress.resources
 G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsClient\obj\x86\Debug\WindowsFormsClient.TT_ListByDate.resources
 G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsClient\obj\x86\Debug\WindowsFormsClient.TT_ReportOccupationByAddress.resources
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsClient\obj\x86\Debug\WindowsFormsClient.TV_SearchByName.resources
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsClient\obj\x86\Debug\WindowsFormsClient.TV_SearchByPhone.resources
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsClient\obj\x86\Debug\WindowsFormsClient.TV_SearchByIdNumber.resources
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsClient\obj\x86\Debug\WindowsFormsClient.TV_SearchByAddress.resources
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsClient\obj\x86\Debug\WindowsFormsClient.TV_ListByDate.resources

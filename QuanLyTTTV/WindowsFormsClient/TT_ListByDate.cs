@@ -91,7 +91,7 @@ namespace WindowsFormsClient
                 dr["FullName"] = result[i].FullName;
                 dr["PhoneNumber"] = result[i].PhoneNumber;
                 dr["Email"] = result[i].Email;
-                dr["Birthday"] = result[i].Birthday;
+                dr["Birthday"] = result[i].Birthday.ToString("dd/MM/yyyy");
                 dr["Sex"] = result[i].Sex;
                 dr["OriginalAddress"] = result[i].OriginalAddress;
                 dr["IDNumber"] = result[i].IDNumber;

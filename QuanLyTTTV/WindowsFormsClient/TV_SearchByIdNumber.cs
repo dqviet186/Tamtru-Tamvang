@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+
 // require class database
 using System.Data.Sql;
 using System.Data.SqlClient;
@@ -21,38 +22,11 @@ using WindowsFormsClient.ServiceReference1;
 
 namespace WindowsFormsClient
 {
-    public partial class TT_SearchByIdNumber : Form
+    public partial class TV_SearchByIdNumber : Form
     {
-        public TT_SearchByIdNumber()
+        public TV_SearchByIdNumber()
         {
             InitializeComponent();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string txtSearch = textBox2.Text.Trim();
-                DataSet myDs = new DataSet();
-                if (txtSearch == "")
-                {
-                    MessageBox.Show("Vui lòng nhập thông tin cần tìm kiếm");
-                    textBox2.Focus();
-                }
-                else
-                {
-                    myDs = dataTTTV(txtSearch, "TT");
-                    dataGridView1.DataSource = myDs.Tables[0].DefaultView;
-                }
-            }
-            catch (FaultException exp)
-            {
-                MessageBox.Show(exp.Code.Name + ": " + exp.Message.ToString(), exp.GetType().ToString());
-            }
-            catch (Exception exp)//bat loi o code rieng phia client
-            {
-                MessageBox.Show(exp.Message.ToString(), exp.GetType().ToString());
-            }
         }
 
         // tao dataset
@@ -110,6 +84,33 @@ namespace WindowsFormsClient
                 ds.Tables["tamtrutamvang"].Rows.Add(dr);
             }
             return ds;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string txtSearch = textBox2.Text.Trim();
+                DataSet myDs = new DataSet();
+                if (txtSearch == "")
+                {
+                    MessageBox.Show("Vui lòng nhập thông tin cần tìm kiếm");
+                    textBox2.Focus();
+                }
+                else
+                {
+                    myDs = dataTTTV(txtSearch, "TV");
+                    dataGridView1.DataSource = myDs.Tables[0].DefaultView;
+                }
+            }
+            catch (FaultException exp)
+            {
+                MessageBox.Show(exp.Code.Name + ": " + exp.Message.ToString(), exp.GetType().ToString());
+            }
+            catch (Exception exp)//bat loi o code rieng phia client
+            {
+                MessageBox.Show(exp.Message.ToString(), exp.GetType().ToString());
+            }
         }
     }
 }
