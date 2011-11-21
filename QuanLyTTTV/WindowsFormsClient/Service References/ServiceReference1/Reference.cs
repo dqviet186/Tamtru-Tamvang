@@ -104,6 +104,38 @@ namespace WindowsFormsClient.ServiceReference1 {
         System.IAsyncResult BeginLoadData(System.AsyncCallback callback, object asyncState);
         
         TTTVService.TranferRecord[] EndLoadData(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/Login", ReplyAction="http://www.tamtrutamvang.com/pis/LoginResponse")]
+        int Login(string username, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://www.tamtrutamvang.com/pis/Login", ReplyAction="http://www.tamtrutamvang.com/pis/LoginResponse")]
+        System.IAsyncResult BeginLogin(string username, string password, System.AsyncCallback callback, object asyncState);
+        
+        int EndLogin(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://www.tamtrutamvang.com/pis/InsertInfomation")]
+        void InsertInfomation(TTTVService.TranferRecord data);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, AsyncPattern=true, Action="http://www.tamtrutamvang.com/pis/InsertInfomation")]
+        System.IAsyncResult BeginInsertInfomation(TTTVService.TranferRecord data, System.AsyncCallback callback, object asyncState);
+        
+        void EndInsertInfomation(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://www.tamtrutamvang.com/pis/UpdatInformation")]
+        void UpdatInformation(int Id, TTTVService.TranferRecord data);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, AsyncPattern=true, Action="http://www.tamtrutamvang.com/pis/UpdatInformation")]
+        System.IAsyncResult BeginUpdatInformation(int Id, TTTVService.TranferRecord data, System.AsyncCallback callback, object asyncState);
+        
+        void EndUpdatInformation(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://www.tamtrutamvang.com/pis/DeleteInformation")]
+        void DeleteInformation(int Id);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, AsyncPattern=true, Action="http://www.tamtrutamvang.com/pis/DeleteInformation")]
+        System.IAsyncResult BeginDeleteInformation(int Id, System.AsyncCallback callback, object asyncState);
+        
+        void EndDeleteInformation(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -302,6 +334,25 @@ namespace WindowsFormsClient.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class LoginCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public LoginCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public int Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class pisClient : System.ServiceModel.ClientBase<WindowsFormsClient.ServiceReference1.pis>, WindowsFormsClient.ServiceReference1.pis {
         
         private BeginOperationDelegate onBeginGetAuthorInfoDelegate;
@@ -364,6 +415,30 @@ namespace WindowsFormsClient.ServiceReference1 {
         
         private System.Threading.SendOrPostCallback onLoadDataCompletedDelegate;
         
+        private BeginOperationDelegate onBeginLoginDelegate;
+        
+        private EndOperationDelegate onEndLoginDelegate;
+        
+        private System.Threading.SendOrPostCallback onLoginCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginInsertInfomationDelegate;
+        
+        private EndOperationDelegate onEndInsertInfomationDelegate;
+        
+        private System.Threading.SendOrPostCallback onInsertInfomationCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginUpdatInformationDelegate;
+        
+        private EndOperationDelegate onEndUpdatInformationDelegate;
+        
+        private System.Threading.SendOrPostCallback onUpdatInformationCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginDeleteInformationDelegate;
+        
+        private EndOperationDelegate onEndDeleteInformationDelegate;
+        
+        private System.Threading.SendOrPostCallback onDeleteInformationCompletedDelegate;
+        
         public pisClient() {
         }
         
@@ -402,6 +477,14 @@ namespace WindowsFormsClient.ServiceReference1 {
         public event System.EventHandler<CountSexByAddressCompletedEventArgs> CountSexByAddressCompleted;
         
         public event System.EventHandler<LoadDataCompletedEventArgs> LoadDataCompleted;
+        
+        public event System.EventHandler<LoginCompletedEventArgs> LoginCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> InsertInfomationCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> UpdatInformationCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> DeleteInformationCompleted;
         
         public string GetAuthorInfo() {
             return base.Channel.GetAuthorInfo();
@@ -919,6 +1002,207 @@ namespace WindowsFormsClient.ServiceReference1 {
                 this.onLoadDataCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnLoadDataCompleted);
             }
             base.InvokeAsync(this.onBeginLoadDataDelegate, null, this.onEndLoadDataDelegate, this.onLoadDataCompletedDelegate, userState);
+        }
+        
+        public int Login(string username, string password) {
+            return base.Channel.Login(username, password);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginLogin(string username, string password, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginLogin(username, password, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public int EndLogin(System.IAsyncResult result) {
+            return base.Channel.EndLogin(result);
+        }
+        
+        private System.IAsyncResult OnBeginLogin(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string username = ((string)(inValues[0]));
+            string password = ((string)(inValues[1]));
+            return this.BeginLogin(username, password, callback, asyncState);
+        }
+        
+        private object[] OnEndLogin(System.IAsyncResult result) {
+            int retVal = this.EndLogin(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnLoginCompleted(object state) {
+            if ((this.LoginCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.LoginCompleted(this, new LoginCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void LoginAsync(string username, string password) {
+            this.LoginAsync(username, password, null);
+        }
+        
+        public void LoginAsync(string username, string password, object userState) {
+            if ((this.onBeginLoginDelegate == null)) {
+                this.onBeginLoginDelegate = new BeginOperationDelegate(this.OnBeginLogin);
+            }
+            if ((this.onEndLoginDelegate == null)) {
+                this.onEndLoginDelegate = new EndOperationDelegate(this.OnEndLogin);
+            }
+            if ((this.onLoginCompletedDelegate == null)) {
+                this.onLoginCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnLoginCompleted);
+            }
+            base.InvokeAsync(this.onBeginLoginDelegate, new object[] {
+                        username,
+                        password}, this.onEndLoginDelegate, this.onLoginCompletedDelegate, userState);
+        }
+        
+        public void InsertInfomation(TTTVService.TranferRecord data) {
+            base.Channel.InsertInfomation(data);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginInsertInfomation(TTTVService.TranferRecord data, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginInsertInfomation(data, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void EndInsertInfomation(System.IAsyncResult result) {
+            base.Channel.EndInsertInfomation(result);
+        }
+        
+        private System.IAsyncResult OnBeginInsertInfomation(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            TTTVService.TranferRecord data = ((TTTVService.TranferRecord)(inValues[0]));
+            return this.BeginInsertInfomation(data, callback, asyncState);
+        }
+        
+        private object[] OnEndInsertInfomation(System.IAsyncResult result) {
+            this.EndInsertInfomation(result);
+            return null;
+        }
+        
+        private void OnInsertInfomationCompleted(object state) {
+            if ((this.InsertInfomationCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.InsertInfomationCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void InsertInfomationAsync(TTTVService.TranferRecord data) {
+            this.InsertInfomationAsync(data, null);
+        }
+        
+        public void InsertInfomationAsync(TTTVService.TranferRecord data, object userState) {
+            if ((this.onBeginInsertInfomationDelegate == null)) {
+                this.onBeginInsertInfomationDelegate = new BeginOperationDelegate(this.OnBeginInsertInfomation);
+            }
+            if ((this.onEndInsertInfomationDelegate == null)) {
+                this.onEndInsertInfomationDelegate = new EndOperationDelegate(this.OnEndInsertInfomation);
+            }
+            if ((this.onInsertInfomationCompletedDelegate == null)) {
+                this.onInsertInfomationCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnInsertInfomationCompleted);
+            }
+            base.InvokeAsync(this.onBeginInsertInfomationDelegate, new object[] {
+                        data}, this.onEndInsertInfomationDelegate, this.onInsertInfomationCompletedDelegate, userState);
+        }
+        
+        public void UpdatInformation(int Id, TTTVService.TranferRecord data) {
+            base.Channel.UpdatInformation(Id, data);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginUpdatInformation(int Id, TTTVService.TranferRecord data, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginUpdatInformation(Id, data, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void EndUpdatInformation(System.IAsyncResult result) {
+            base.Channel.EndUpdatInformation(result);
+        }
+        
+        private System.IAsyncResult OnBeginUpdatInformation(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int Id = ((int)(inValues[0]));
+            TTTVService.TranferRecord data = ((TTTVService.TranferRecord)(inValues[1]));
+            return this.BeginUpdatInformation(Id, data, callback, asyncState);
+        }
+        
+        private object[] OnEndUpdatInformation(System.IAsyncResult result) {
+            this.EndUpdatInformation(result);
+            return null;
+        }
+        
+        private void OnUpdatInformationCompleted(object state) {
+            if ((this.UpdatInformationCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.UpdatInformationCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void UpdatInformationAsync(int Id, TTTVService.TranferRecord data) {
+            this.UpdatInformationAsync(Id, data, null);
+        }
+        
+        public void UpdatInformationAsync(int Id, TTTVService.TranferRecord data, object userState) {
+            if ((this.onBeginUpdatInformationDelegate == null)) {
+                this.onBeginUpdatInformationDelegate = new BeginOperationDelegate(this.OnBeginUpdatInformation);
+            }
+            if ((this.onEndUpdatInformationDelegate == null)) {
+                this.onEndUpdatInformationDelegate = new EndOperationDelegate(this.OnEndUpdatInformation);
+            }
+            if ((this.onUpdatInformationCompletedDelegate == null)) {
+                this.onUpdatInformationCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnUpdatInformationCompleted);
+            }
+            base.InvokeAsync(this.onBeginUpdatInformationDelegate, new object[] {
+                        Id,
+                        data}, this.onEndUpdatInformationDelegate, this.onUpdatInformationCompletedDelegate, userState);
+        }
+        
+        public void DeleteInformation(int Id) {
+            base.Channel.DeleteInformation(Id);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginDeleteInformation(int Id, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginDeleteInformation(Id, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void EndDeleteInformation(System.IAsyncResult result) {
+            base.Channel.EndDeleteInformation(result);
+        }
+        
+        private System.IAsyncResult OnBeginDeleteInformation(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int Id = ((int)(inValues[0]));
+            return this.BeginDeleteInformation(Id, callback, asyncState);
+        }
+        
+        private object[] OnEndDeleteInformation(System.IAsyncResult result) {
+            this.EndDeleteInformation(result);
+            return null;
+        }
+        
+        private void OnDeleteInformationCompleted(object state) {
+            if ((this.DeleteInformationCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.DeleteInformationCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void DeleteInformationAsync(int Id) {
+            this.DeleteInformationAsync(Id, null);
+        }
+        
+        public void DeleteInformationAsync(int Id, object userState) {
+            if ((this.onBeginDeleteInformationDelegate == null)) {
+                this.onBeginDeleteInformationDelegate = new BeginOperationDelegate(this.OnBeginDeleteInformation);
+            }
+            if ((this.onEndDeleteInformationDelegate == null)) {
+                this.onEndDeleteInformationDelegate = new EndOperationDelegate(this.OnEndDeleteInformation);
+            }
+            if ((this.onDeleteInformationCompletedDelegate == null)) {
+                this.onDeleteInformationCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnDeleteInformationCompleted);
+            }
+            base.InvokeAsync(this.onBeginDeleteInformationDelegate, new object[] {
+                        Id}, this.onEndDeleteInformationDelegate, this.onDeleteInformationCompletedDelegate, userState);
         }
     }
 }

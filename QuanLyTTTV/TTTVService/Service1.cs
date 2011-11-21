@@ -18,6 +18,12 @@ namespace TTTVService
     {
         TranferRecord[] data;
 
+        private System.Data.SqlClient.SqlConnection myConnection;
+        private System.Data.DataSet myDataSet;
+        private System.Data.SqlClient.SqlCommand myCommand;
+        private System.Data.SqlClient.SqlDataAdapter DataAdapter;
+        private DataTable dataTable;
+
         public string GetAuthor()
         {
             string nhom = "Nhóm: 10";
@@ -480,19 +486,192 @@ namespace TTTVService
             }
         }
 
-        public void InsertData()
+        public int Login(string username, string password)
         {
-            
+            try
+            {
+                if (username == "" || password == "")
+                {
+                    return 0;
+                }
+
+                string query = "SELECT * FROM users WHERE username = '" + username + "' AND password = '" + password + "'";
+
+
+                SqlConnection cn = new SqlConnection();
+                cn.ConnectionString = "Data Source=mavi-PC;Initial Catalog=cnweb;Integrated Security=True";
+                cn.Open();
+
+                SqlCommand sql = new SqlCommand(query, cn);
+                SqlDataAdapter adt = new SqlDataAdapter(sql);
+                DataSet ds = new DataSet();
+                adt.Fill(ds);
+                int rows = ds.Tables[0].Rows.Count;              
+
+                cn.Close();
+
+                if (rows > 0)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (PisNotFoundException exp)
+            {
+                TrackedFault tf = new TrackedFault(
+                    Guid.NewGuid(),
+                    exp.Message,
+                    DateTime.Now);
+
+                throw new FaultException<TrackedFault>(
+                    tf,
+                    new FaultReason("PisNotFoundException"),
+                    FaultCode.CreateReceiverFaultCode(new FaultCode("Login")));
+            }
+            catch (Exception exp)
+            {
+                FaultReasonText reason = new FaultReasonText(exp.Message);
+                throw new FaultException(new FaultReason(reason), FaultCode.CreateReceiverFaultCode(new FaultCode("Login")));
+            }
         }
 
-        public void UpdateData(int Id)
+        public void InsertData(TranferRecord data)
         {
-            
+            try
+            {
+                string connectionString = "Data Source=mavi-PC;Initial Catalog=cnweb;Integrated Security=True";
+                myConnection = new SqlConnection(connectionString);
+
+                // Open connection
+                myConnection.Open();
+
+                string updateCement = "INSERT INTO tamtrutamvang (FullName,PhoneNumber,Email,Birthday,Sex,OriginalAddress,IDNumber,Occupation,CurrentAddress,FromDate,ToDate,Reason,Description,Type) VALUES (@FullName,@PhoneNumber,@Email,@Birthday,@Sex,@OriginalAddress,@IDNumber,@Occupation,@CurrentAddress,@FromDate,@ToDate,@Reason,@Description,@Type)";
+                SqlCommand cmd = new SqlCommand(updateCement, myConnection);
+                cmd.Parameters.AddWithValue("@FullName", data.FullName);
+                cmd.Parameters.AddWithValue("@PhoneNumber", data.PhoneNumber);
+                cmd.Parameters.AddWithValue("@Email", data.Email);
+                cmd.Parameters.AddWithValue("@Birthday", data.Birthday.ToString("yyyy-MM-dd"));
+                cmd.Parameters.AddWithValue("@Sex", data.Sex);
+                cmd.Parameters.AddWithValue("@OriginalAddress", data.OriginalAddress);
+                cmd.Parameters.AddWithValue("@IDNumber", data.IDNumber);
+                cmd.Parameters.AddWithValue("@Occupation", data.Occupation);
+                cmd.Parameters.AddWithValue("@CurrentAddress", data.CurrentAddress);
+                cmd.Parameters.AddWithValue("@FromDate", data.FromDate.ToString("yyyy-MM-dd"));
+                cmd.Parameters.AddWithValue("@ToDate", data.ToDate.ToString("yyyy-MM-dd"));
+                cmd.Parameters.AddWithValue("@Reason", data.Reason);
+                cmd.Parameters.AddWithValue("@Description", data.Description);
+                cmd.Parameters.AddWithValue("@Type", data.Type);
+                cmd.ExecuteNonQuery();
+
+                // close connection
+                myConnection.Close();
+            }
+            catch (PisNotFoundException exp)
+            {
+                TrackedFault tf = new TrackedFault(
+                    Guid.NewGuid(),
+                    exp.Message,
+                    DateTime.Now);
+
+                throw new FaultException<TrackedFault>(
+                    tf,
+                    new FaultReason("PisNotFoundException"),
+                    FaultCode.CreateReceiverFaultCode(new FaultCode("InsertInfomation")));
+            }
+            catch (Exception exp)
+            {
+                FaultReasonText reason = new FaultReasonText(exp.Message);
+                throw new FaultException(new FaultReason(reason), FaultCode.CreateReceiverFaultCode(new FaultCode("InsertInfomation")));
+            }
+        }
+
+        public void UpdateData(int Id, TranferRecord data)
+        {
+            try
+            {
+                string connectionString = "Data Source=mavi-PC;Initial Catalog=cnweb;Integrated Security=True";
+                myConnection = new SqlConnection(connectionString);
+
+                // Open connection
+                myConnection.Open();
+
+                string updateCement = "UPDATE tamtrutamvang SET FullName=@FullName,PhoneNumber=@PhoneNumber,Email=@Email,Birthday=@Birthday,Sex=@Sex,OriginalAddress=@OriginalAddress,IDNumber=@IDNumber,Occupation=@Occupation,CurrentAddress=@CurrentAddress,FromDate=@FromDate,ToDate=@ToDate,Reason=@Reason,Description=@Description,Type=@Type WHERE Id = " + Id;
+                SqlCommand cmd = new SqlCommand(updateCement, myConnection);
+                cmd.Parameters.AddWithValue("@FullName", data.FullName);
+                cmd.Parameters.AddWithValue("@PhoneNumber", data.PhoneNumber);
+                cmd.Parameters.AddWithValue("@Email", data.Email);
+                cmd.Parameters.AddWithValue("@Birthday", data.Birthday.ToString("yyyy-MM-dd"));
+                cmd.Parameters.AddWithValue("@Sex", data.Sex);
+                cmd.Parameters.AddWithValue("@OriginalAddress", data.OriginalAddress);
+                cmd.Parameters.AddWithValue("@IDNumber", data.IDNumber);
+                cmd.Parameters.AddWithValue("@Occupation", data.Occupation);
+                cmd.Parameters.AddWithValue("@CurrentAddress", data.CurrentAddress);
+                cmd.Parameters.AddWithValue("@FromDate", data.FromDate.ToString("yyyy-MM-dd"));
+                cmd.Parameters.AddWithValue("@ToDate", data.ToDate.ToString("yyyy-MM-dd"));
+                cmd.Parameters.AddWithValue("@Reason", data.Reason);
+                cmd.Parameters.AddWithValue("@Description", data.Description);
+                cmd.Parameters.AddWithValue("@Type", data.Type);
+                cmd.ExecuteNonQuery();
+
+                // close connection
+                myConnection.Close();
+            }
+            catch (PisNotFoundException exp)
+            {
+                TrackedFault tf = new TrackedFault(
+                    Guid.NewGuid(),
+                    exp.Message,
+                    DateTime.Now);
+
+                throw new FaultException<TrackedFault>(
+                    tf,
+                    new FaultReason("PisNotFoundException"),
+                    FaultCode.CreateReceiverFaultCode(new FaultCode("UpdatInformation")));
+            }
+            catch (Exception exp)
+            {
+                FaultReasonText reason = new FaultReasonText(exp.Message);
+                throw new FaultException(new FaultReason(reason), FaultCode.CreateReceiverFaultCode(new FaultCode("UpdatInformation")));
+            }
         }
 
         public void DeleteData(int Id)
         {
+            try
+            {
+                string connectionString = "Data Source=mavi-PC;Initial Catalog=cnweb;Integrated Security=True";
+                myConnection = new SqlConnection(connectionString);
 
+                // Open connection
+                myConnection.Open();
+
+                string updateCement = "DELETE tamtrutamvang WHERE Id = " + Id;
+                SqlCommand cmd = new SqlCommand(updateCement, myConnection);
+                cmd.ExecuteNonQuery();
+
+                // close connection
+                myConnection.Close();
+            }
+            catch (PisNotFoundException exp)
+            {
+                TrackedFault tf = new TrackedFault(
+                    Guid.NewGuid(),
+                    exp.Message,
+                    DateTime.Now);
+
+                throw new FaultException<TrackedFault>(
+                    tf,
+                    new FaultReason("PisNotFoundException"),
+                    FaultCode.CreateReceiverFaultCode(new FaultCode("DeleteInformation")));
+            }
+            catch (Exception exp)
+            {
+                FaultReasonText reason = new FaultReasonText(exp.Message);
+                throw new FaultException(new FaultReason(reason), FaultCode.CreateReceiverFaultCode(new FaultCode("DeleteInformation")));
+            }
         }
 
         public TranferRecord[] GetData()

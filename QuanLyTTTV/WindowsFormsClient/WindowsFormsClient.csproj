@@ -54,6 +54,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\ServiceReference1\Reference.cs">
@@ -66,6 +72,12 @@
     </Compile>
     <Compile Include="FormNhom.Designer.cs">
       <DependentUpon>FormNhom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Thongtintamtru.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Thongtintamtru.Designer.cs">
+      <DependentUpon>Thongtintamtru.cs</DependentUpon>
     </Compile>
     <Compile Include="TT_ListByDate.cs">
       <SubType>Form</SubType>
@@ -142,6 +154,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -153,6 +168,9 @@
     </Compile>
     <EmbeddedResource Include="FormNhom.resx">
       <DependentUpon>FormNhom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Thongtintamtru.resx">
+      <DependentUpon>Thongtintamtru.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TT_ListByDate.resx">
       <DependentUpon>TT_ListByDate.cs</DependentUpon>

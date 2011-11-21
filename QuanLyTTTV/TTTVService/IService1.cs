@@ -62,15 +62,17 @@ namespace TTTVService
         [FaultContract(typeof(TrackedFault))]
         TranferRecord[] GetData();
 
-        //[OperationContract(Name="InsertInfomation", IsOneWay=true)]
-        //void InsertData();
+        [OperationContract(Name = "Login")]
+        int Login(string username, string password);
 
-        //[OperationContract(Name = "UpdatInformation", IsOneWay = true)]
-        //void UpdateData(int Id);
+        [OperationContract(Name="InsertInfomation", IsOneWay=true)]
+        void InsertData(TranferRecord data);
 
-        //[OperationContract(Name = "DeleteInformation", IsOneWay = true)]
-        //void DeleteData(int Id);
-        // For Insert, update, delete data
+        [OperationContract(Name = "UpdatInformation", IsOneWay = true)]
+        void UpdateData(int Id, TranferRecord data);
+
+        [OperationContract(Name = "DeleteInformation", IsOneWay = true)]
+        void DeleteData(int Id);
     }
 
     [DataContract]
@@ -123,5 +125,15 @@ namespace TTTVService
 
         [DataMember]
         public string Type;
+    }
+
+    [DataContract]
+    public class UserRecord
+    {
+        [DataMember]
+        public string username;
+
+        [DataMember]
+        public string password;
     }
 }

@@ -97,6 +97,21 @@
   <wsdl:message name="pis_LoadData_TrackedFaultFault_FaultMessage">
     <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/TTTVService" name="detail" element="q10:TrackedFault" />
   </wsdl:message>
+  <wsdl:message name="pis_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="pis_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="pis_InsertInfomation_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertInfomation" />
+  </wsdl:message>
+  <wsdl:message name="pis_UpdatInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatInformation" />
+  </wsdl:message>
+  <wsdl:message name="pis_DeleteInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteInformation" />
+  </wsdl:message>
   <wsdl:portType name="pis">
     <wsdl:operation name="GetAuthorInfo">
       <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/GetAuthorInfo" message="tns:pis_GetAuthorInfo_InputMessage" />
@@ -147,6 +162,19 @@
       <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/LoadData" message="tns:pis_LoadData_InputMessage" />
       <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/LoadDataResponse" message="tns:pis_LoadData_OutputMessage" />
       <wsdl:fault wsaw:Action="http://www.tamtrutamvang.com/pis/LoadDataTrackedFaultFault" name="TrackedFaultFault" message="tns:pis_LoadData_TrackedFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/Login" message="tns:pis_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/LoginResponse" message="tns:pis_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertInfomation">
+      <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/InsertInfomation" message="tns:pis_InsertInfomation_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatInformation">
+      <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/UpdatInformation" message="tns:pis_UpdatInformation_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInformation">
+      <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/DeleteInformation" message="tns:pis_DeleteInformation_InputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>
