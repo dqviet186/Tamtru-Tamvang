@@ -5,6 +5,7 @@
       <xsd:import namespace="http://www.tamtrutamvang.com/" />
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/TTTVService" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="pis_GetAuthorInfo_InputMessage">
@@ -43,6 +44,15 @@
   <wsdl:message name="pis_FindInfoByIdNumber_TrackedFaultFault_FaultMessage">
     <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/TTTVService" name="detail" element="q4:TrackedFault" />
   </wsdl:message>
+  <wsdl:message name="pis_FindInfoByEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindInfoByEmail" />
+  </wsdl:message>
+  <wsdl:message name="pis_FindInfoByEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindInfoByEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="pis_FindInfoByEmail_TrackedFaultFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/TTTVService" name="detail" element="q5:TrackedFault" />
+  </wsdl:message>
   <wsdl:message name="pis_ListPersonBySex_InputMessage">
     <wsdl:part name="parameters" element="tns:ListPersonBySex" />
   </wsdl:message>
@@ -50,7 +60,7 @@
     <wsdl:part name="parameters" element="tns:ListPersonBySexResponse" />
   </wsdl:message>
   <wsdl:message name="pis_ListPersonBySex_TrackedFaultFault_FaultMessage">
-    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/TTTVService" name="detail" element="q5:TrackedFault" />
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/TTTVService" name="detail" element="q6:TrackedFault" />
   </wsdl:message>
   <wsdl:message name="pis_ListPersonByAddress_InputMessage">
     <wsdl:part name="parameters" element="tns:ListPersonByAddress" />
@@ -59,7 +69,7 @@
     <wsdl:part name="parameters" element="tns:ListPersonByAddressResponse" />
   </wsdl:message>
   <wsdl:message name="pis_ListPersonByAddress_TrackedFaultFault_FaultMessage">
-    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/TTTVService" name="detail" element="q6:TrackedFault" />
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/TTTVService" name="detail" element="q7:TrackedFault" />
   </wsdl:message>
   <wsdl:message name="pis_ListPersonByDate_InputMessage">
     <wsdl:part name="parameters" element="tns:ListPersonByDate" />
@@ -68,7 +78,7 @@
     <wsdl:part name="parameters" element="tns:ListPersonByDateResponse" />
   </wsdl:message>
   <wsdl:message name="pis_ListPersonByDate_TrackedFaultFault_FaultMessage">
-    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/TTTVService" name="detail" element="q7:TrackedFault" />
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/TTTVService" name="detail" element="q8:TrackedFault" />
   </wsdl:message>
   <wsdl:message name="pis_ListOccupationByAddress_InputMessage">
     <wsdl:part name="parameters" element="tns:ListOccupationByAddress" />
@@ -77,7 +87,7 @@
     <wsdl:part name="parameters" element="tns:ListOccupationByAddressResponse" />
   </wsdl:message>
   <wsdl:message name="pis_ListOccupationByAddress_TrackedFaultFault_FaultMessage">
-    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/TTTVService" name="detail" element="q8:TrackedFault" />
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/TTTVService" name="detail" element="q9:TrackedFault" />
   </wsdl:message>
   <wsdl:message name="pis_CountSexByAddress_InputMessage">
     <wsdl:part name="parameters" element="tns:CountSexByAddress" />
@@ -86,7 +96,7 @@
     <wsdl:part name="parameters" element="tns:CountSexByAddressResponse" />
   </wsdl:message>
   <wsdl:message name="pis_CountSexByAddress_TrackedFaultFault_FaultMessage">
-    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/TTTVService" name="detail" element="q9:TrackedFault" />
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/TTTVService" name="detail" element="q10:TrackedFault" />
   </wsdl:message>
   <wsdl:message name="pis_LoadData_InputMessage">
     <wsdl:part name="parameters" element="tns:LoadData" />
@@ -95,13 +105,19 @@
     <wsdl:part name="parameters" element="tns:LoadDataResponse" />
   </wsdl:message>
   <wsdl:message name="pis_LoadData_TrackedFaultFault_FaultMessage">
-    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/TTTVService" name="detail" element="q10:TrackedFault" />
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/TTTVService" name="detail" element="q11:TrackedFault" />
   </wsdl:message>
   <wsdl:message name="pis_Login_InputMessage">
     <wsdl:part name="parameters" element="tns:Login" />
   </wsdl:message>
   <wsdl:message name="pis_Login_OutputMessage">
     <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="pis_Login_TrackedFaultFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/TTTVService" name="detail" element="q12:TrackedFault" />
+  </wsdl:message>
+  <wsdl:message name="pis_ImportDataFromFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:ImportDataFromFile" />
   </wsdl:message>
   <wsdl:message name="pis_InsertInfomation_InputMessage">
     <wsdl:part name="parameters" element="tns:InsertInfomation" />
@@ -132,6 +148,11 @@
       <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/FindInfoByIdNumber" message="tns:pis_FindInfoByIdNumber_InputMessage" />
       <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/FindInfoByIdNumberResponse" message="tns:pis_FindInfoByIdNumber_OutputMessage" />
       <wsdl:fault wsaw:Action="http://www.tamtrutamvang.com/pis/FindInfoByIdNumberTrackedFaultFault" name="TrackedFaultFault" message="tns:pis_FindInfoByIdNumber_TrackedFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindInfoByEmail">
+      <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/FindInfoByEmail" message="tns:pis_FindInfoByEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/FindInfoByEmailResponse" message="tns:pis_FindInfoByEmail_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.tamtrutamvang.com/pis/FindInfoByEmailTrackedFaultFault" name="TrackedFaultFault" message="tns:pis_FindInfoByEmail_TrackedFaultFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="ListPersonBySex">
       <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/ListPersonBySex" message="tns:pis_ListPersonBySex_InputMessage" />
@@ -166,6 +187,10 @@
     <wsdl:operation name="Login">
       <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/Login" message="tns:pis_Login_InputMessage" />
       <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/LoginResponse" message="tns:pis_Login_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.tamtrutamvang.com/pis/LoginTrackedFaultFault" name="TrackedFaultFault" message="tns:pis_Login_TrackedFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportDataFromFile">
+      <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/ImportDataFromFile" message="tns:pis_ImportDataFromFile_InputMessage" />
     </wsdl:operation>
     <wsdl:operation name="InsertInfomation">
       <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/InsertInfomation" message="tns:pis_InsertInfomation_InputMessage" />

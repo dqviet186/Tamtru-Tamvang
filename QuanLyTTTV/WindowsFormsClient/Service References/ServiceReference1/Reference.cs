@@ -51,6 +51,15 @@ namespace WindowsFormsClient.ServiceReference1 {
         
         TTTVService.TranferRecord[] EndFindInfoByIdNumber(System.IAsyncResult result);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/FindInfoByEmail", ReplyAction="http://www.tamtrutamvang.com/pis/FindInfoByEmailResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(TTTVService.TrackedFault), Action="http://www.tamtrutamvang.com/pis/FindInfoByEmailTrackedFaultFault", Name="TrackedFault", Namespace="http://schemas.datacontract.org/2004/07/TTTVService")]
+        TTTVService.TranferRecord[] FindInfoByEmail(string Email, string type);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://www.tamtrutamvang.com/pis/FindInfoByEmail", ReplyAction="http://www.tamtrutamvang.com/pis/FindInfoByEmailResponse")]
+        System.IAsyncResult BeginFindInfoByEmail(string Email, string type, System.AsyncCallback callback, object asyncState);
+        
+        TTTVService.TranferRecord[] EndFindInfoByEmail(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/ListPersonBySex", ReplyAction="http://www.tamtrutamvang.com/pis/ListPersonBySexResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(TTTVService.TrackedFault), Action="http://www.tamtrutamvang.com/pis/ListPersonBySexTrackedFaultFault", Name="TrackedFault", Namespace="http://schemas.datacontract.org/2004/07/TTTVService")]
         TTTVService.TranferRecord[] ListPersonBySex(string Address, string Sex, string type);
@@ -106,12 +115,21 @@ namespace WindowsFormsClient.ServiceReference1 {
         TTTVService.TranferRecord[] EndLoadData(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/Login", ReplyAction="http://www.tamtrutamvang.com/pis/LoginResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(TTTVService.TrackedFault), Action="http://www.tamtrutamvang.com/pis/LoginTrackedFaultFault", Name="TrackedFault", Namespace="http://schemas.datacontract.org/2004/07/TTTVService")]
         int Login(string username, string password);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://www.tamtrutamvang.com/pis/Login", ReplyAction="http://www.tamtrutamvang.com/pis/LoginResponse")]
         System.IAsyncResult BeginLogin(string username, string password, System.AsyncCallback callback, object asyncState);
         
         int EndLogin(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://www.tamtrutamvang.com/pis/ImportDataFromFile")]
+        void ImportDataFromFile(string[] file);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, AsyncPattern=true, Action="http://www.tamtrutamvang.com/pis/ImportDataFromFile")]
+        System.IAsyncResult BeginImportDataFromFile(string[] file, System.AsyncCallback callback, object asyncState);
+        
+        void EndImportDataFromFile(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://www.tamtrutamvang.com/pis/InsertInfomation")]
         void InsertInfomation(TTTVService.TranferRecord data);
@@ -206,6 +224,25 @@ namespace WindowsFormsClient.ServiceReference1 {
         private object[] results;
         
         public FindInfoByIdNumberCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TTTVService.TranferRecord[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TTTVService.TranferRecord[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class FindInfoByEmailCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public FindInfoByEmailCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -379,6 +416,12 @@ namespace WindowsFormsClient.ServiceReference1 {
         
         private System.Threading.SendOrPostCallback onFindInfoByIdNumberCompletedDelegate;
         
+        private BeginOperationDelegate onBeginFindInfoByEmailDelegate;
+        
+        private EndOperationDelegate onEndFindInfoByEmailDelegate;
+        
+        private System.Threading.SendOrPostCallback onFindInfoByEmailCompletedDelegate;
+        
         private BeginOperationDelegate onBeginListPersonBySexDelegate;
         
         private EndOperationDelegate onEndListPersonBySexDelegate;
@@ -420,6 +463,12 @@ namespace WindowsFormsClient.ServiceReference1 {
         private EndOperationDelegate onEndLoginDelegate;
         
         private System.Threading.SendOrPostCallback onLoginCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginImportDataFromFileDelegate;
+        
+        private EndOperationDelegate onEndImportDataFromFileDelegate;
+        
+        private System.Threading.SendOrPostCallback onImportDataFromFileCompletedDelegate;
         
         private BeginOperationDelegate onBeginInsertInfomationDelegate;
         
@@ -466,6 +515,8 @@ namespace WindowsFormsClient.ServiceReference1 {
         
         public event System.EventHandler<FindInfoByIdNumberCompletedEventArgs> FindInfoByIdNumberCompleted;
         
+        public event System.EventHandler<FindInfoByEmailCompletedEventArgs> FindInfoByEmailCompleted;
+        
         public event System.EventHandler<ListPersonBySexCompletedEventArgs> ListPersonBySexCompleted;
         
         public event System.EventHandler<ListPersonByAddressCompletedEventArgs> ListPersonByAddressCompleted;
@@ -479,6 +530,8 @@ namespace WindowsFormsClient.ServiceReference1 {
         public event System.EventHandler<LoadDataCompletedEventArgs> LoadDataCompleted;
         
         public event System.EventHandler<LoginCompletedEventArgs> LoginCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> ImportDataFromFileCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> InsertInfomationCompleted;
         
@@ -688,6 +741,58 @@ namespace WindowsFormsClient.ServiceReference1 {
             base.InvokeAsync(this.onBeginFindInfoByIdNumberDelegate, new object[] {
                         IdNumber,
                         type}, this.onEndFindInfoByIdNumberDelegate, this.onFindInfoByIdNumberCompletedDelegate, userState);
+        }
+        
+        public TTTVService.TranferRecord[] FindInfoByEmail(string Email, string type) {
+            return base.Channel.FindInfoByEmail(Email, type);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginFindInfoByEmail(string Email, string type, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginFindInfoByEmail(Email, type, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TTTVService.TranferRecord[] EndFindInfoByEmail(System.IAsyncResult result) {
+            return base.Channel.EndFindInfoByEmail(result);
+        }
+        
+        private System.IAsyncResult OnBeginFindInfoByEmail(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string Email = ((string)(inValues[0]));
+            string type = ((string)(inValues[1]));
+            return this.BeginFindInfoByEmail(Email, type, callback, asyncState);
+        }
+        
+        private object[] OnEndFindInfoByEmail(System.IAsyncResult result) {
+            TTTVService.TranferRecord[] retVal = this.EndFindInfoByEmail(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnFindInfoByEmailCompleted(object state) {
+            if ((this.FindInfoByEmailCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.FindInfoByEmailCompleted(this, new FindInfoByEmailCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void FindInfoByEmailAsync(string Email, string type) {
+            this.FindInfoByEmailAsync(Email, type, null);
+        }
+        
+        public void FindInfoByEmailAsync(string Email, string type, object userState) {
+            if ((this.onBeginFindInfoByEmailDelegate == null)) {
+                this.onBeginFindInfoByEmailDelegate = new BeginOperationDelegate(this.OnBeginFindInfoByEmail);
+            }
+            if ((this.onEndFindInfoByEmailDelegate == null)) {
+                this.onEndFindInfoByEmailDelegate = new EndOperationDelegate(this.OnEndFindInfoByEmail);
+            }
+            if ((this.onFindInfoByEmailCompletedDelegate == null)) {
+                this.onFindInfoByEmailCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnFindInfoByEmailCompleted);
+            }
+            base.InvokeAsync(this.onBeginFindInfoByEmailDelegate, new object[] {
+                        Email,
+                        type}, this.onEndFindInfoByEmailDelegate, this.onFindInfoByEmailCompletedDelegate, userState);
         }
         
         public TTTVService.TranferRecord[] ListPersonBySex(string Address, string Sex, string type) {
@@ -1054,6 +1159,55 @@ namespace WindowsFormsClient.ServiceReference1 {
             base.InvokeAsync(this.onBeginLoginDelegate, new object[] {
                         username,
                         password}, this.onEndLoginDelegate, this.onLoginCompletedDelegate, userState);
+        }
+        
+        public void ImportDataFromFile(string[] file) {
+            base.Channel.ImportDataFromFile(file);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginImportDataFromFile(string[] file, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginImportDataFromFile(file, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void EndImportDataFromFile(System.IAsyncResult result) {
+            base.Channel.EndImportDataFromFile(result);
+        }
+        
+        private System.IAsyncResult OnBeginImportDataFromFile(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string[] file = ((string[])(inValues[0]));
+            return this.BeginImportDataFromFile(file, callback, asyncState);
+        }
+        
+        private object[] OnEndImportDataFromFile(System.IAsyncResult result) {
+            this.EndImportDataFromFile(result);
+            return null;
+        }
+        
+        private void OnImportDataFromFileCompleted(object state) {
+            if ((this.ImportDataFromFileCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.ImportDataFromFileCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void ImportDataFromFileAsync(string[] file) {
+            this.ImportDataFromFileAsync(file, null);
+        }
+        
+        public void ImportDataFromFileAsync(string[] file, object userState) {
+            if ((this.onBeginImportDataFromFileDelegate == null)) {
+                this.onBeginImportDataFromFileDelegate = new BeginOperationDelegate(this.OnBeginImportDataFromFile);
+            }
+            if ((this.onEndImportDataFromFileDelegate == null)) {
+                this.onEndImportDataFromFileDelegate = new EndOperationDelegate(this.OnEndImportDataFromFile);
+            }
+            if ((this.onImportDataFromFileCompletedDelegate == null)) {
+                this.onImportDataFromFileCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnImportDataFromFileCompleted);
+            }
+            base.InvokeAsync(this.onBeginImportDataFromFileDelegate, new object[] {
+                        file}, this.onEndImportDataFromFileDelegate, this.onImportDataFromFileCompletedDelegate, userState);
         }
         
         public void InsertInfomation(TTTVService.TranferRecord data) {

@@ -219,6 +219,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Service References\ServiceReference1\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\ServiceReference1\service.wsdl" />
     <None Include="Service References\ServiceReference1\service.xsd">
       <SubType>Designer</SubType>

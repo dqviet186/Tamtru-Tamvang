@@ -32,6 +32,11 @@ namespace TTTVService
         [FaultContract(typeof(TrackedFault))]
         TranferRecord[] GetInfoByIdNumber(string IdNumber, string type);
 
+        // Find information by Email
+        [OperationContract(Name = "FindInfoByEmail")]
+        [FaultContract(typeof(TrackedFault))]
+        TranferRecord[] GetInfoByEmail(string Email, string type);
+
         // Find information by sex
         [OperationContract(Name="ListPersonBySex")]
         [FaultContract(typeof(TrackedFault))]
@@ -63,7 +68,11 @@ namespace TTTVService
         TranferRecord[] GetData();
 
         [OperationContract(Name = "Login")]
+        [FaultContract(typeof(TrackedFault))]
         int Login(string username, string password);
+
+        [OperationContract(Name = "ImportDataFromFile", IsOneWay = true)]
+        void ImportData(string[] file);
 
         [OperationContract(Name="InsertInfomation", IsOneWay=true)]
         void InsertData(TranferRecord data);
