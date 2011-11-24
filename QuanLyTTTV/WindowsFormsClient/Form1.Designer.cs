@@ -31,6 +31,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinNhómToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quảnLýThôngTinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýThôngTinTạmTrúToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tìmKiếmTheoTênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tìmKiếmTheoSốĐiệnThoạiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,7 +50,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.quảnLýThôngTinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +63,7 @@
             this.thoátToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1350, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(784, 24);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -82,6 +82,13 @@
             this.thôngTinNhómToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.thôngTinNhómToolStripMenuItem.Text = "Thông tin nhóm";
             this.thôngTinNhómToolStripMenuItem.Click += new System.EventHandler(this.thôngTinNhómToolStripMenuItem_Click);
+            // 
+            // quảnLýThôngTinToolStripMenuItem
+            // 
+            this.quảnLýThôngTinToolStripMenuItem.Name = "quảnLýThôngTinToolStripMenuItem";
+            this.quảnLýThôngTinToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.quảnLýThôngTinToolStripMenuItem.Text = "Quản lý thông tin";
+            this.quảnLýThôngTinToolStripMenuItem.Click += new System.EventHandler(this.quảnLýThôngTinToolStripMenuItem_Click);
             // 
             // quảnLýThôngTinTạmTrúToolStripMenuItem
             // 
@@ -205,7 +212,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label1.Location = new System.Drawing.Point(309, 202);
+            this.label1.Location = new System.Drawing.Point(28, 92);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(716, 37);
             this.label1.TabIndex = 6;
@@ -217,7 +224,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label2.Location = new System.Drawing.Point(43, 288);
+            this.label2.Location = new System.Drawing.Point(136, 198);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(410, 25);
             this.label2.TabIndex = 7;
@@ -229,26 +236,19 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label3.Location = new System.Drawing.Point(43, 333);
+            this.label3.Location = new System.Drawing.Point(136, 243);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(370, 25);
             this.label3.TabIndex = 8;
             this.label3.Text = "Sinh viên thực hiện: Dương Quốc Việt";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // quảnLýThôngTinToolStripMenuItem
-            // 
-            this.quảnLýThôngTinToolStripMenuItem.Name = "quảnLýThôngTinToolStripMenuItem";
-            this.quảnLýThôngTinToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.quảnLýThôngTinToolStripMenuItem.Text = "Quản lý thông tin";
-            this.quảnLýThôngTinToolStripMenuItem.Click += new System.EventHandler(this.quảnLýThôngTinToolStripMenuItem_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1350, 730);
+            this.ClientSize = new System.Drawing.Size(784, 362);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
