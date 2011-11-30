@@ -106,5 +106,10 @@ namespace WindowsFormsClient
         {
             new Login().ShowDialog();
         }
+
+        private void netMSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

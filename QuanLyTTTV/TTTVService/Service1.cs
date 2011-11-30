@@ -26,11 +26,24 @@ namespace TTTVService
 
         public string GetAuthor()
         {
-            string nhom = "Nhóm: 10";
-            string hoten = "Họ tên: Dương Quốc Việt";
-            string mssv = "MSSV: 09263L";
-            string kq = nhom + "\n" + hoten + "\n" + mssv;
-            return kq;
+            try
+            {
+                string nhom = "Nhóm: 10";
+                string hoten = "Họ tên: Dương Quốc Việt";
+                string mssv = "MSSV: 09263L";
+                string kq = nhom + "\n" + hoten + "\n" + mssv;
+                return kq;
+            }
+            catch (FaultOutOfMemory exp)
+            {
+                throw new FaultException("Out of memory!!",
+                    FaultCode.CreateReceiverFaultCode(new FaultCode("GetAuthor")));
+            }
+            catch (Exception exp)
+            {
+                FaultReasonText reason = new FaultReasonText(exp.Message);
+                throw new FaultException(new FaultReason(reason), FaultCode.CreateReceiverFaultCode(new FaultCode("GetAuthor")));
+            }
         }
 
         public TranferRecord[] GetInfoByName(string Name, string type)
@@ -806,6 +819,14 @@ namespace TTTVService
         public PisNotFoundException(string message, Exception inner) : base(message, inner) { }
         protected PisNotFoundException(
           System.Runtime.Serialization.SerializationInfo info,
+          System.Runtime.Serialization.StreamingContext context)
+            : base(info, context) { }
+    }
+
+    public class FaultOutOfMemory : Exception
+    {
+        public FaultOutOfMemory(
+             System.Runtime.Serialization.SerializationInfo info,
           System.Runtime.Serialization.StreamingContext context)
             : base(info, context) { }
     }

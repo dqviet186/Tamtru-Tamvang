@@ -45,6 +45,8 @@
             this.txt3 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.txt4 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -124,7 +126,7 @@
             // 
             // btnstart
             // 
-            this.btnstart.Location = new System.Drawing.Point(11, 268);
+            this.btnstart.Location = new System.Drawing.Point(12, 302);
             this.btnstart.Name = "btnstart";
             this.btnstart.Size = new System.Drawing.Size(75, 23);
             this.btnstart.TabIndex = 9;
@@ -134,7 +136,7 @@
             // 
             // btnstop
             // 
-            this.btnstop.Location = new System.Drawing.Point(92, 268);
+            this.btnstop.Location = new System.Drawing.Point(93, 302);
             this.btnstop.Name = "btnstop";
             this.btnstop.Size = new System.Drawing.Size(75, 23);
             this.btnstop.TabIndex = 10;
@@ -160,7 +162,7 @@
             // 
             // btnsave
             // 
-            this.btnsave.Location = new System.Drawing.Point(173, 268);
+            this.btnsave.Location = new System.Drawing.Point(174, 302);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(105, 23);
             this.btnsave.TabIndex = 14;
@@ -201,17 +203,38 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 248);
+            this.label5.Location = new System.Drawing.Point(12, 282);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(35, 13);
             this.label5.TabIndex = 26;
             this.label5.Text = "label5";
             // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(15, 247);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(106, 17);
+            this.checkBox4.TabIndex = 27;
+            this.checkBox4.Text = "NetMsmqBinding";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
+            // 
+            // txt4
+            // 
+            this.txt4.Enabled = false;
+            this.txt4.Location = new System.Drawing.Point(173, 250);
+            this.txt4.Name = "txt4";
+            this.txt4.Size = new System.Drawing.Size(184, 20);
+            this.txt4.TabIndex = 28;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(366, 303);
+            this.ClientSize = new System.Drawing.Size(370, 389);
+            this.Controls.Add(this.txt4);
+            this.Controls.Add(this.checkBox4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txt3);
@@ -256,6 +279,8 @@
         private System.Windows.Forms.TextBox txt3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.TextBox txt4;
     }
 }
 

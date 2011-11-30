@@ -50,6 +50,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.netMSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,7 +72,8 @@
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.thôngTinNhómToolStripMenuItem,
-            this.quảnLýThôngTinToolStripMenuItem});
+            this.quảnLýThôngTinToolStripMenuItem,
+            this.netMSToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(108, 20);
             this.toolStripMenuItem1.Text = "Thông tin chung";
@@ -79,14 +81,14 @@
             // thôngTinNhómToolStripMenuItem
             // 
             this.thôngTinNhómToolStripMenuItem.Name = "thôngTinNhómToolStripMenuItem";
-            this.thôngTinNhómToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.thôngTinNhómToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.thôngTinNhómToolStripMenuItem.Text = "Thông tin nhóm";
             this.thôngTinNhómToolStripMenuItem.Click += new System.EventHandler(this.thôngTinNhómToolStripMenuItem_Click);
             // 
             // quảnLýThôngTinToolStripMenuItem
             // 
             this.quảnLýThôngTinToolStripMenuItem.Name = "quảnLýThôngTinToolStripMenuItem";
-            this.quảnLýThôngTinToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.quảnLýThôngTinToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.quảnLýThôngTinToolStripMenuItem.Text = "Quản lý thông tin";
             this.quảnLýThôngTinToolStripMenuItem.Click += new System.EventHandler(this.quảnLýThôngTinToolStripMenuItem_Click);
             // 
@@ -243,6 +245,13 @@
             this.label3.Text = "Sinh viên thực hiện: Dương Quốc Việt";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // netMSToolStripMenuItem
+            // 
+            this.netMSToolStripMenuItem.Name = "netMSToolStripMenuItem";
+            this.netMSToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.netMSToolStripMenuItem.Text = "NetMsmqBinding";
+            this.netMSToolStripMenuItem.Click += new System.EventHandler(this.netMSToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -290,6 +299,7 @@
         private System.Windows.Forms.ToolStripMenuItem tìmKiếmTạmVắngTheoĐịaChỉToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem timKiếmTạmVắngTheoNgàyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quảnLýThôngTinToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem netMSToolStripMenuItem;
     }
 }
 

@@ -27,3 +27,5 @@ G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsCli
 G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsClient\obj\x86\Debug\WindowsFormsClient.TV_ListByDate.resources
 G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsClient\obj\x86\Debug\WindowsFormsClient.Login.resources
 G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsClient\obj\x86\Debug\WindowsFormsClient.Thongtintamtru.resources
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsClient\obj\x86\Debug\WindowsFormsClient.NetMsmqBinding.resources
+G:\DQVIET186\hk11.1A\Cong Nghe va Dich vu Web\project\QuanLyTTTV\WindowsFormsClient\obj\x86\Debug\WindowsFormsClient.TestFault.resources

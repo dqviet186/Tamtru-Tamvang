@@ -76,6 +76,10 @@ namespace WindowsFormsHostingWS
                     host.AddServiceEndpoint(contractType, new NetTcpBinding(), "net.tcp://localhost:8000/quanly/"+txt3.Text);
                     //host.AddServiceEndpoint(contractType, A, "net.tcp://localhost:8000/quanly/");
                 }
+                else if (str == "NetMsmqBinding")
+                {
+                    host.AddServiceEndpoint(contractType, new NetMsmqBinding(), "net.msmq://localhost:8000/quanly/kiemtra/");
+                }
 
                 if (ShowMex == "Yes")
                 {
@@ -156,6 +160,21 @@ namespace WindowsFormsHostingWS
                 txt3.Text = "";
                 txt3.Enabled = false;
                 endpoints.Items.Remove(checkBox3.Text);
+            }
+        }
+
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox4.Checked)
+            {
+                txt4.Enabled = true;
+                endpoints.Items.Add(checkBox4.Text);
+            }
+            else
+            {
+                txt4.Text = "";
+                txt4.Enabled = false;
+                endpoints.Items.Remove(checkBox4.Text);
             }
         }
 
