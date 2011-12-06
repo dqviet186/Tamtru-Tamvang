@@ -107,15 +107,6 @@
   <wsdl:message name="pis_LoadData_TrackedFaultFault_FaultMessage">
     <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/TTTVService" name="detail" element="q11:TrackedFault" />
   </wsdl:message>
-  <wsdl:message name="pis_Login_InputMessage">
-    <wsdl:part name="parameters" element="tns:Login" />
-  </wsdl:message>
-  <wsdl:message name="pis_Login_OutputMessage">
-    <wsdl:part name="parameters" element="tns:LoginResponse" />
-  </wsdl:message>
-  <wsdl:message name="pis_Login_TrackedFaultFault_FaultMessage">
-    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/TTTVService" name="detail" element="q12:TrackedFault" />
-  </wsdl:message>
   <wsdl:message name="pis_ImportDataFromFile_InputMessage">
     <wsdl:part name="parameters" element="tns:ImportDataFromFile" />
   </wsdl:message>
@@ -183,11 +174,6 @@
       <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/LoadData" message="tns:pis_LoadData_InputMessage" />
       <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/LoadDataResponse" message="tns:pis_LoadData_OutputMessage" />
       <wsdl:fault wsaw:Action="http://www.tamtrutamvang.com/pis/LoadDataTrackedFaultFault" name="TrackedFaultFault" message="tns:pis_LoadData_TrackedFaultFault_FaultMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="Login">
-      <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/Login" message="tns:pis_Login_InputMessage" />
-      <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/LoginResponse" message="tns:pis_Login_OutputMessage" />
-      <wsdl:fault wsaw:Action="http://www.tamtrutamvang.com/pis/LoginTrackedFaultFault" name="TrackedFaultFault" message="tns:pis_Login_TrackedFaultFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="ImportDataFromFile">
       <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/ImportDataFromFile" message="tns:pis_ImportDataFromFile_InputMessage" />

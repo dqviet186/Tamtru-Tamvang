@@ -33,8 +33,12 @@ namespace WindowsFormsClient
             string username = textBox1.Text;
             string password = textBox2.Text;
 
-            ServiceReference1.pisClient proxy = new ServiceReference1.pisClient();
+            //ServiceReference1.pisClient proxy = new ServiceReference1.pisClient();
+            //int result = proxy.Login(username, password);
+
+            ServiceReference2.WSLoginClient proxy = new ServiceReference2.WSLoginClient();
             int result = proxy.Login(username, password);
+            
             if (result == 1)
             {
                 new Thongtintamtru().ShowDialog();

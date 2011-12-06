@@ -114,15 +114,6 @@ namespace WindowsFormsClient.ServiceReference1 {
         
         TTTVService.TranferRecord[] EndLoadData(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/Login", ReplyAction="http://www.tamtrutamvang.com/pis/LoginResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(TTTVService.TrackedFault), Action="http://www.tamtrutamvang.com/pis/LoginTrackedFaultFault", Name="TrackedFault", Namespace="http://schemas.datacontract.org/2004/07/TTTVService")]
-        int Login(string username, string password);
-        
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://www.tamtrutamvang.com/pis/Login", ReplyAction="http://www.tamtrutamvang.com/pis/LoginResponse")]
-        System.IAsyncResult BeginLogin(string username, string password, System.AsyncCallback callback, object asyncState);
-        
-        int EndLogin(System.IAsyncResult result);
-        
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://www.tamtrutamvang.com/pis/ImportDataFromFile")]
         void ImportDataFromFile(string[] file);
         
@@ -371,25 +362,6 @@ namespace WindowsFormsClient.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class LoginCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public LoginCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public int Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class pisClient : System.ServiceModel.ClientBase<WindowsFormsClient.ServiceReference1.pis>, WindowsFormsClient.ServiceReference1.pis {
         
         private BeginOperationDelegate onBeginGetAuthorInfoDelegate;
@@ -458,12 +430,6 @@ namespace WindowsFormsClient.ServiceReference1 {
         
         private System.Threading.SendOrPostCallback onLoadDataCompletedDelegate;
         
-        private BeginOperationDelegate onBeginLoginDelegate;
-        
-        private EndOperationDelegate onEndLoginDelegate;
-        
-        private System.Threading.SendOrPostCallback onLoginCompletedDelegate;
-        
         private BeginOperationDelegate onBeginImportDataFromFileDelegate;
         
         private EndOperationDelegate onEndImportDataFromFileDelegate;
@@ -528,8 +494,6 @@ namespace WindowsFormsClient.ServiceReference1 {
         public event System.EventHandler<CountSexByAddressCompletedEventArgs> CountSexByAddressCompleted;
         
         public event System.EventHandler<LoadDataCompletedEventArgs> LoadDataCompleted;
-        
-        public event System.EventHandler<LoginCompletedEventArgs> LoginCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> ImportDataFromFileCompleted;
         
@@ -1107,58 +1071,6 @@ namespace WindowsFormsClient.ServiceReference1 {
                 this.onLoadDataCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnLoadDataCompleted);
             }
             base.InvokeAsync(this.onBeginLoadDataDelegate, null, this.onEndLoadDataDelegate, this.onLoadDataCompletedDelegate, userState);
-        }
-        
-        public int Login(string username, string password) {
-            return base.Channel.Login(username, password);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginLogin(string username, string password, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginLogin(username, password, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public int EndLogin(System.IAsyncResult result) {
-            return base.Channel.EndLogin(result);
-        }
-        
-        private System.IAsyncResult OnBeginLogin(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            string username = ((string)(inValues[0]));
-            string password = ((string)(inValues[1]));
-            return this.BeginLogin(username, password, callback, asyncState);
-        }
-        
-        private object[] OnEndLogin(System.IAsyncResult result) {
-            int retVal = this.EndLogin(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnLoginCompleted(object state) {
-            if ((this.LoginCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.LoginCompleted(this, new LoginCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void LoginAsync(string username, string password) {
-            this.LoginAsync(username, password, null);
-        }
-        
-        public void LoginAsync(string username, string password, object userState) {
-            if ((this.onBeginLoginDelegate == null)) {
-                this.onBeginLoginDelegate = new BeginOperationDelegate(this.OnBeginLogin);
-            }
-            if ((this.onEndLoginDelegate == null)) {
-                this.onEndLoginDelegate = new EndOperationDelegate(this.OnEndLogin);
-            }
-            if ((this.onLoginCompletedDelegate == null)) {
-                this.onLoginCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnLoginCompleted);
-            }
-            base.InvokeAsync(this.onBeginLoginDelegate, new object[] {
-                        username,
-                        password}, this.onEndLoginDelegate, this.onLoginCompletedDelegate, userState);
         }
         
         public void ImportDataFromFile(string[] file) {

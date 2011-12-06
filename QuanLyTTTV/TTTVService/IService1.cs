@@ -67,9 +67,9 @@ namespace TTTVService
         [FaultContract(typeof(TrackedFault))]
         TranferRecord[] GetData();
 
-        [OperationContract(Name = "Login")]
-        [FaultContract(typeof(TrackedFault))]
-        int Login(string username, string password);
+        //[OperationContract(Name = "Login")]
+        //[FaultContract(typeof(TrackedFault))]
+        //int Login(string username, string password);
 
         [OperationContract(Name = "ImportDataFromFile", IsOneWay = true)]
         void ImportData(string[] file);
@@ -136,13 +136,13 @@ namespace TTTVService
         public string Type;
     }
 
-    [DataContract]
-    public class UserRecord
-    {
-        [DataMember]
-        public string username;
+    //[DataContract]
+    //public class UserRecord
+    //{
+    //    [DataMember]
+    //    public string username;
 
-        [DataMember]
-        public string password;
-    }
+    //    [DataMember]
+    //    public string password;
+    //}
 }
