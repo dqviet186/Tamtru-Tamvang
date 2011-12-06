@@ -13,7 +13,7 @@ using System.Data.SqlClient;
 namespace TTTVService
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
-    [ServiceBehavior(IncludeExceptionDetailInFaults = true)]
+    [ServiceBehavior(IncludeExceptionDetailInFaults = true, InstanceContextMode = InstanceContextMode.PerCall)]
     public class Service1 : IService1
     {
         TranferRecord[] data;
