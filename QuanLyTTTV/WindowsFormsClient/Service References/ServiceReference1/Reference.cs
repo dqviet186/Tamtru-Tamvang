@@ -12,7 +12,7 @@ namespace WindowsFormsClient.ServiceReference1 {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.tamtrutamvang.com/", ConfigurationName="ServiceReference1.pis")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.tamtrutamvang.com/", ConfigurationName="ServiceReference1.pis", SessionMode=System.ServiceModel.SessionMode.Required)]
     public interface pis {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.tamtrutamvang.com/pis/GetAuthorInfo", ReplyAction="http://www.tamtrutamvang.com/pis/GetAuthorInfoResponse")]

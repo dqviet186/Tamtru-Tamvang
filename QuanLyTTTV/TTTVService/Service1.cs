@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
+using System.Transactions;
 using System.ServiceModel;
 using System.Text;
 
@@ -13,7 +14,8 @@ using System.Data.SqlClient;
 namespace TTTVService
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
-    [ServiceBehavior(IncludeExceptionDetailInFaults = true, InstanceContextMode = InstanceContextMode.PerCall)]
+    //[ServiceBehavior(IncludeExceptionDetailInFaults = true, InstanceContextMode = InstanceContextMode.PerCall)]
+    [ServiceBehavior(IncludeExceptionDetailInFaults = true, InstanceContextMode = InstanceContextMode.PerSession)]
     public class Service1 : IService1
     {
         TranferRecord[] data;
@@ -610,6 +612,8 @@ namespace TTTVService
         //    }
         //}
 
+        [OperationBehavior(TransactionScopeRequired = true, TransactionAutoComplete = false)]
+        //[TransactionFlow(TransactionFlowOption.Allowed)]
         public void InsertData(TranferRecord data)
         {
             try
@@ -660,6 +664,8 @@ namespace TTTVService
             }
         }
 
+        [OperationBehavior(TransactionScopeRequired = true, TransactionAutoComplete = true)]
+        //[TransactionFlow(TransactionFlowOption.Allowed)]
         public void UpdateData(int Id, TranferRecord data)
         {
             try
@@ -710,6 +716,8 @@ namespace TTTVService
             }
         }
 
+        [OperationBehavior(TransactionScopeRequired = true, TransactionAutoComplete = true)]
+        //[TransactionFlow(TransactionFlowOption.Allowed)]
         public void DeleteData(int Id)
         {
             try

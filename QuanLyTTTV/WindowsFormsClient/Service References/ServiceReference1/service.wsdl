@@ -119,72 +119,72 @@
   <wsdl:message name="pis_DeleteInformation_InputMessage">
     <wsdl:part name="parameters" element="tns:DeleteInformation" />
   </wsdl:message>
-  <wsdl:portType name="pis">
-    <wsdl:operation name="GetAuthorInfo">
+  <wsdl:portType msc:usingSession="true" name="pis">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAuthorInfo">
       <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/GetAuthorInfo" message="tns:pis_GetAuthorInfo_InputMessage" />
       <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/GetAuthorInfoResponse" message="tns:pis_GetAuthorInfo_OutputMessage" />
       <wsdl:fault wsaw:Action="http://www.tamtrutamvang.com/pis/GetAuthorInfoTrackedFaultFault" name="TrackedFaultFault" message="tns:pis_GetAuthorInfo_TrackedFaultFault_FaultMessage" />
     </wsdl:operation>
-    <wsdl:operation name="FindInfoByName">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="FindInfoByName">
       <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/FindInfoByName" message="tns:pis_FindInfoByName_InputMessage" />
       <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/FindInfoByNameResponse" message="tns:pis_FindInfoByName_OutputMessage" />
       <wsdl:fault wsaw:Action="http://www.tamtrutamvang.com/pis/FindInfoByNameTrackedFaultFault" name="TrackedFaultFault" message="tns:pis_FindInfoByName_TrackedFaultFault_FaultMessage" />
     </wsdl:operation>
-    <wsdl:operation name="FindInfoByPhone">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="FindInfoByPhone">
       <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/FindInfoByPhone" message="tns:pis_FindInfoByPhone_InputMessage" />
       <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/FindInfoByPhoneResponse" message="tns:pis_FindInfoByPhone_OutputMessage" />
       <wsdl:fault wsaw:Action="http://www.tamtrutamvang.com/pis/FindInfoByPhoneTrackedFaultFault" name="TrackedFaultFault" message="tns:pis_FindInfoByPhone_TrackedFaultFault_FaultMessage" />
     </wsdl:operation>
-    <wsdl:operation name="FindInfoByIdNumber">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="FindInfoByIdNumber">
       <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/FindInfoByIdNumber" message="tns:pis_FindInfoByIdNumber_InputMessage" />
       <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/FindInfoByIdNumberResponse" message="tns:pis_FindInfoByIdNumber_OutputMessage" />
       <wsdl:fault wsaw:Action="http://www.tamtrutamvang.com/pis/FindInfoByIdNumberTrackedFaultFault" name="TrackedFaultFault" message="tns:pis_FindInfoByIdNumber_TrackedFaultFault_FaultMessage" />
     </wsdl:operation>
-    <wsdl:operation name="FindInfoByEmail">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="FindInfoByEmail">
       <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/FindInfoByEmail" message="tns:pis_FindInfoByEmail_InputMessage" />
       <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/FindInfoByEmailResponse" message="tns:pis_FindInfoByEmail_OutputMessage" />
       <wsdl:fault wsaw:Action="http://www.tamtrutamvang.com/pis/FindInfoByEmailTrackedFaultFault" name="TrackedFaultFault" message="tns:pis_FindInfoByEmail_TrackedFaultFault_FaultMessage" />
     </wsdl:operation>
-    <wsdl:operation name="ListPersonBySex">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ListPersonBySex">
       <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/ListPersonBySex" message="tns:pis_ListPersonBySex_InputMessage" />
       <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/ListPersonBySexResponse" message="tns:pis_ListPersonBySex_OutputMessage" />
       <wsdl:fault wsaw:Action="http://www.tamtrutamvang.com/pis/ListPersonBySexTrackedFaultFault" name="TrackedFaultFault" message="tns:pis_ListPersonBySex_TrackedFaultFault_FaultMessage" />
     </wsdl:operation>
-    <wsdl:operation name="ListPersonByAddress">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ListPersonByAddress">
       <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/ListPersonByAddress" message="tns:pis_ListPersonByAddress_InputMessage" />
       <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/ListPersonByAddressResponse" message="tns:pis_ListPersonByAddress_OutputMessage" />
       <wsdl:fault wsaw:Action="http://www.tamtrutamvang.com/pis/ListPersonByAddressTrackedFaultFault" name="TrackedFaultFault" message="tns:pis_ListPersonByAddress_TrackedFaultFault_FaultMessage" />
     </wsdl:operation>
-    <wsdl:operation name="ListPersonByDate">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ListPersonByDate">
       <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/ListPersonByDate" message="tns:pis_ListPersonByDate_InputMessage" />
       <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/ListPersonByDateResponse" message="tns:pis_ListPersonByDate_OutputMessage" />
       <wsdl:fault wsaw:Action="http://www.tamtrutamvang.com/pis/ListPersonByDateTrackedFaultFault" name="TrackedFaultFault" message="tns:pis_ListPersonByDate_TrackedFaultFault_FaultMessage" />
     </wsdl:operation>
-    <wsdl:operation name="ListOccupationByAddress">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ListOccupationByAddress">
       <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/ListOccupationByAddress" message="tns:pis_ListOccupationByAddress_InputMessage" />
       <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/ListOccupationByAddressResponse" message="tns:pis_ListOccupationByAddress_OutputMessage" />
       <wsdl:fault wsaw:Action="http://www.tamtrutamvang.com/pis/ListOccupationByAddressTrackedFaultFault" name="TrackedFaultFault" message="tns:pis_ListOccupationByAddress_TrackedFaultFault_FaultMessage" />
     </wsdl:operation>
-    <wsdl:operation name="CountSexByAddress">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="CountSexByAddress">
       <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/CountSexByAddress" message="tns:pis_CountSexByAddress_InputMessage" />
       <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/CountSexByAddressResponse" message="tns:pis_CountSexByAddress_OutputMessage" />
       <wsdl:fault wsaw:Action="http://www.tamtrutamvang.com/pis/CountSexByAddressTrackedFaultFault" name="TrackedFaultFault" message="tns:pis_CountSexByAddress_TrackedFaultFault_FaultMessage" />
     </wsdl:operation>
-    <wsdl:operation name="LoadData">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="LoadData">
       <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/LoadData" message="tns:pis_LoadData_InputMessage" />
       <wsdl:output wsaw:Action="http://www.tamtrutamvang.com/pis/LoadDataResponse" message="tns:pis_LoadData_OutputMessage" />
       <wsdl:fault wsaw:Action="http://www.tamtrutamvang.com/pis/LoadDataTrackedFaultFault" name="TrackedFaultFault" message="tns:pis_LoadData_TrackedFaultFault_FaultMessage" />
     </wsdl:operation>
-    <wsdl:operation name="ImportDataFromFile">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ImportDataFromFile">
       <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/ImportDataFromFile" message="tns:pis_ImportDataFromFile_InputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="InsertInfomation">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InsertInfomation">
       <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/InsertInfomation" message="tns:pis_InsertInfomation_InputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="UpdatInformation">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UpdatInformation">
       <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/UpdatInformation" message="tns:pis_UpdatInformation_InputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="DeleteInformation">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeleteInformation">
       <wsdl:input wsaw:Action="http://www.tamtrutamvang.com/pis/DeleteInformation" message="tns:pis_DeleteInformation_InputMessage" />
     </wsdl:operation>
   </wsdl:portType>
